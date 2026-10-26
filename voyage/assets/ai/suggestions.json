@@ -1,0 +1,1618 @@
+{
+ "version": 1,
+ "categories": {
+  "travel": [
+   "旅",
+   "游",
+   "攻略",
+   "酒店",
+   "机票",
+   "景点",
+   "行程",
+   "trip",
+   "travel",
+   "旅行",
+   "여행"
+  ],
+  "food": [
+   "吃",
+   "菜",
+   "食谱",
+   "做饭",
+   "餐",
+   "recipe",
+   "food",
+   "cook",
+   "料理",
+   "요리"
+  ],
+  "health": [
+   "健康",
+   "睡",
+   "病",
+   "药",
+   "医",
+   "疼",
+   "health",
+   "sleep",
+   "健康",
+   "건강"
+  ],
+  "fitness": [
+   "跑步",
+   "健身",
+   "运动",
+   "减肥",
+   "训练",
+   "workout",
+   "run",
+   "運動",
+   "운동"
+  ],
+  "science": [
+   "科学",
+   "物理",
+   "化学",
+   "生物",
+   "宇宙",
+   "疫苗",
+   "量子",
+   "science",
+   "科学",
+   "과학"
+  ],
+  "history": [
+   "历史",
+   "朝代",
+   "战争",
+   "帝国",
+   "history",
+   "歴史",
+   "역사"
+  ],
+  "learning": [
+   "学习",
+   "考试",
+   "背",
+   "书",
+   "课程",
+   "learn",
+   "study",
+   "勉強",
+   "공부"
+  ],
+  "tech": [
+   "手机",
+   "电脑",
+   "AI",
+   "模型",
+   "软件",
+   "网络",
+   "tech",
+   "phone",
+   "スマホ",
+   "기술"
+  ],
+  "work": [
+   "工作",
+   "会议",
+   "邮件",
+   "报告",
+   "同事",
+   "老板",
+   "work",
+   "meeting",
+   "仕事",
+   "업무"
+  ],
+  "career": [
+   "简历",
+   "面试",
+   "求职",
+   "跳槽",
+   "薪",
+   "resume",
+   "interview",
+   "面接",
+   "면접"
+  ],
+  "money": [
+   "钱",
+   "理财",
+   "基金",
+   "股票",
+   "房",
+   "预算",
+   "invest",
+   "money",
+   "お金",
+   "돈"
+  ],
+  "home": [
+   "收纳",
+   "装修",
+   "打扫",
+   "家居",
+   "房间",
+   "clean",
+   "home",
+   "掃除",
+   "청소"
+  ],
+  "life": [
+   "生活",
+   "礼物",
+   "周末",
+   "习惯",
+   "life",
+   "gift",
+   "生活",
+   "생활"
+  ],
+  "parenting": [
+   "孩子",
+   "育儿",
+   "宝宝",
+   "教育",
+   "kid",
+   "child",
+   "子ども",
+   "아이"
+  ],
+  "pets": [
+   "猫",
+   "狗",
+   "宠物",
+   "pet",
+   "cat",
+   "dog",
+   "ペット",
+   "반려"
+  ],
+  "emotion": [
+   "压力",
+   "焦虑",
+   "心情",
+   "情绪",
+   "stress",
+   "anxious",
+   "ストレス",
+   "스트레스"
+  ],
+  "entertainment": [
+   "电影",
+   "音乐",
+   "游戏",
+   "剧",
+   "movie",
+   "music",
+   "game",
+   "映画",
+   "영화"
+  ],
+  "fun": [
+   "谜",
+   "冷知识",
+   "推理",
+   "笑话",
+   "puzzle",
+   "fact",
+   "クイズ",
+   "퀴즈"
+  ],
+  "creative": [
+   "故事",
+   "诗",
+   "起名",
+   "创意",
+   "story",
+   "poem",
+   "name",
+   "物語",
+   "이야기"
+  ],
+  "language": [
+   "英语",
+   "口语",
+   "日语",
+   "韩语",
+   "english",
+   "language",
+   "英語",
+   "영어"
+  ],
+  "productivity": [
+   "效率",
+   "计划",
+   "习惯",
+   "拖延",
+   "plan",
+   "habit",
+   "効率",
+   "효율"
+  ],
+  "translate": [
+   "翻译",
+   "translate",
+   "翻訳",
+   "번역"
+  ],
+  "code": [
+   "代码",
+   "bug",
+   "报错",
+   "kotlin",
+   "python",
+   "sql",
+   "git",
+   "code",
+   "コード",
+   "코드"
+  ],
+  "writing": [
+   "文案",
+   "写",
+   "润色",
+   "作文",
+   "write",
+   "copy",
+   "文章",
+   "글"
+  ]
+ },
+ "items": [
+  {
+   "id": "travel_weekend",
+   "kind": "general",
+   "cat": "travel",
+   "when": [
+    "weekend"
+   ],
+   "t": {
+    "hans": "周末两天，附近有哪些适合短途的地方？",
+    "hant": "週末兩天，附近有哪些適合短途旅行的地方？",
+    "en": "Where can I go for a two-day weekend trip nearby?",
+    "ja": "週末の二日間で行ける近場の旅行先は？",
+    "ko": "주말 이틀 동안 가까이 다녀올 만한 곳은?"
+   }
+  },
+  {
+   "id": "travel_plan",
+   "kind": "general",
+   "cat": "travel",
+   "when": [],
+   "t": {
+    "hans": "规划一次杭州三日游",
+    "hant": "規劃一次杭州三日遊",
+    "en": "Plan a three-day trip to Hangzhou",
+    "ja": "杭州三日間の旅行プランを立てて",
+    "ko": "항저우 3일 여행 일정을 짜 줘"
+   }
+  },
+  {
+   "id": "travel_pack",
+   "kind": "general",
+   "cat": "travel",
+   "when": [],
+   "t": {
+    "hans": "出差三天，行李清单怎么列最省心？",
+    "hant": "出差三天，行李清單怎麼列最省心？",
+    "en": "Make me a packing list for a three-day business trip",
+    "ja": "三日間の出張の持ち物リストを作って",
+    "ko": "3일 출장 짐 목록을 만들어 줘"
+   }
+  },
+  {
+   "id": "travel_budget",
+   "kind": "general",
+   "cat": "travel",
+   "when": [],
+   "t": {
+    "hans": "五千元预算，国内哪里玩得最值？",
+    "hant": "五千元預算，國內哪裡玩得最值？",
+    "en": "Where can a modest budget go furthest for a week away?",
+    "ja": "限られた予算で一週間楽しめる旅行先は？",
+    "ko": "적은 예산으로 일주일 여행하기 좋은 곳은?"
+   }
+  },
+  {
+   "id": "travel_winter",
+   "kind": "general",
+   "cat": "travel",
+   "when": [
+    "winter"
+   ],
+   "t": {
+    "hans": "冬天去哪里看雪最合适？",
+    "hant": "冬天去哪裡看雪最合適？",
+    "en": "Where are the best places to see snow this winter?",
+    "ja": "冬に雪景色を楽しめるおすすめの場所は？",
+    "ko": "겨울에 눈 구경하기 좋은 곳은?"
+   }
+  },
+  {
+   "id": "travel_summer",
+   "kind": "general",
+   "cat": "travel",
+   "when": [
+    "summer"
+   ],
+   "t": {
+    "hans": "夏天避暑，推荐几个凉快的目的地",
+    "hant": "夏天避暑，推薦幾個涼快的目的地",
+    "en": "Suggest a few cool places to escape the summer heat",
+    "ja": "夏の暑さを避けられる涼しい旅行先を教えて",
+    "ko": "여름 더위를 피할 시원한 여행지를 추천해 줘"
+   }
+  },
+  {
+   "id": "food_breakfast",
+   "kind": "general",
+   "cat": "food",
+   "when": [
+    "morning"
+   ],
+   "t": {
+    "hans": "十分钟能做好的营养早餐有哪些？",
+    "hant": "十分鐘能做好的營養早餐有哪些？",
+    "en": "What healthy breakfasts can I make in ten minutes?",
+    "ja": "10分で作れる栄養のある朝ごはんは？",
+    "ko": "10분 안에 만들 수 있는 건강한 아침 메뉴는?"
+   }
+  },
+  {
+   "id": "food_lunch",
+   "kind": "general",
+   "cat": "food",
+   "when": [
+    "noon"
+   ],
+   "t": {
+    "hans": "中午吃什么？给我三个不重样的建议",
+    "hant": "中午吃什麼？給我三個不重樣的建議",
+    "en": "What should I have for lunch? Give me three different ideas",
+    "ja": "お昼ごはん、何にしよう？違う案を三つ",
+    "ko": "점심 뭐 먹지? 서로 다른 메뉴 세 가지 추천해 줘"
+   }
+  },
+  {
+   "id": "food_dinner",
+   "kind": "general",
+   "cat": "food",
+   "when": [
+    "evening"
+   ],
+   "t": {
+    "hans": "冰箱里有鸡蛋、番茄和土豆，晚饭能做什么？",
+    "hant": "冰箱裡有雞蛋、番茄和馬鈴薯，晚餐能做什麼？",
+    "en": "I have eggs, tomatoes and potatoes. What can I cook for dinner?",
+    "ja": "卵とトマトとじゃがいもで作れる晩ごはんは？",
+    "ko": "달걀, 토마토, 감자로 만들 수 있는 저녁 메뉴는?"
+   }
+  },
+  {
+   "id": "food_week",
+   "kind": "general",
+   "cat": "food",
+   "when": [
+    "weekend"
+   ],
+   "t": {
+    "hans": "帮我做一份一周的家常菜单和采购清单",
+    "hant": "幫我做一份一週的家常菜單和採購清單",
+    "en": "Make me a week of home-cooked meals and a shopping list",
+    "ja": "一週間の献立と買い物リストを作って",
+    "ko": "일주일 집밥 식단과 장보기 목록을 만들어 줘"
+   }
+  },
+  {
+   "id": "food_autumn",
+   "kind": "general",
+   "cat": "food",
+   "when": [
+    "autumn"
+   ],
+   "t": {
+    "hans": "秋天适合吃哪些应季食材？",
+    "hant": "秋天適合吃哪些當季食材？",
+    "en": "Which seasonal foods are best in autumn?",
+    "ja": "秋が旬の食材とおすすめの食べ方は？",
+    "ko": "가을 제철 식재료와 요리법을 알려 줘"
+   }
+  },
+  {
+   "id": "food_night",
+   "kind": "general",
+   "cat": "food",
+   "when": [
+    "night"
+   ],
+   "t": {
+    "hans": "深夜饿了，有什么不太长胖的宵夜？",
+    "hant": "深夜餓了，有什麼不太會胖的宵夜？",
+    "en": "Hungry late at night. What is a light snack that won't hurt?",
+    "ja": "夜中にお腹が空いた。太りにくい夜食は？",
+    "ko": "늦은 밤 배고플 때 부담 없는 야식은?"
+   }
+  },
+  {
+   "id": "health_sleep",
+   "kind": "general",
+   "cat": "health",
+   "when": [
+    "night"
+   ],
+   "t": {
+    "hans": "总是睡不着，有哪些能马上试的方法？",
+    "hant": "總是睡不著，有哪些能馬上試的方法？",
+    "en": "I can't fall asleep. What can I try right now?",
+    "ja": "眠れないとき、すぐ試せる方法は？",
+    "ko": "잠이 안 올 때 바로 해 볼 수 있는 방법은?"
+   }
+  },
+  {
+   "id": "health_neck",
+   "kind": "general",
+   "cat": "health",
+   "when": [
+    "afternoon",
+    "weekday"
+   ],
+   "t": {
+    "hans": "久坐脖子酸，做几个办公室里能做的拉伸",
+    "hant": "久坐脖子痠，做幾個辦公室裡能做的伸展",
+    "en": "My neck aches from sitting. Suggest stretches I can do at my desk",
+    "ja": "座りっぱなしで首がこる。デスクでできるストレッチは？",
+    "ko": "오래 앉아 있어 목이 뻐근해. 자리에서 할 수 있는 스트레칭은?"
+   }
+  },
+  {
+   "id": "health_cold",
+   "kind": "general",
+   "cat": "health",
+   "when": [
+    "winter",
+    "autumn"
+   ],
+   "t": {
+    "hans": "换季容易感冒，平时怎么预防？",
+    "hant": "換季容易感冒，平時怎麼預防？",
+    "en": "How can I avoid catching colds when the season changes?",
+    "ja": "季節の変わり目に風邪をひかないコツは？",
+    "ko": "환절기 감기를 예방하는 방법은?"
+   }
+  },
+  {
+   "id": "health_water",
+   "kind": "general",
+   "cat": "health",
+   "when": [
+    "summer"
+   ],
+   "t": {
+    "hans": "夏天出汗多，每天该怎么补水？",
+    "hant": "夏天出汗多，每天該怎麼補水？",
+    "en": "How much should I drink on hot, sweaty summer days?",
+    "ja": "汗をかく夏、水分補給はどうすればいい？",
+    "ko": "땀이 많은 여름에 수분 보충은 어떻게 할까?"
+   }
+  },
+  {
+   "id": "fitness_start",
+   "kind": "general",
+   "cat": "fitness",
+   "when": [],
+   "t": {
+    "hans": "零基础想开始跑步，给我一个四周计划",
+    "hant": "零基礎想開始跑步，給我一個四週計畫",
+    "en": "I've never run before. Give me a four-week plan to start",
+    "ja": "運動初心者向けの四週間ランニング計画を作って",
+    "ko": "달리기 초보를 위한 4주 계획을 짜 줘"
+   }
+  },
+  {
+   "id": "fitness_home",
+   "kind": "general",
+   "cat": "fitness",
+   "when": [
+    "evening"
+   ],
+   "t": {
+    "hans": "在家二十分钟的无器械训练",
+    "hant": "在家二十分鐘的徒手訓練",
+    "en": "A twenty-minute workout at home with no equipment",
+    "ja": "器具なしでできる20分の自宅トレーニング",
+    "ko": "장비 없이 집에서 하는 20분 운동"
+   }
+  },
+  {
+   "id": "fitness_morning",
+   "kind": "general",
+   "cat": "fitness",
+   "when": [
+    "morning"
+   ],
+   "t": {
+    "hans": "早上起床后适合做哪些轻运动？",
+    "hant": "早上起床後適合做哪些輕運動？",
+    "en": "What light exercise is good right after waking up?",
+    "ja": "朝起きてすぐできる軽い運動は？",
+    "ko": "아침에 일어나서 하기 좋은 가벼운 운동은?"
+   }
+  },
+  {
+   "id": "learn_vaccine",
+   "kind": "general",
+   "cat": "science",
+   "when": [],
+   "t": {
+    "hans": "解释疫苗如何训练免疫系统",
+    "hant": "解釋疫苗如何訓練免疫系統",
+    "en": "Explain how vaccines train the immune system",
+    "ja": "ワクチンが免疫を鍛える仕組みを説明して",
+    "ko": "백신이 면역 체계를 훈련시키는 원리를 설명해 줘"
+   }
+  },
+  {
+   "id": "learn_ai",
+   "kind": "general",
+   "cat": "tech",
+   "when": [],
+   "t": {
+    "hans": "用通俗的话讲讲大模型是怎么生成文字的",
+    "hant": "用淺白的話講講大型語言模型是怎麼生成文字的",
+    "en": "Explain in plain words how large language models write text",
+    "ja": "大規模言語モデルが文章を作る仕組みをわかりやすく",
+    "ko": "대형 언어 모델이 글을 만드는 원리를 쉽게 설명해 줘"
+   }
+  },
+  {
+   "id": "learn_quantum",
+   "kind": "general",
+   "cat": "science",
+   "when": [],
+   "t": {
+    "hans": "量子纠缠到底是什么？举个日常的比喻",
+    "hant": "量子糾纏到底是什麼？舉個日常的比喻",
+    "en": "What is quantum entanglement? Use an everyday analogy",
+    "ja": "量子もつれとは？身近なたとえで",
+    "ko": "양자 얽힘이 뭔지 일상적인 비유로 설명해 줘"
+   }
+  },
+  {
+   "id": "learn_black_hole",
+   "kind": "general",
+   "cat": "science",
+   "when": [
+    "night"
+   ],
+   "t": {
+    "hans": "黑洞里面会发生什么？",
+    "hant": "黑洞裡面會發生什麼？",
+    "en": "What happens inside a black hole?",
+    "ja": "ブラックホールの中では何が起きている？",
+    "ko": "블랙홀 안에서는 무슨 일이 일어날까?"
+   }
+  },
+  {
+   "id": "learn_history",
+   "kind": "general",
+   "cat": "history",
+   "when": [],
+   "t": {
+    "hans": "用十分钟讲清楚丝绸之路的来龙去脉",
+    "hant": "用十分鐘講清楚絲綢之路的來龍去脈",
+    "en": "Tell me the story of the Silk Road in ten minutes",
+    "ja": "シルクロードの歴史を10分で説明して",
+    "ko": "실크로드의 역사를 10분 안에 설명해 줘"
+   }
+  },
+  {
+   "id": "learn_history2",
+   "kind": "general",
+   "cat": "history",
+   "when": [
+    "weekend"
+   ],
+   "t": {
+    "hans": "罗马帝国为什么会衰落？",
+    "hant": "羅馬帝國為什麼會衰落？",
+    "en": "Why did the Roman Empire fall?",
+    "ja": "ローマ帝国はなぜ衰退したの？",
+    "ko": "로마 제국은 왜 몰락했을까?"
+   }
+  },
+  {
+   "id": "learn_skill",
+   "kind": "general",
+   "cat": "learning",
+   "when": [
+    "weekend"
+   ],
+   "t": {
+    "hans": "一个月学会一项新技能，有哪些值得试的？",
+    "hant": "一個月學會一項新技能，有哪些值得試的？",
+    "en": "Which new skills could I realistically learn in a month?",
+    "ja": "一か月で身につけられる新しいスキルは？",
+    "ko": "한 달 안에 배울 만한 새로운 기술은?"
+   }
+  },
+  {
+   "id": "learn_method",
+   "kind": "general",
+   "cat": "learning",
+   "when": [],
+   "t": {
+    "hans": "有什么高效记忆的方法，适合背单词？",
+    "hant": "有什麼高效記憶的方法，適合背單字？",
+    "en": "What memory techniques work best for learning vocabulary?",
+    "ja": "単語暗記に効く記憶術は？",
+    "ko": "단어 암기에 효과적인 기억법은?"
+   }
+  },
+  {
+   "id": "learn_book",
+   "kind": "general",
+   "cat": "learning",
+   "when": [
+    "evening"
+   ],
+   "t": {
+    "hans": "推荐五本读完会改变想法的书",
+    "hant": "推薦五本讀完會改變想法的書",
+    "en": "Recommend five books that change how you think",
+    "ja": "考え方が変わる本を五冊すすめて",
+    "ko": "생각을 바꿔 줄 책 다섯 권을 추천해 줘"
+   }
+  },
+  {
+   "id": "tech_phone",
+   "kind": "general",
+   "cat": "tech",
+   "when": [],
+   "t": {
+    "hans": "手机越用越卡，有哪些真正有用的办法？",
+    "hant": "手機越用越卡，有哪些真正有用的辦法？",
+    "en": "My phone keeps getting slower. What actually helps?",
+    "ja": "スマホが重くなってきた。本当に効く対策は？",
+    "ko": "휴대폰이 점점 느려져. 정말 효과 있는 방법은?"
+   }
+  },
+  {
+   "id": "tech_password",
+   "kind": "general",
+   "cat": "tech",
+   "when": [],
+   "t": {
+    "hans": "怎么设置既好记又安全的密码？",
+    "hant": "怎麼設定既好記又安全的密碼？",
+    "en": "How do I make passwords that are both safe and memorable?",
+    "ja": "覚えやすくて安全なパスワードの作り方は？",
+    "ko": "기억하기 쉽고 안전한 비밀번호 만드는 법은?"
+   }
+  },
+  {
+   "id": "tech_ev",
+   "kind": "general",
+   "cat": "tech",
+   "when": [],
+   "t": {
+    "hans": "比较纯电与混动车的日常通勤成本",
+    "hant": "比較純電與油電車的日常通勤成本",
+    "en": "Compare the daily commuting cost of EVs and hybrids",
+    "ja": "EVとハイブリッドの通勤コストを比べて",
+    "ko": "전기차와 하이브리드의 출퇴근 비용을 비교해 줘"
+   }
+  },
+  {
+   "id": "work_email",
+   "kind": "general",
+   "cat": "work",
+   "when": [
+    "morning",
+    "weekday"
+   ],
+   "t": {
+    "hans": "帮我写一封礼貌地催进度的邮件",
+    "hant": "幫我寫一封禮貌地催進度的郵件",
+    "en": "Help me write a polite email asking for a status update",
+    "ja": "進捗を丁寧に催促するメールを書いて",
+    "ko": "진행 상황을 정중히 묻는 메일을 써 줘"
+   }
+  },
+  {
+   "id": "work_meeting",
+   "kind": "general",
+   "cat": "work",
+   "when": [
+    "weekday"
+   ],
+   "t": {
+    "hans": "把一小时的会议压缩到二十分钟，该怎么组织？",
+    "hant": "把一小時的會議壓縮到二十分鐘，該怎麼安排？",
+    "en": "How do I fit a one-hour meeting into twenty minutes?",
+    "ja": "1時間の会議を20分に縮めるには？",
+    "ko": "한 시간 회의를 20분으로 줄이려면 어떻게 할까?"
+   }
+  },
+  {
+   "id": "work_plan",
+   "kind": "general",
+   "cat": "work",
+   "when": [
+    "morning",
+    "weekday"
+   ],
+   "t": {
+    "hans": "今天事情很多，帮我按轻重缓急排个顺序",
+    "hant": "今天事情很多，幫我依輕重緩急排個順序",
+    "en": "I have a lot to do today. Help me prioritise",
+    "ja": "今日はやることが多い。優先順位をつけて",
+    "ko": "오늘 할 일이 많아. 우선순위를 정해 줘"
+   }
+  },
+  {
+   "id": "work_report",
+   "kind": "general",
+   "cat": "work",
+   "when": [
+    "afternoon",
+    "weekday"
+   ],
+   "t": {
+    "hans": "周报总写成流水账，怎么写得有重点？",
+    "hant": "週報總寫成流水帳，怎麼寫得有重點？",
+    "en": "My weekly reports read like logs. How do I make them focused?",
+    "ja": "週報が羅列になりがち。要点を押さえる書き方は？",
+    "ko": "주간 보고가 나열식이 돼. 핵심 있게 쓰려면?"
+   }
+  },
+  {
+   "id": "work_friday",
+   "kind": "general",
+   "cat": "work",
+   "when": [
+    "afternoon"
+   ],
+   "t": {
+    "hans": "下班前十分钟，怎么复盘今天的工作？",
+    "hant": "下班前十分鐘，怎麼回顧今天的工作？",
+    "en": "How should I review my day in the last ten minutes of work?",
+    "ja": "終業前の10分で一日を振り返る方法は？",
+    "ko": "퇴근 전 10분 동안 하루를 돌아보는 방법은?"
+   }
+  },
+  {
+   "id": "career_resume",
+   "kind": "general",
+   "cat": "career",
+   "when": [],
+   "t": {
+    "hans": "简历里的项目经历怎么写才有说服力？",
+    "hant": "履歷裡的專案經歷怎麼寫才有說服力？",
+    "en": "How do I describe projects on my CV convincingly?",
+    "ja": "職務経歴書のプロジェクト経験を説得力ある書き方に",
+    "ko": "이력서의 프로젝트 경험을 설득력 있게 쓰는 법은?"
+   }
+  },
+  {
+   "id": "career_interview",
+   "kind": "general",
+   "cat": "career",
+   "when": [],
+   "t": {
+    "hans": "模拟一场产品经理面试，你来提问",
+    "hant": "模擬一場產品經理面試，你來提問",
+    "en": "Run a mock product manager interview with me",
+    "ja": "プロダクトマネージャーの模擬面接をして",
+    "ko": "제품 관리자 모의 면접을 진행해 줘"
+   }
+  },
+  {
+   "id": "career_salary",
+   "kind": "general",
+   "cat": "career",
+   "when": [
+    "weekday"
+   ],
+   "t": {
+    "hans": "想谈加薪，开口前要准备什么？",
+    "hant": "想談加薪，開口前要準備什麼？",
+    "en": "What should I prepare before asking for a raise?",
+    "ja": "昇給交渉の前に準備すべきことは？",
+    "ko": "연봉 인상을 요청하기 전에 준비할 것은?"
+   }
+  },
+  {
+   "id": "money_budget",
+   "kind": "general",
+   "cat": "money",
+   "when": [],
+   "t": {
+    "hans": "帮我设计一个月度记账和储蓄的方法",
+    "hant": "幫我設計一個每月記帳和儲蓄的方法",
+    "en": "Help me set up a simple monthly budget and savings plan",
+    "ja": "毎月の家計簿と貯金の仕組みを作って",
+    "ko": "월별 가계부와 저축 계획을 세워 줘"
+   }
+  },
+  {
+   "id": "money_invest",
+   "kind": "general",
+   "cat": "money",
+   "when": [
+    "weekend"
+   ],
+   "t": {
+    "hans": "指数基金定投适合什么样的人？",
+    "hant": "指數基金定期定額適合什麼樣的人？",
+    "en": "Who is dollar-cost averaging into index funds right for?",
+    "ja": "インデックス投資の積立はどんな人に向いている？",
+    "ko": "인덱스 펀드 적립식 투자는 누구에게 맞을까?"
+   }
+  },
+  {
+   "id": "money_compare",
+   "kind": "general",
+   "cat": "money",
+   "when": [],
+   "t": {
+    "hans": "租房和买房，怎么算哪个更划算？",
+    "hant": "租屋和買房，怎麼算哪個比較划算？",
+    "en": "Renting or buying a home: how do I work out which is better?",
+    "ja": "賃貸と購入、どちらが得か計算するには？",
+    "ko": "전세와 매매 중 어느 쪽이 나은지 어떻게 계산할까?"
+   }
+  },
+  {
+   "id": "life_clean",
+   "kind": "general",
+   "cat": "home",
+   "when": [
+    "weekend"
+   ],
+   "t": {
+    "hans": "周末大扫除，按什么顺序最省力？",
+    "hant": "週末大掃除，照什麼順序最省力？",
+    "en": "What order makes a weekend deep clean least tiring?",
+    "ja": "週末の大掃除、効率のいい順番は？",
+    "ko": "주말 대청소를 가장 효율적으로 하는 순서는?"
+   }
+  },
+  {
+   "id": "life_organize",
+   "kind": "general",
+   "cat": "home",
+   "when": [],
+   "t": {
+    "hans": "小户型怎么收纳才不显乱？",
+    "hant": "小坪數怎麼收納才不顯亂？",
+    "en": "How do I keep a small flat from looking cluttered?",
+    "ja": "狭い部屋をすっきり見せる収納術は？",
+    "ko": "좁은 집을 깔끔하게 보이게 하는 수납법은?"
+   }
+  },
+  {
+   "id": "life_plant",
+   "kind": "general",
+   "cat": "home",
+   "when": [
+    "spring"
+   ],
+   "t": {
+    "hans": "春天适合在阳台种些什么？",
+    "hant": "春天適合在陽台種些什麼？",
+    "en": "What can I grow on a balcony in spring?",
+    "ja": "春にベランダで育てやすい植物は？",
+    "ko": "봄에 베란다에서 키우기 좋은 식물은?"
+   }
+  },
+  {
+   "id": "life_gift",
+   "kind": "general",
+   "cat": "life",
+   "when": [],
+   "t": {
+    "hans": "送长辈的礼物，有什么实用又体面的选择？",
+    "hant": "送長輩的禮物，有什麼實用又體面的選擇？",
+    "en": "What are thoughtful, practical gifts for older relatives?",
+    "ja": "目上の家族に贈る実用的で品のあるプレゼントは？",
+    "ko": "어른께 드릴 실용적이고 품위 있는 선물은?"
+   }
+  },
+  {
+   "id": "life_weekend",
+   "kind": "general",
+   "cat": "life",
+   "when": [
+    "weekend"
+   ],
+   "t": {
+    "hans": "推荐几个周末可以完成的小项目",
+    "hant": "推薦幾個週末可以完成的小專案",
+    "en": "Suggest a few small projects I can finish this weekend",
+    "ja": "週末に完成できる小さなプロジェクトを教えて",
+    "ko": "주말에 끝낼 수 있는 작은 프로젝트를 추천해 줘"
+   }
+  },
+  {
+   "id": "life_morning",
+   "kind": "general",
+   "cat": "life",
+   "when": [
+    "morning"
+   ],
+   "t": {
+    "hans": "帮我设计一个不赶时间的早晨流程",
+    "hant": "幫我設計一個不趕時間的早晨流程",
+    "en": "Design an unhurried morning routine for me",
+    "ja": "慌ただしくない朝のルーティンを考えて",
+    "ko": "여유로운 아침 루틴을 짜 줘"
+   }
+  },
+  {
+   "id": "life_night",
+   "kind": "general",
+   "cat": "life",
+   "when": [
+    "night"
+   ],
+   "t": {
+    "hans": "睡前一小时做什么能更放松？",
+    "hant": "睡前一小時做什麼能更放鬆？",
+    "en": "What should I do in the hour before bed to unwind?",
+    "ja": "寝る前の1時間、リラックスするには？",
+    "ko": "잠들기 전 한 시간 동안 긴장을 푸는 방법은?"
+   }
+  },
+  {
+   "id": "parent_talk",
+   "kind": "general",
+   "cat": "parenting",
+   "when": [],
+   "t": {
+    "hans": "孩子不爱写作业，怎么沟通更有效？",
+    "hant": "孩子不愛寫作業，怎麼溝通更有效？",
+    "en": "My child avoids homework. How can I talk about it better?",
+    "ja": "宿題を嫌がる子どもとの上手な話し方は？",
+    "ko": "숙제를 싫어하는 아이와 대화하는 방법은?"
+   }
+  },
+  {
+   "id": "parent_weekend",
+   "kind": "general",
+   "cat": "parenting",
+   "when": [
+    "weekend"
+   ],
+   "t": {
+    "hans": "周末带孩子，有哪些不花钱的好去处？",
+    "hant": "週末帶孩子，有哪些不花錢的好去處？",
+    "en": "Free things to do with kids this weekend?",
+    "ja": "週末に子どもと行けるお金のかからない場所は？",
+    "ko": "주말에 아이와 갈 만한 무료 장소는?"
+   }
+  },
+  {
+   "id": "pet_cat",
+   "kind": "general",
+   "cat": "pets",
+   "when": [],
+   "t": {
+    "hans": "第一次养猫，需要准备什么？",
+    "hant": "第一次養貓，需要準備什麼？",
+    "en": "What do I need before getting my first cat?",
+    "ja": "初めて猫を飼うときに必要なものは？",
+    "ko": "처음 고양이를 키울 때 준비할 것은?"
+   }
+  },
+  {
+   "id": "mind_stress",
+   "kind": "general",
+   "cat": "emotion",
+   "when": [
+    "evening"
+   ],
+   "t": {
+    "hans": "最近压力很大，有哪些能缓解的小办法？",
+    "hant": "最近壓力很大，有哪些能緩解的小方法？",
+    "en": "I've been really stressed. What small things can help?",
+    "ja": "最近ストレスが多い。和らげる小さな工夫は？",
+    "ko": "요즘 스트레스가 심해. 도움이 될 작은 방법은?"
+   }
+  },
+  {
+   "id": "mind_talk",
+   "kind": "general",
+   "cat": "emotion",
+   "when": [
+    "night"
+   ],
+   "t": {
+    "hans": "有点睡不着，陪我聊聊天吧",
+    "hant": "有點睡不著，陪我聊聊天吧",
+    "en": "Can't sleep. Just chat with me for a bit",
+    "ja": "眠れないから少し話し相手になって",
+    "ko": "잠이 안 와. 잠깐 이야기 좀 하자"
+   }
+  },
+  {
+   "id": "mind_focus",
+   "kind": "general",
+   "cat": "emotion",
+   "when": [
+    "afternoon"
+   ],
+   "t": {
+    "hans": "下午总犯困走神，怎么找回专注？",
+    "hant": "下午總是犯睏分心，怎麼找回專注？",
+    "en": "I keep drifting off in the afternoon. How do I refocus?",
+    "ja": "午後に集中が切れる。立て直す方法は？",
+    "ko": "오후마다 졸리고 집중이 안 돼. 다시 집중하려면?"
+   }
+  },
+  {
+   "id": "fun_movie",
+   "kind": "general",
+   "cat": "entertainment",
+   "when": [
+    "evening",
+    "weekend"
+   ],
+   "t": {
+    "hans": "今晚想看一部高分电影，按心情推荐",
+    "hant": "今晚想看一部高分電影，依心情推薦",
+    "en": "Recommend a highly rated film for tonight based on my mood",
+    "ja": "今夜観たい名作映画を気分別にすすめて",
+    "ko": "오늘 밤 볼 평점 높은 영화를 기분별로 추천해 줘"
+   }
+  },
+  {
+   "id": "fun_music",
+   "kind": "general",
+   "cat": "entertainment",
+   "when": [],
+   "t": {
+    "hans": "推荐一张适合专注工作时听的专辑",
+    "hant": "推薦一張適合專注工作時聽的專輯",
+    "en": "Recommend an album to focus to while working",
+    "ja": "集中して作業するときに聴くアルバムをすすめて",
+    "ko": "집중해서 일할 때 들을 앨범을 추천해 줘"
+   }
+  },
+  {
+   "id": "fun_game",
+   "kind": "general",
+   "cat": "entertainment",
+   "when": [
+    "weekend"
+   ],
+   "t": {
+    "hans": "几个朋友聚会，有什么好玩的桌游？",
+    "hant": "幾個朋友聚會，有什麼好玩的桌遊？",
+    "en": "Good board games for a small get-together?",
+    "ja": "友達数人で遊べる面白いボードゲームは？",
+    "ko": "친구 몇 명이 모였을 때 할 만한 보드게임은?"
+   }
+  },
+  {
+   "id": "fun_riddle",
+   "kind": "general",
+   "cat": "fun",
+   "when": [],
+   "t": {
+    "hans": "出三道有意思的推理题考考我",
+    "hant": "出三道有意思的推理題考考我",
+    "en": "Give me three fun logic puzzles",
+    "ja": "面白い推理クイズを三問出して",
+    "ko": "재미있는 추리 퀴즈 세 문제를 내 줘"
+   }
+  },
+  {
+   "id": "fun_fact",
+   "kind": "general",
+   "cat": "fun",
+   "when": [],
+   "t": {
+    "hans": "讲五个大多数人不知道的冷知识",
+    "hant": "講五個大多數人不知道的冷知識",
+    "en": "Tell me five facts most people don't know",
+    "ja": "ほとんどの人が知らない雑学を五つ",
+    "ko": "대부분 모르는 잡학 다섯 가지를 알려 줘"
+   }
+  },
+  {
+   "id": "fun_name",
+   "kind": "general",
+   "cat": "creative",
+   "when": [],
+   "t": {
+    "hans": "给我的新咖啡店想十个名字",
+    "hant": "幫我的新咖啡店想十個名字",
+    "en": "Come up with ten names for my new café",
+    "ja": "新しいカフェの名前を十個考えて",
+    "ko": "새 카페 이름 열 개를 지어 줘"
+   }
+  },
+  {
+   "id": "creative_story",
+   "kind": "general",
+   "cat": "creative",
+   "when": [
+    "night"
+   ],
+   "t": {
+    "hans": "讲一个五分钟能听完的睡前故事",
+    "hant": "講一個五分鐘能聽完的睡前故事",
+    "en": "Tell me a bedtime story that takes five minutes",
+    "ja": "5分で聞ける寝る前のお話をして",
+    "ko": "5분 만에 들을 수 있는 잠자리 이야기를 들려줘"
+   }
+  },
+  {
+   "id": "creative_poem",
+   "kind": "general",
+   "cat": "creative",
+   "when": [
+    "autumn"
+   ],
+   "t": {
+    "hans": "以秋天为题写一首短诗",
+    "hant": "以秋天為題寫一首短詩",
+    "en": "Write a short poem about autumn",
+    "ja": "秋をテーマに短い詩を書いて",
+    "ko": "가을을 주제로 짧은 시를 써 줘"
+   }
+  },
+  {
+   "id": "creative_spring",
+   "kind": "general",
+   "cat": "creative",
+   "when": [
+    "spring"
+   ],
+   "t": {
+    "hans": "写一段描写春雨的文字",
+    "hant": "寫一段描寫春雨的文字",
+    "en": "Write a short passage describing spring rain",
+    "ja": "春雨を描写する短い文章を書いて",
+    "ko": "봄비를 묘사하는 짧은 글을 써 줘"
+   }
+  },
+  {
+   "id": "lang_en",
+   "kind": "general",
+   "cat": "language",
+   "when": [
+    "morning"
+   ],
+   "t": {
+    "hans": "用英语和我进行一段五分钟的日常对话练习",
+    "hant": "用英語和我進行一段五分鐘的日常對話練習",
+    "en": "Practise a five-minute everyday conversation with me in Spanish",
+    "ja": "英語で5分間の日常会話の練習をして",
+    "ko": "영어로 5분 일상 회화 연습을 해 줘"
+   }
+  },
+  {
+   "id": "prod_habit",
+   "kind": "general",
+   "cat": "productivity",
+   "when": [],
+   "t": {
+    "hans": "怎么坚持一个新习惯超过三十天？",
+    "hant": "怎麼堅持一個新習慣超過三十天？",
+    "en": "How do I keep a new habit going past thirty days?",
+    "ja": "新しい習慣を30日以上続けるコツは？",
+    "ko": "새 습관을 30일 넘게 유지하는 방법은?"
+   }
+  },
+  {
+   "id": "prod_week",
+   "kind": "general",
+   "cat": "productivity",
+   "when": [
+    "weekend"
+   ],
+   "t": {
+    "hans": "帮我规划下周的目标和每日安排",
+    "hant": "幫我規劃下週的目標和每日安排",
+    "en": "Help me plan next week's goals and daily schedule",
+    "ja": "来週の目標と毎日の予定を立てて",
+    "ko": "다음 주 목표와 일별 일정을 세워 줘"
+   }
+  },
+  {
+   "id": "prod_pomodoro",
+   "kind": "general",
+   "cat": "productivity",
+   "when": [
+    "weekday",
+    "afternoon"
+   ],
+   "t": {
+    "hans": "番茄工作法适合我吗？怎么调整",
+    "hant": "番茄鐘工作法適合我嗎？怎麼調整",
+    "en": "Is the Pomodoro technique right for me, and how should I adapt it?",
+    "ja": "ポモドーロ・テクニックは自分に合う？調整の仕方は",
+    "ko": "뽀모도로 기법이 나에게 맞을까? 어떻게 조정하지?"
+   }
+  },
+  {
+   "id": "tr_0",
+   "kind": "translator",
+   "cat": "translate",
+   "when": [],
+   "t": {
+    "hans": "把这段话翻译成地道的英文：",
+    "hant": "把這段話翻譯成道地的英文：",
+    "en": "Translate this into natural English: ",
+    "ja": "この文を自然な英語に訳して：",
+    "ko": "이 문장을 자연스러운 영어로 번역해 줘: "
+   }
+  },
+  {
+   "id": "tr_1",
+   "kind": "translator",
+   "cat": "translate",
+   "when": [],
+   "t": {
+    "hans": "这句英文是什么意思？有哪些语气上的细微差别？",
+    "hant": "這句英文是什麼意思？有哪些語氣上的細微差別？",
+    "en": "What does this sentence mean, and what are its nuances?",
+    "ja": "この英文の意味とニュアンスの違いを教えて",
+    "ko": "이 영어 문장의 뜻과 뉘앙스 차이를 알려 줘"
+   }
+  },
+  {
+   "id": "tr_2",
+   "kind": "translator",
+   "cat": "translate",
+   "when": [],
+   "t": {
+    "hans": "把这封邮件翻译成日语，用正式的敬语",
+    "hant": "把這封郵件翻譯成日文，用正式的敬語",
+    "en": "Translate this email into formal Japanese",
+    "ja": "このメールを丁寧な敬語の日本語に訳して",
+    "ko": "이 메일을 격식 있는 일본어로 번역해 줘"
+   }
+  },
+  {
+   "id": "tr_3",
+   "kind": "translator",
+   "cat": "translate",
+   "when": [],
+   "t": {
+    "hans": "帮我润色这段英文，让它更像母语者写的",
+    "hant": "幫我潤飾這段英文，讓它更像母語者寫的",
+    "en": "Polish this English so it reads like a native speaker wrote it",
+    "ja": "この英文をネイティブらしく直して",
+    "ko": "이 영어를 원어민이 쓴 것처럼 다듬어 줘"
+   }
+  },
+  {
+   "id": "tr_4",
+   "kind": "translator",
+   "cat": "translate",
+   "when": [],
+   "t": {
+    "hans": "“画蛇添足”有对应的英文习语吗？",
+    "hant": "「畫蛇添足」有對應的英文慣用語嗎？",
+    "en": "Is there an English idiom for 'gilding the lily'-type overdoing?",
+    "ja": "「蛇足」に当たる英語の慣用句は？",
+    "ko": "'사족'에 해당하는 영어 관용구가 있을까?"
+   }
+  },
+  {
+   "id": "tr_5",
+   "kind": "translator",
+   "cat": "translate",
+   "when": [],
+   "t": {
+    "hans": "把菜单上的这几道菜翻译成英文并简单介绍",
+    "hant": "把菜單上的這幾道菜翻譯成英文並簡單介紹",
+    "en": "Translate these dishes from a menu and describe them briefly",
+    "ja": "メニューの料理を英訳して簡単に説明して",
+    "ko": "메뉴의 요리들을 영어로 번역하고 간단히 소개해 줘"
+   }
+  },
+  {
+   "id": "tr_6",
+   "kind": "translator",
+   "cat": "translate",
+   "when": [],
+   "t": {
+    "hans": "用韩语怎么礼貌地问路？",
+    "hant": "用韓語怎麼禮貌地問路？",
+    "en": "How do I politely ask for directions in Korean?",
+    "ja": "韓国語で丁寧に道を尋ねるには？",
+    "ko": "한국어로 정중하게 길을 묻는 법은?"
+   }
+  },
+  {
+   "id": "tr_7",
+   "kind": "translator",
+   "cat": "translate",
+   "when": [],
+   "t": {
+    "hans": "把这段说明书翻译成简体中文",
+    "hant": "把這段說明書翻譯成繁體中文",
+    "en": "Translate this instruction manual into English",
+    "ja": "この説明書を日本語に訳して",
+    "ko": "이 설명서를 한국어로 번역해 줘"
+   }
+  },
+  {
+   "id": "code_0",
+   "kind": "coder",
+   "cat": "code",
+   "when": [],
+   "t": {
+    "hans": "用 Kotlin 写一个带重试的网络请求封装",
+    "hant": "用 Kotlin 寫一個帶重試的網路請求封裝",
+    "en": "Write a Kotlin network call wrapper with retries",
+    "ja": "Kotlinでリトライ付きのネットワーク呼び出しを書いて",
+    "ko": "Kotlin으로 재시도가 있는 네트워크 호출을 작성해 줘"
+   }
+  },
+  {
+   "id": "code_1",
+   "kind": "coder",
+   "cat": "code",
+   "when": [],
+   "t": {
+    "hans": "解释一下这段报错并告诉我怎么修",
+    "hant": "解釋一下這段錯誤並告訴我怎麼修",
+    "en": "Explain this error and tell me how to fix it",
+    "ja": "このエラーの意味と直し方を教えて",
+    "ko": "이 오류의 의미와 해결 방법을 알려 줘"
+   }
+  },
+  {
+   "id": "code_2",
+   "kind": "coder",
+   "cat": "code",
+   "when": [],
+   "t": {
+    "hans": "帮我写一个按日期分组的 SQL 查询",
+    "hant": "幫我寫一個按日期分組的 SQL 查詢",
+    "en": "Write a SQL query that groups rows by date",
+    "ja": "日付ごとに集計するSQLを書いて",
+    "ko": "날짜별로 묶는 SQL 쿼리를 작성해 줘"
+   }
+  },
+  {
+   "id": "code_3",
+   "kind": "coder",
+   "cat": "code",
+   "when": [],
+   "t": {
+    "hans": "用 Python 批量重命名一个文件夹里的照片",
+    "hant": "用 Python 批次重新命名一個資料夾裡的照片",
+    "en": "Batch-rename the photos in a folder with Python",
+    "ja": "Pythonでフォルダ内の写真を一括リネームして",
+    "ko": "Python으로 폴더 안 사진 이름을 일괄 변경해 줘"
+   }
+  },
+  {
+   "id": "code_4",
+   "kind": "coder",
+   "cat": "code",
+   "when": [],
+   "t": {
+    "hans": "Git 提交错了分支，怎么挪回来？",
+    "hant": "Git 提交到錯的分支，怎麼移回來？",
+    "en": "I committed to the wrong Git branch. How do I move it?",
+    "ja": "Gitで別ブランチにコミットしてしまった。戻し方は？",
+    "ko": "Git에서 다른 브랜치에 커밋했어. 어떻게 옮기지?"
+   }
+  },
+  {
+   "id": "code_5",
+   "kind": "coder",
+   "cat": "code",
+   "when": [],
+   "t": {
+    "hans": "写一个正则，匹配国内手机号",
+    "hant": "寫一個正規表示式，比對台灣手機號碼",
+    "en": "Write a regex that matches international phone numbers",
+    "ja": "携帯電話番号にマッチする正規表現を書いて",
+    "ko": "휴대폰 번호를 찾는 정규식을 작성해 줘"
+   }
+  },
+  {
+   "id": "code_6",
+   "kind": "coder",
+   "cat": "code",
+   "when": [],
+   "t": {
+    "hans": "Jetpack Compose 里怎么避免不必要的重组？",
+    "hant": "Jetpack Compose 裡怎麼避免不必要的重組？",
+    "en": "How do I avoid unnecessary recomposition in Jetpack Compose?",
+    "ja": "Jetpack Composeで不要な再コンポーズを避けるには？",
+    "ko": "Jetpack Compose에서 불필요한 리컴포지션을 피하는 법은?"
+   }
+  },
+  {
+   "id": "code_7",
+   "kind": "coder",
+   "cat": "code",
+   "when": [],
+   "t": {
+    "hans": "比较一下 REST 和 GraphQL，各适合什么场景",
+    "hant": "比較一下 REST 和 GraphQL，各適合什麼場景",
+    "en": "Compare REST and GraphQL and when to use each",
+    "ja": "RESTとGraphQLの違いと使い分けは？",
+    "ko": "REST와 GraphQL을 비교하고 각각 언제 쓰는지 알려 줘"
+   }
+  },
+  {
+   "id": "code_8",
+   "kind": "coder",
+   "cat": "code",
+   "when": [],
+   "t": {
+    "hans": "帮我 review 这段代码，指出潜在问题",
+    "hant": "幫我 review 這段程式碼，指出潛在問題",
+    "en": "Review this code and point out potential issues",
+    "ja": "このコードをレビューして問題点を指摘して",
+    "ko": "이 코드를 리뷰하고 잠재적인 문제를 짚어 줘"
+   }
+  },
+  {
+   "id": "code_9",
+   "kind": "coder",
+   "cat": "code",
+   "when": [],
+   "t": {
+    "hans": "写一个 Shell 脚本，每天自动备份一个目录",
+    "hant": "寫一個 Shell 腳本，每天自動備份一個目錄",
+    "en": "Write a shell script that backs up a folder every day",
+    "ja": "フォルダを毎日バックアップするシェルスクリプトを書いて",
+    "ko": "폴더를 매일 백업하는 셸 스크립트를 작성해 줘"
+   }
+  },
+  {
+   "id": "write_0",
+   "kind": "writer",
+   "cat": "writing",
+   "when": [],
+   "t": {
+    "hans": "帮我写一段朋友圈文案，记录今天的晚霞",
+    "hant": "幫我寫一段貼文，記錄今天的晚霞",
+    "en": "Write a short social post about today's sunset",
+    "ja": "今日の夕焼けを記録するSNS投稿を書いて",
+    "ko": "오늘 노을을 기록하는 SNS 글을 써 줘"
+   }
+  },
+  {
+   "id": "write_1",
+   "kind": "writer",
+   "cat": "writing",
+   "when": [],
+   "t": {
+    "hans": "把这段文字改得更简洁有力",
+    "hant": "把這段文字改得更簡潔有力",
+    "en": "Make this passage tighter and punchier",
+    "ja": "この文章をもっと簡潔で力強く直して",
+    "ko": "이 글을 더 간결하고 힘 있게 고쳐 줘"
+   }
+  },
+  {
+   "id": "write_2",
+   "kind": "writer",
+   "cat": "writing",
+   "when": [],
+   "t": {
+    "hans": "写一封感谢老同事帮忙的短信",
+    "hant": "寫一封感謝老同事幫忙的訊息",
+    "en": "Write a short thank-you note to a former colleague",
+    "ja": "元同僚へのお礼メッセージを書いて",
+    "ko": "예전 동료에게 고마움을 전하는 짧은 메시지를 써 줘"
+   }
+  },
+  {
+   "id": "write_3",
+   "kind": "writer",
+   "cat": "writing",
+   "when": [],
+   "t": {
+    "hans": "为一款保温杯写三条电商卖点",
+    "hant": "為一款保溫杯寫三條電商賣點",
+    "en": "Write three selling points for an insulated bottle",
+    "ja": "保温ボトルの販売ポイントを三つ書いて",
+    "ko": "보온병의 판매 포인트 세 가지를 써 줘"
+   }
+  },
+  {
+   "id": "write_4",
+   "kind": "writer",
+   "cat": "writing",
+   "when": [],
+   "t": {
+    "hans": "写一个悬疑短篇的开头，三百字以内",
+    "hant": "寫一個懸疑短篇的開頭，三百字以內",
+    "en": "Write the opening of a mystery story in under 200 words",
+    "ja": "ミステリー短編の書き出しを書いて",
+    "ko": "미스터리 단편의 도입부를 써 줘"
+   }
+  },
+  {
+   "id": "write_5",
+   "kind": "writer",
+   "cat": "writing",
+   "when": [],
+   "t": {
+    "hans": "帮我写一份周末活动的邀请函",
+    "hant": "幫我寫一份週末活動的邀請函",
+    "en": "Write an invitation for a weekend event",
+    "ja": "週末イベントの招待状を書いて",
+    "ko": "주말 행사 초대장을 써 줘"
+   }
+  },
+  {
+   "id": "write_6",
+   "kind": "writer",
+   "cat": "writing",
+   "when": [],
+   "t": {
+    "hans": "把会议记录整理成清晰的要点",
+    "hant": "把會議記錄整理成清楚的重點",
+    "en": "Turn these meeting notes into clear bullet points",
+    "ja": "会議メモをわかりやすい要点にまとめて",
+    "ko": "회의록을 명확한 요점으로 정리해 줘"
+   }
+  },
+  {
+   "id": "write_7",
+   "kind": "writer",
+   "cat": "writing",
+   "when": [],
+   "t": {
+    "hans": "写一段年终总结的开头，不要套话",
+    "hant": "寫一段年終總結的開頭，不要套話",
+    "en": "Write the opening of a year-end review without clichés",
+    "ja": "決まり文句なしで年末の振り返りの書き出しを",
+    "ko": "상투적이지 않은 연말 회고 도입부를 써 줘"
+   }
+  }
+ ],
+ "templates": [
+  {
+   "id": "term",
+   "needs": "term",
+   "kind": "general",
+   "cat": "season",
+   "t": {
+    "hans": "今天是{term}，有哪些习俗和养生建议？",
+    "hant": "今天是{term}，有哪些習俗和養生建議？"
+   }
+  },
+  {
+   "id": "festival",
+   "needs": "festival",
+   "kind": "general",
+   "cat": "season",
+   "t": {
+    "hans": "{festival}快到了，有什么讲究和好玩的过法？",
+    "hant": "{festival}快到了，有什麼講究和好玩的過法？",
+    "en": "{festival} is coming up. What are some good ways to celebrate?",
+    "ja": "もうすぐ{festival}。楽しい過ごし方は？",
+    "ko": "곧 {festival}이야. 재미있게 보내는 방법은?"
+   }
+  },
+  {
+   "id": "followup",
+   "needs": "title",
+   "kind": "any",
+   "cat": "followup",
+   "t": {
+    "hans": "接着上次的「{title}」，再深入聊聊",
+    "hant": "接著上次的「{title}」，再深入聊聊",
+    "en": "Let's pick up where we left off on \"{title}\"",
+    "ja": "前回の「{title}」の続きを話そう",
+    "ko": "지난번 '{title}' 이야기를 이어서 하자"
+   }
+  }
+ ]
+}

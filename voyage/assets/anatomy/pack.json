@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "release": "https://github.com/MiChongs/voyage-models/releases/download/anatomy/",
+  "files": {
+    "model": {
+      "asset": "anatomy-model-15c3852fd3eb.glb",
+      "bytes": 7247344,
+      "sha256": "15c3852fd3eb40251730f0b2a241fc943ec652a2974b06da0edf987b11ce727a"
+    },
+    "atlas": {
+      "asset": "anatomy-atlas-be6122c173ac.json.gz",
+      "bytes": 339104,
+      "sha256": "be6122c173acb71b66980d0d983f1c2af69b47003397e9712583b9864de1bf8c"
+    }
+  },
+  "structures": 3847
+}

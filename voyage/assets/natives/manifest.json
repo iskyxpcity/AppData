@@ -1,0 +1,1532 @@
+{
+  "schema": 1,
+  "release": "https://github.com/MiChongs/voyage-models/releases/download/natives/",
+  "packs": {
+    "ytdlp": {
+      "versions": {
+        "youtubedlAndroid": "0.18.1"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libpython.zip.so",
+            "size": 14305904,
+            "sha256": "7edecb6c9bd3a94456168d44911d8aea9f917bedef90c320a29500d92ac3eb62",
+            "asset": "ytdlp-arm64-v8a-libpython.zip.so-7edecb6c9bd3.gz",
+            "assetSize": 14052564,
+            "needs": []
+          },
+          {
+            "name": "libffmpeg.zip.so",
+            "size": 35624931,
+            "sha256": "4664a895283f9f31786be39b0c484c1f96631f02c7c7f9c70a4a4a2da324a092",
+            "asset": "ytdlp-arm64-v8a-libffmpeg.zip.so-4664a895283f.gz",
+            "assetSize": 35438667,
+            "needs": []
+          },
+          {
+            "name": "libaria2c.zip.so",
+            "size": 4296181,
+            "sha256": "dc869261fef649c3c23cfb705ded6ec851d88203d75ffcbedcc043cb5cd44904",
+            "asset": "ytdlp-arm64-v8a-libaria2c.zip.so-dc869261fef6.gz",
+            "assetSize": 4245010,
+            "needs": []
+          }
+        ],
+        "armeabi-v7a": [
+          {
+            "name": "libpython.zip.so",
+            "size": 12822487,
+            "sha256": "4d860f1434442c69f128279705806916def2b323d1b43b7fa6ada7dfab0a0571",
+            "asset": "ytdlp-armeabi-v7a-libpython.zip.so-4d860f143444.gz",
+            "assetSize": 12571082,
+            "needs": []
+          },
+          {
+            "name": "libffmpeg.zip.so",
+            "size": 30476956,
+            "sha256": "5b4a436358e28fc0f0788f5f917dcce9d35c0107b7454ca78dda3191e6dc120c",
+            "asset": "ytdlp-armeabi-v7a-libffmpeg.zip.so-5b4a436358e2.gz",
+            "assetSize": 30317457,
+            "needs": []
+          },
+          {
+            "name": "libaria2c.zip.so",
+            "size": 3888805,
+            "sha256": "993841c8410b9166c0365f51bd00331de094e5edb56469df5b1d29e493fd4656",
+            "asset": "ytdlp-armeabi-v7a-libaria2c.zip.so-993841c8410b.gz",
+            "assetSize": 3847861,
+            "needs": []
+          }
+        ],
+        "x86": [
+          {
+            "name": "libpython.zip.so",
+            "size": 13979299,
+            "sha256": "66ebb37673d4f005f56e4b433907026e23064fc74e0a10aadd3144de20d8bc82",
+            "asset": "ytdlp-x86-libpython.zip.so-66ebb37673d4.gz",
+            "assetSize": 13711348,
+            "needs": []
+          },
+          {
+            "name": "libffmpeg.zip.so",
+            "size": 34544829,
+            "sha256": "45652e124a27c823fdd76c31207caaf5879eab1e3c69677dd2e89df4e6bc6b50",
+            "asset": "ytdlp-x86-libffmpeg.zip.so-45652e124a27.gz",
+            "assetSize": 34326922,
+            "needs": []
+          },
+          {
+            "name": "libaria2c.zip.so",
+            "size": 4245860,
+            "sha256": "d63032bf83e2b9e66a9f252526cc6f6e1825395f82a6381158adc3eee064a880",
+            "asset": "ytdlp-x86-libaria2c.zip.so-d63032bf83e2.gz",
+            "assetSize": 4192194,
+            "needs": []
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "libpython.zip.so",
+            "size": 14302766,
+            "sha256": "27caa316e09681ada860fdb6b35c1914e541e266e674141361758ac127fe2f15",
+            "asset": "ytdlp-x86_64-libpython.zip.so-27caa316e096.gz",
+            "assetSize": 14046766,
+            "needs": []
+          },
+          {
+            "name": "libffmpeg.zip.so",
+            "size": 38595503,
+            "sha256": "79a442979bfc0363fcdd7e47f75daf022891e84fc01f3fdd866af785d22321ef",
+            "asset": "ytdlp-x86_64-libffmpeg.zip.so-79a442979bfc.gz",
+            "assetSize": 38391766,
+            "needs": []
+          },
+          {
+            "name": "libaria2c.zip.so",
+            "size": 4334465,
+            "sha256": "a6f593c07760a3332fb8fba33644ad7a5220bc017f7924002736279adde7b4f0",
+            "asset": "ytdlp-x86_64-libaria2c.zip.so-a6f593c07760.gz",
+            "assetSize": 4281798,
+            "needs": []
+          }
+        ]
+      },
+      "loaders": []
+    },
+    "torrent": {
+      "versions": {
+        "libtorrent4j": "2.1.0-39"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libtorrent4j.so",
+            "size": 15883152,
+            "sha256": "6428158f8e012f048f85eb790317e55cf8557ba4018d53e543e86dd9c25cef2f",
+            "asset": "torrent-arm64-v8a-libtorrent4j.so-6428158f8e01.gz",
+            "assetSize": 6190419,
+            "needs": []
+          }
+        ],
+        "armeabi-v7a": [
+          {
+            "name": "libtorrent4j.so",
+            "size": 13734884,
+            "sha256": "f8fbe9f7ba3703092d05bbd8ea39b75227cbd3b84c43aeefa5798464e018863c",
+            "asset": "torrent-armeabi-v7a-libtorrent4j.so-f8fbe9f7ba37.gz",
+            "assetSize": 5405515,
+            "needs": []
+          }
+        ],
+        "x86": [
+          {
+            "name": "libtorrent4j.so",
+            "size": 16360060,
+            "sha256": "de5d10d1e43882e56b4795b4e49071ea62d435444410a37c517fa60247ad0276",
+            "asset": "torrent-x86-libtorrent4j.so-de5d10d1e438.gz",
+            "assetSize": 6072014,
+            "needs": []
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "libtorrent4j.so",
+            "size": 16358808,
+            "sha256": "5c48c09033912792451ebe8d0c495b9655ce44c921bed8c78b2e08a7c1d6a399",
+            "asset": "torrent-x86_64-libtorrent4j.so-5c48c0903391.gz",
+            "assetSize": 5989209,
+            "needs": []
+          }
+        ]
+      },
+      "loaders": []
+    },
+    "litertlm": {
+      "versions": {
+        "litertlm": "0.18.0"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "liblitertlm_jni.so",
+            "size": 22155680,
+            "sha256": "4a94a3f955ad7c58cbcdfc5cb4ff566187bb9e8c5bc2c4056b4e226646c7e8fd",
+            "asset": "litertlm-arm64-v8a-liblitertlm_jni.so-4a94a3f955ad.gz",
+            "assetSize": 9686084,
+            "needs": []
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "liblitertlm_jni.so",
+            "size": 26353160,
+            "sha256": "177ed8b6cbea8fec901e705d78aadf8ccbc51004e6d03cc82915a55f313fb667",
+            "asset": "litertlm-x86_64-liblitertlm_jni.so-177ed8b6cbea.gz",
+            "assetSize": 10643415,
+            "needs": []
+          }
+        ]
+      },
+      "loaders": [
+        "com.google.ai.edge.litertlm.NativeLibraryLoader"
+      ]
+    },
+    "ffmpeg": {
+      "versions": {
+        "ffmpegKit": "8.1.9"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libavutil.so",
+            "size": 559480,
+            "sha256": "14fbb26354194eebda109d46249c08e395926675667fed6bd9316aeebe8aa574",
+            "asset": "ffmpeg-arm64-v8a-libavutil.so-14fbb2635419.gz",
+            "assetSize": 238247,
+            "needs": []
+          },
+          {
+            "name": "libswresample.so",
+            "size": 205392,
+            "sha256": "e146a4af3f512e2573007214fca0781ff271b9bba9e5a6c413f8949039bdd111",
+            "asset": "ffmpeg-arm64-v8a-libswresample.so-e146a4af3f51.gz",
+            "assetSize": 91818,
+            "needs": [
+              "libavutil.so"
+            ]
+          },
+          {
+            "name": "libswscale.so",
+            "size": 545824,
+            "sha256": "ecaa5150db97ddaf1c63d3a25a633a1d61ddcf2fc60fff3b78fc97decde52fea",
+            "asset": "ffmpeg-arm64-v8a-libswscale.so-ecaa5150db97.gz",
+            "assetSize": 237684,
+            "needs": [
+              "libavutil.so"
+            ]
+          },
+          {
+            "name": "libavcodec.so",
+            "size": 19105416,
+            "sha256": "38b5bafc8931576f6a973f3ec1cd602b3d982de2d72e51f8a0cb54b7edb48e20",
+            "asset": "ffmpeg-arm64-v8a-libavcodec.so-38b5bafc8931.gz",
+            "assetSize": 9553419,
+            "needs": [
+              "libswresample.so",
+              "libavutil.so"
+            ]
+          },
+          {
+            "name": "libavformat.so",
+            "size": 3561688,
+            "sha256": "4056c02729dfe85b6ae2496c77bb2d3a2d4002c0363cad97990d79c3b7178957",
+            "asset": "ffmpeg-arm64-v8a-libavformat.so-4056c02729df.gz",
+            "assetSize": 1929349,
+            "needs": [
+              "libavcodec.so",
+              "libavutil.so"
+            ]
+          },
+          {
+            "name": "libavfilter.so",
+            "size": 5200024,
+            "sha256": "a3644554f34ceb5061546d1120be2ed3a5f116a27f4514c6fa16e073a3714bdb",
+            "asset": "ffmpeg-arm64-v8a-libavfilter.so-a3644554f34c.gz",
+            "assetSize": 2183389,
+            "needs": [
+              "libswscale.so",
+              "libavformat.so",
+              "libavcodec.so",
+              "libswresample.so",
+              "libavutil.so"
+            ]
+          },
+          {
+            "name": "libavdevice.so",
+            "size": 56528,
+            "sha256": "f67e2e36b04a317928c0ff7402cc611882cd88351fdb77b0528683c356bdbf9c",
+            "asset": "ffmpeg-arm64-v8a-libavdevice.so-f67e2e36b04a.gz",
+            "assetSize": 22884,
+            "needs": [
+              "libavfilter.so",
+              "libavformat.so",
+              "libavcodec.so",
+              "libavutil.so"
+            ]
+          },
+          {
+            "name": "libffmpegkit_abidetect.so",
+            "size": 30592,
+            "sha256": "85a14211bbf8a4550102f385a053d77e05f9ff35762ab8442440b0af9eb035a0",
+            "asset": "ffmpeg-arm64-v8a-libffmpegkit_abidetect.so-85a14211bbf8.gz",
+            "assetSize": 10623,
+            "needs": []
+          },
+          {
+            "name": "libffmpegkit.so",
+            "size": 467680,
+            "sha256": "6afcc0f252885698613d643ad210429d73c43557ee452aec2ccb9380db3099f9",
+            "asset": "ffmpeg-arm64-v8a-libffmpegkit.so-6afcc0f25288.gz",
+            "assetSize": 185718,
+            "needs": [
+              "libavfilter.so",
+              "libavformat.so",
+              "libavcodec.so",
+              "libavutil.so",
+              "libswresample.so",
+              "libavdevice.so",
+              "libswscale.so"
+            ]
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "libavutil.so",
+            "size": 692736,
+            "sha256": "0355ce96ecd25335fdd63381f1c622dfced6c9d84988bb2bd1117e95e72973f3",
+            "asset": "ffmpeg-x86_64-libavutil.so-0355ce96ecd2.gz",
+            "assetSize": 253293,
+            "needs": []
+          },
+          {
+            "name": "libswresample.so",
+            "size": 343944,
+            "sha256": "8df356a2926d6f8ae56074842bbc48909ea470ad3753b91aa323004a640a064b",
+            "asset": "ffmpeg-x86_64-libswresample.so-8df356a2926d.gz",
+            "assetSize": 142142,
+            "needs": [
+              "libavutil.so"
+            ]
+          },
+          {
+            "name": "libswscale.so",
+            "size": 853912,
+            "sha256": "8a067fe980e639f02dcb2361a4c276c6182a9ee86b1375cd91c6cd776a01d033",
+            "asset": "ffmpeg-x86_64-libswscale.so-8a067fe980e6.gz",
+            "assetSize": 276349,
+            "needs": [
+              "libavutil.so"
+            ]
+          },
+          {
+            "name": "libavcodec.so",
+            "size": 24384816,
+            "sha256": "44443ae1f8f5b6912a250474ba8ac2e91ad859e57961c52bae9d676dbbc4affb",
+            "asset": "ffmpeg-x86_64-libavcodec.so-44443ae1f8f5.gz",
+            "assetSize": 10123910,
+            "needs": [
+              "libswresample.so",
+              "libavutil.so"
+            ]
+          },
+          {
+            "name": "libavformat.so",
+            "size": 3725304,
+            "sha256": "683b3139f54ca0c623f28f86322019e529cd3e16bdb45c6aec0cf2f2ac3a5bd1",
+            "asset": "ffmpeg-x86_64-libavformat.so-683b3139f54c.gz",
+            "assetSize": 1961553,
+            "needs": [
+              "libavcodec.so",
+              "libavutil.so"
+            ]
+          },
+          {
+            "name": "libavfilter.so",
+            "size": 6001024,
+            "sha256": "a309102b70f34661ba0bd2c8d2267983ccbcf509df290a5b516e5c4e79312f56",
+            "asset": "ffmpeg-x86_64-libavfilter.so-a309102b70f3.gz",
+            "assetSize": 2372067,
+            "needs": [
+              "libswscale.so",
+              "libavformat.so",
+              "libavcodec.so",
+              "libswresample.so",
+              "libavutil.so"
+            ]
+          },
+          {
+            "name": "libavdevice.so",
+            "size": 57296,
+            "sha256": "e300db3fd08a90581db4368f7e811c07fa654d5095374ee6e025201bb3ae82fb",
+            "asset": "ffmpeg-x86_64-libavdevice.so-e300db3fd08a.gz",
+            "assetSize": 22611,
+            "needs": [
+              "libavfilter.so",
+              "libavformat.so",
+              "libavcodec.so",
+              "libavutil.so"
+            ]
+          },
+          {
+            "name": "libffmpegkit_abidetect.so",
+            "size": 43448,
+            "sha256": "949bab04063d945235bd2133d0107dd352006223d48499e1b5d96d894273327f",
+            "asset": "ffmpeg-x86_64-libffmpegkit_abidetect.so-949bab04063d.gz",
+            "assetSize": 15216,
+            "needs": []
+          },
+          {
+            "name": "libffmpegkit.so",
+            "size": 480128,
+            "sha256": "37e20b02b56fe32049f6ca1831161d5c853dcfa32715d539825a994c8bf5cdbc",
+            "asset": "ffmpeg-x86_64-libffmpegkit.so-37e20b02b56f.gz",
+            "assetSize": 193468,
+            "needs": [
+              "libavfilter.so",
+              "libavformat.so",
+              "libavcodec.so",
+              "libavutil.so",
+              "libswresample.so",
+              "libavdevice.so",
+              "libswscale.so"
+            ]
+          }
+        ]
+      },
+      "loaders": [
+        "com.arthenica.ffmpegkit.NativeLoader"
+      ]
+    },
+    "sherpa": {
+      "versions": {
+        "sherpaOnnx": "1.13.8"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libonnxruntime.so",
+            "size": 22249560,
+            "sha256": "33847ad43bffe204699fd4a27f7f3603452a8cdaf2f9a44983a0bc31ffcf2da1",
+            "asset": "sherpa-arm64-v8a-libonnxruntime.so-33847ad43bff.gz",
+            "assetSize": 7945315,
+            "needs": []
+          },
+          {
+            "name": "libsherpa-onnx-c-api.so",
+            "size": 4465168,
+            "sha256": "c85e2382e2ca12b0513826be926eaccfea896b4cbf568182e287671ba526f80d",
+            "asset": "sherpa-arm64-v8a-libsherpa-onnx-c-api.so-c85e2382e2ca.gz",
+            "assetSize": 1884434,
+            "needs": [
+              "libonnxruntime.so"
+            ]
+          },
+          {
+            "name": "libsherpa-onnx-jni.so",
+            "size": 4771760,
+            "sha256": "3c6492ea91ea68fd3b72b9495efdde6dd913f6b58c387e3b07389cf335f4d26f",
+            "asset": "sherpa-arm64-v8a-libsherpa-onnx-jni.so-3c6492ea91ea.gz",
+            "assetSize": 1962535,
+            "needs": [
+              "libonnxruntime.so"
+            ]
+          }
+        ],
+        "armeabi-v7a": [
+          {
+            "name": "libonnxruntime.so",
+            "size": 15359592,
+            "sha256": "7a8f17a707e52e0ac3a026be319272876d9eae61f4bb19585292772d785f7744",
+            "asset": "sherpa-armeabi-v7a-libonnxruntime.so-7a8f17a707e5.gz",
+            "assetSize": 7216870,
+            "needs": []
+          },
+          {
+            "name": "libsherpa-onnx-c-api.so",
+            "size": 3202700,
+            "sha256": "2294b9cc929ca0d22c5da52864ec8176f8fd119a739c9d594384763f6101d33f",
+            "asset": "sherpa-armeabi-v7a-libsherpa-onnx-c-api.so-2294b9cc929c.gz",
+            "assetSize": 1776055,
+            "needs": [
+              "libonnxruntime.so"
+            ]
+          },
+          {
+            "name": "libsherpa-onnx-jni.so",
+            "size": 3428780,
+            "sha256": "3d6b6daf6d23162dceb1df91ac075a42a09b60fafb5f9400cba22562f10a1dc0",
+            "asset": "sherpa-armeabi-v7a-libsherpa-onnx-jni.so-3d6b6daf6d23.gz",
+            "assetSize": 1871654,
+            "needs": [
+              "libonnxruntime.so"
+            ]
+          }
+        ],
+        "x86": [
+          {
+            "name": "libonnxruntime.so",
+            "size": 26491148,
+            "sha256": "fcb6cd80415f7951e58fdd8158a238946dce3710d5fee492b67174d5131f9eee",
+            "asset": "sherpa-x86-libonnxruntime.so-fcb6cd80415f.gz",
+            "assetSize": 9134790,
+            "needs": []
+          },
+          {
+            "name": "libsherpa-onnx-c-api.so",
+            "size": 5051192,
+            "sha256": "fc08ee45be6eaafde43e128f22f130aec4ef2c5362e44d95f7ae54e9ad6e752e",
+            "asset": "sherpa-x86-libsherpa-onnx-c-api.so-fc08ee45be6e.gz",
+            "assetSize": 2071809,
+            "needs": [
+              "libonnxruntime.so"
+            ]
+          },
+          {
+            "name": "libsherpa-onnx-jni.so",
+            "size": 5358928,
+            "sha256": "04831b079ebd68557b6e9605f90be1dc76118973ee1aef5a75cc0d0889dc3778",
+            "asset": "sherpa-x86-libsherpa-onnx-jni.so-04831b079ebd.gz",
+            "assetSize": 2144696,
+            "needs": [
+              "libonnxruntime.so"
+            ]
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "libonnxruntime.so",
+            "size": 25581120,
+            "sha256": "087e84297cad64acb823c3d901d6e0cc934e91add7cdb20da802cd1c0bea5c3e",
+            "asset": "sherpa-x86_64-libonnxruntime.so-087e84297cad.gz",
+            "assetSize": 8896589,
+            "needs": []
+          },
+          {
+            "name": "libsherpa-onnx-c-api.so",
+            "size": 4927096,
+            "sha256": "631ca2828e47b61d8afe4b3c75a157423cbafaba6f8c0db89c27d21f1b173d9a",
+            "asset": "sherpa-x86_64-libsherpa-onnx-c-api.so-631ca2828e47.gz",
+            "assetSize": 2090216,
+            "needs": [
+              "libonnxruntime.so"
+            ]
+          },
+          {
+            "name": "libsherpa-onnx-jni.so",
+            "size": 5201192,
+            "sha256": "1dc24c88fb364f1022a5217b70ab3bc3c9cae3120ae2e1ed358e1f68ed120b04",
+            "asset": "sherpa-x86_64-libsherpa-onnx-jni.so-1dc24c88fb36.gz",
+            "assetSize": 2177880,
+            "needs": [
+              "libonnxruntime.so"
+            ]
+          }
+        ]
+      },
+      "loaders": [
+        "com.k2fsa.sherpa.onnx.AudioTagging",
+        "com.k2fsa.sherpa.onnx.KeywordSpotter",
+        "com.k2fsa.sherpa.onnx.OfflinePunctuation",
+        "com.k2fsa.sherpa.onnx.OfflineRecognizer",
+        "com.k2fsa.sherpa.onnx.OfflineSpeakerDiarization",
+        "com.k2fsa.sherpa.onnx.OfflineSpeechDenoiser",
+        "com.k2fsa.sherpa.onnx.OfflineStream",
+        "com.k2fsa.sherpa.onnx.OfflineTts",
+        "com.k2fsa.sherpa.onnx.OnlinePunctuation",
+        "com.k2fsa.sherpa.onnx.OnlineRecognizer",
+        "com.k2fsa.sherpa.onnx.OnlineSpeechDenoiser",
+        "com.k2fsa.sherpa.onnx.OnlineStream",
+        "com.k2fsa.sherpa.onnx.SpeakerEmbeddingExtractor",
+        "com.k2fsa.sherpa.onnx.SpeakerEmbeddingManager",
+        "com.k2fsa.sherpa.onnx.SpokenLanguageIdentification",
+        "com.k2fsa.sherpa.onnx.Vad",
+        "com.k2fsa.sherpa.onnx.VersionInfo",
+        "com.k2fsa.sherpa.onnx.WaveReader"
+      ]
+    },
+    "opencv": {
+      "versions": {
+        "opencv": "4.14.0"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libopencv_java4.so",
+            "size": 24657160,
+            "sha256": "b5c79265a2634aee120d78fd0aebf39b53906d12bb9b87fa5e2d61818ca98af7",
+            "asset": "opencv-arm64-v8a-libopencv_java4.so-b5c79265a263.gz",
+            "assetSize": 9748685,
+            "needs": []
+          }
+        ],
+        "armeabi-v7a": [
+          {
+            "name": "libopencv_java4.so",
+            "size": 16050808,
+            "sha256": "abe97377c384ad7a8f9d1775e6ebbb47f54d64b3bd4f1d5637a07d4758406c1b",
+            "asset": "opencv-armeabi-v7a-libopencv_java4.so-abe97377c384.gz",
+            "assetSize": 7980687,
+            "needs": []
+          }
+        ],
+        "x86": [
+          {
+            "name": "libopencv_java4.so",
+            "size": 45338344,
+            "sha256": "2013d64781ba224cfcfcd0241d4858054e1614769327935870af97a0956fb8bd",
+            "asset": "opencv-x86-libopencv_java4.so-2013d64781ba.gz",
+            "assetSize": 17707505,
+            "needs": []
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "libopencv_java4.so",
+            "size": 60525192,
+            "sha256": "672945874e20bdffcf5b0bf88fe6546bf528a54277912feb102a14ab1a4a6cfc",
+            "asset": "opencv-x86_64-libopencv_java4.so-672945874e20.gz",
+            "assetSize": 24256378,
+            "needs": []
+          }
+        ]
+      },
+      "loaders": [
+        "org.opencv.android.StaticHelper",
+        "org.opencv.osgi.OpenCVNativeLoader"
+      ]
+    },
+    "litert": {
+      "versions": {
+        "litert": "2.1.5"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libLiteRt.so",
+            "size": 5328296,
+            "sha256": "366e3e040b00692158f9f8f9105870672c93348a3d8e9024120b40045a074b0b",
+            "asset": "litert-arm64-v8a-libLiteRt.so-366e3e040b00.gz",
+            "assetSize": 2219803,
+            "needs": []
+          }
+        ],
+        "armeabi-v7a": [
+          {
+            "name": "libLiteRt.so",
+            "size": 3504124,
+            "sha256": "836ee7a2321c9453f02658b6774fc4c5951716432b450ba6bc4e9a94fe524e6c",
+            "asset": "litert-armeabi-v7a-libLiteRt.so-836ee7a2321c.gz",
+            "assetSize": 1843301,
+            "needs": []
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "libLiteRt.so",
+            "size": 7272904,
+            "sha256": "6d5b2f35d536a3b2d38b26d26328cc9c259133ef2aa0413ec554cd7ef84f6604",
+            "asset": "litert-x86_64-libLiteRt.so-6d5b2f35d536.gz",
+            "assetSize": 2937507,
+            "needs": []
+          }
+        ]
+      },
+      "loaders": [
+        "com.google.ai.edge.litert.CompiledModel",
+        "com.google.ai.edge.litert.Environment",
+        "com.google.ai.edge.litert.TensorBuffer",
+        "org.tensorflow.lite.TensorFlowLite"
+      ]
+    },
+    "mlkit-ocr": {
+      "versions": {
+        "mlkitTextRecognition": "16.0.1"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libmlkit_google_ocr_pipeline.so",
+            "size": 11064544,
+            "sha256": "fa41d509a661e8aa8b3e3ac1a28541f8823f308414fcad733fe26d61feea2646",
+            "asset": "mlkit-ocr-arm64-v8a-libmlkit_google_ocr_pipeline.so-fa41d509a661.gz",
+            "assetSize": 4395313,
+            "needs": []
+          }
+        ],
+        "armeabi-v7a": [
+          {
+            "name": "libmlkit_google_ocr_pipeline.so",
+            "size": 6781940,
+            "sha256": "06b9e2f587e401c6446aa0db344bb31b622957a2d04aa4eac03cde8b3a6ed78a",
+            "asset": "mlkit-ocr-armeabi-v7a-libmlkit_google_ocr_pipeline.so-06b9e2f587e4.gz",
+            "assetSize": 3506703,
+            "needs": []
+          }
+        ],
+        "x86": [
+          {
+            "name": "libmlkit_google_ocr_pipeline.so",
+            "size": 11561048,
+            "sha256": "50b7ee3a7efe130ae236456f5d953bc91fa9c3fbb17a38d78e79148bf3e6c2d7",
+            "asset": "mlkit-ocr-x86-libmlkit_google_ocr_pipeline.so-50b7ee3a7efe.gz",
+            "assetSize": 4573712,
+            "needs": []
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "libmlkit_google_ocr_pipeline.so",
+            "size": 11626128,
+            "sha256": "3ddffb498b60f7f9512e341d4ee3abe4e1580c4fd65ef9b2c8ce9e490de467d8",
+            "asset": "mlkit-ocr-x86_64-libmlkit_google_ocr_pipeline.so-3ddffb498b60.gz",
+            "assetSize": 4446262,
+            "needs": []
+          }
+        ]
+      },
+      "loaders": [
+        "com.google.android.libraries.vision.visionkit.pipeline.alt.NativePipelineImpl",
+        "com.google.mlkit.vision.text.bundled.common.zba"
+      ]
+    },
+    "mlkit-objects": {
+      "versions": {
+        "mlkitObjectDetection": "17.0.2"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libmlkitcommonpipeline.so",
+            "size": 10989136,
+            "sha256": "c146e1f60adeb21e7feb8062cdb446056ce619e430d3555c3872b3ff8a907c2f",
+            "asset": "mlkit-objects-arm64-v8a-libmlkitcommonpipeline.so-c146e1f60ade.gz",
+            "assetSize": 4444473,
+            "needs": []
+          }
+        ],
+        "armeabi-v7a": [
+          {
+            "name": "libmlkitcommonpipeline.so",
+            "size": 6928228,
+            "sha256": "9ab65cd53ed8334fc0fcd09fe3c442f2a9bb6653e1392bc0ff4a1c1381aba7db",
+            "asset": "mlkit-objects-armeabi-v7a-libmlkitcommonpipeline.so-9ab65cd53ed8.gz",
+            "assetSize": 3670142,
+            "needs": []
+          }
+        ],
+        "x86": [
+          {
+            "name": "libmlkitcommonpipeline.so",
+            "size": 12514200,
+            "sha256": "d0484916cc8bb39f525f64bda64881454146309e9f935e7bfa0675c8a13d9ecc",
+            "asset": "mlkit-objects-x86-libmlkitcommonpipeline.so-d0484916cc8b.gz",
+            "assetSize": 4867089,
+            "needs": []
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "libmlkitcommonpipeline.so",
+            "size": 12129104,
+            "sha256": "493256b9b10afcbd72259be0671d888e8827fbc26af28d9217c6ba482ff99eaa",
+            "asset": "mlkit-objects-x86_64-libmlkitcommonpipeline.so-493256b9b10a.gz",
+            "assetSize": 4709110,
+            "needs": []
+          }
+        ]
+      },
+      "loaders": [
+        "com.google.android.libraries.vision.visionkit.pipeline.NativePipelineImpl",
+        "com.google.mlkit.vision.vkp.PipelineManager"
+      ]
+    },
+    "filament": {
+      "versions": {
+        "filament": "1.77.3"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libfilament-jni.so",
+            "size": 2961976,
+            "sha256": "eeba130cc7c856df2fef6972e711bebfa4734e287fc0498789f6df97ef938217",
+            "asset": "filament-arm64-v8a-libfilament-jni.so-eeba130cc7c8.gz",
+            "assetSize": 1209122,
+            "needs": []
+          },
+          {
+            "name": "libgltfio-jni.so",
+            "size": 3094888,
+            "sha256": "6893810bf5eac6fb868b1c1678dcf7912b36efbdc1bc00c9d5f4fa4d99914f11",
+            "asset": "filament-arm64-v8a-libgltfio-jni.so-6893810bf5ea.gz",
+            "assetSize": 1446778,
+            "needs": [
+              "libfilament-jni.so"
+            ]
+          }
+        ],
+        "armeabi-v7a": [
+          {
+            "name": "libfilament-jni.so",
+            "size": 2234868,
+            "sha256": "1fc9b4a076b46be8ec7599c8cba46fc794888a8324dbf0fabd8629d34278c4db",
+            "asset": "filament-armeabi-v7a-libfilament-jni.so-1fc9b4a076b4.gz",
+            "assetSize": 1099814,
+            "needs": []
+          },
+          {
+            "name": "libgltfio-jni.so",
+            "size": 2270464,
+            "sha256": "01cc3b9b46494cdd4d3249c1352611ea4e8a2f29a5b8a978d8fa281bd3d124a8",
+            "asset": "filament-armeabi-v7a-libgltfio-jni.so-01cc3b9b4649.gz",
+            "assetSize": 1304747,
+            "needs": [
+              "libfilament-jni.so"
+            ]
+          }
+        ],
+        "x86": [
+          {
+            "name": "libfilament-jni.so",
+            "size": 3381940,
+            "sha256": "259b1a1a1f15aa6e85601d82cfb65caed6aef1cfd770ba51c919d54e1865a7f1",
+            "asset": "filament-x86-libfilament-jni.so-259b1a1a1f15.gz",
+            "assetSize": 1348662,
+            "needs": []
+          },
+          {
+            "name": "libgltfio-jni.so",
+            "size": 3320760,
+            "sha256": "396e5c4a6301c13e157d8082e205641cec61e48c81a96cc21745c26bfff84159",
+            "asset": "filament-x86-libgltfio-jni.so-396e5c4a6301.gz",
+            "assetSize": 1543610,
+            "needs": [
+              "libfilament-jni.so"
+            ]
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "libfilament-jni.so",
+            "size": 3277704,
+            "sha256": "b3fbe45e998214c30acd41db847d49a51226ce7f9fb1784774a2eac4ae501d22",
+            "asset": "filament-x86_64-libfilament-jni.so-b3fbe45e9982.gz",
+            "assetSize": 1303510,
+            "needs": []
+          },
+          {
+            "name": "libgltfio-jni.so",
+            "size": 3325216,
+            "sha256": "5a9648bdc7853db9b8db13908c7200feafbd788f0b96707f668666393b2afa9d",
+            "asset": "filament-x86_64-libgltfio-jni.so-5a9648bdc785.gz",
+            "assetSize": 1519331,
+            "needs": [
+              "libfilament-jni.so"
+            ]
+          }
+        ]
+      },
+      "loaders": [
+        "com.google.android.filament.Filament",
+        "com.google.android.filament.gltfio.Gltfio"
+      ]
+    },
+    "fluidsynth": {
+      "versions": {
+        "fluidsynth": "2.6.0"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libogg.so",
+            "size": 29768,
+            "sha256": "cdc7932073ca3a02a5ac4bead12b7ae993ab5df8e16d6f377f9c90548fb4f89a",
+            "asset": "fluidsynth-arm64-v8a-libogg.so-cdc7932073ca.gz",
+            "assetSize": 19017,
+            "needs": []
+          },
+          {
+            "name": "libFLAC.so",
+            "size": 238784,
+            "sha256": "f2f41deaa82a485511b0f0d3be5cccf9fc6a1fafef17de8478f92cc694b161e5",
+            "asset": "fluidsynth-arm64-v8a-libFLAC.so-f2f41deaa82a.gz",
+            "assetSize": 109269,
+            "needs": [
+              "libogg.so"
+            ]
+          },
+          {
+            "name": "libopus.so",
+            "size": 400048,
+            "sha256": "62b355062e4de2bb28403148e500c1d1b00171ba8616c49e444976fb70803df9",
+            "asset": "fluidsynth-arm64-v8a-libopus.so-62b355062e4d.gz",
+            "assetSize": 252290,
+            "needs": []
+          },
+          {
+            "name": "libvorbis.so",
+            "size": 187440,
+            "sha256": "d36062c22d5441a2e12c86f92612418f6569f55365a8144db4ba036dc0824227",
+            "asset": "fluidsynth-arm64-v8a-libvorbis.so-d36062c22d54.gz",
+            "assetSize": 109777,
+            "needs": [
+              "libogg.so"
+            ]
+          },
+          {
+            "name": "libvorbisenc.so",
+            "size": 653632,
+            "sha256": "b7e2acb468b629ee21ad29d4b5ea02afdb1b32826b325216464fe3166a9aea65",
+            "asset": "fluidsynth-arm64-v8a-libvorbisenc.so-b7e2acb468b6.gz",
+            "assetSize": 93290,
+            "needs": [
+              "libvorbis.so",
+              "libogg.so"
+            ]
+          },
+          {
+            "name": "libsndfile.so",
+            "size": 513384,
+            "sha256": "317bdac59b88c4f26e3b51c8d24355249939d63cc40cc08cb3688674ba24dd11",
+            "asset": "fluidsynth-arm64-v8a-libsndfile.so-317bdac59b88.gz",
+            "assetSize": 217819,
+            "needs": [
+              "libogg.so",
+              "libvorbisenc.so",
+              "libFLAC.so",
+              "libopus.so",
+              "libvorbis.so"
+            ]
+          },
+          {
+            "name": "liboboe.so",
+            "size": 308560,
+            "sha256": "bbe8fa5a0ba4d36de62ac731a910bd3c0f9bc70b69d2a9a2af959e229a92bef1",
+            "asset": "fluidsynth-arm64-v8a-liboboe.so-bbe8fa5a0ba4.gz",
+            "assetSize": 105220,
+            "needs": []
+          },
+          {
+            "name": "libfluidsynth.so",
+            "size": 544536,
+            "sha256": "b076401951a2e813afe2e319e48350e3a5c016cdcd8f625c02b0b74bb420337e",
+            "asset": "fluidsynth-arm64-v8a-libfluidsynth.so-b076401951a2.gz",
+            "assetSize": 247609,
+            "needs": [
+              "libsndfile.so",
+              "liboboe.so"
+            ]
+          }
+        ],
+        "armeabi-v7a": [
+          {
+            "name": "libogg.so",
+            "size": 22328,
+            "sha256": "6131c8d9be30d32f0cc696ad1e44be028f0a83ab6ab7f11b985513c97b1951db",
+            "asset": "fluidsynth-armeabi-v7a-libogg.so-6131c8d9be30.gz",
+            "assetSize": 16647,
+            "needs": []
+          },
+          {
+            "name": "libFLAC.so",
+            "size": 162252,
+            "sha256": "a9c77290a431aae025f34712ac649857baae8d10d941095afecd67f55fa013a6",
+            "asset": "fluidsynth-armeabi-v7a-libFLAC.so-a9c77290a431.gz",
+            "assetSize": 95585,
+            "needs": [
+              "libogg.so"
+            ]
+          },
+          {
+            "name": "libopus.so",
+            "size": 302064,
+            "sha256": "e8f91ae432ee8a92ac80655122999e28f6d7b9db1ed59f0933a1831de3d24172",
+            "asset": "fluidsynth-armeabi-v7a-libopus.so-e8f91ae432ee.gz",
+            "assetSize": 209943,
+            "needs": []
+          },
+          {
+            "name": "libvorbis.so",
+            "size": 141660,
+            "sha256": "e16fc9a3433f04c680ac8b6d97aa2d96e14ed51f669c1f4e392f44c4f59f0d48",
+            "asset": "fluidsynth-armeabi-v7a-libvorbis.so-e16fc9a3433f.gz",
+            "assetSize": 87606,
+            "needs": [
+              "libogg.so"
+            ]
+          },
+          {
+            "name": "libvorbisenc.so",
+            "size": 528508,
+            "sha256": "2484272fa423979546152e9a8e67477ab44624a5d6b144ed7fd433b18cc33908",
+            "asset": "fluidsynth-armeabi-v7a-libvorbisenc.so-2484272fa423.gz",
+            "assetSize": 89663,
+            "needs": [
+              "libvorbis.so",
+              "libogg.so"
+            ]
+          },
+          {
+            "name": "libsndfile.so",
+            "size": 376612,
+            "sha256": "ffc8269972aeb5423a4de9bede581ff04b619bb90f89cd244e652dfcc96f04fd",
+            "asset": "fluidsynth-armeabi-v7a-libsndfile.so-ffc8269972ae.gz",
+            "assetSize": 197861,
+            "needs": [
+              "libogg.so",
+              "libvorbisenc.so",
+              "libFLAC.so",
+              "libopus.so",
+              "libvorbis.so"
+            ]
+          },
+          {
+            "name": "liboboe.so",
+            "size": 197016,
+            "sha256": "05112a928835f3bfc574cc66ba0c764855bc6e5141b2f3b540e7620a2d095437",
+            "asset": "fluidsynth-armeabi-v7a-liboboe.so-05112a928835.gz",
+            "assetSize": 82305,
+            "needs": []
+          },
+          {
+            "name": "libfluidsynth.so",
+            "size": 381288,
+            "sha256": "61ccc05e3d1144f4fda5ea5a65d4a35c9a871bbdfacd4c669d162480ec59d48b",
+            "asset": "fluidsynth-armeabi-v7a-libfluidsynth.so-61ccc05e3d11.gz",
+            "assetSize": 212433,
+            "needs": [
+              "libsndfile.so",
+              "liboboe.so"
+            ]
+          }
+        ],
+        "x86": [
+          {
+            "name": "libogg.so",
+            "size": 29956,
+            "sha256": "a641c591bbd84d114677fd09177acd532d27a1a7ca0b0e889107048d5cdc19d3",
+            "asset": "fluidsynth-x86-libogg.so-a641c591bbd8.gz",
+            "assetSize": 19663,
+            "needs": []
+          },
+          {
+            "name": "libFLAC.so",
+            "size": 275724,
+            "sha256": "3ee92f88f2e1bf758c6dc2731f76c46a377fd01aaca77b3eda4d69d9b9655621",
+            "asset": "fluidsynth-x86-libFLAC.so-3ee92f88f2e1.gz",
+            "assetSize": 125568,
+            "needs": [
+              "libogg.so"
+            ]
+          },
+          {
+            "name": "libopus.so",
+            "size": 496176,
+            "sha256": "ff9aab0ac18f128579a1698e2e3e91f994ff87c01aaf642525065302abcc1236",
+            "asset": "fluidsynth-x86-libopus.so-ff9aab0ac18f.gz",
+            "assetSize": 278876,
+            "needs": []
+          },
+          {
+            "name": "libvorbis.so",
+            "size": 225968,
+            "sha256": "a9f2994bda2d5fdda4f49b0a09f789d906a515177fa648519372eb5b2277364f",
+            "asset": "fluidsynth-x86-libvorbis.so-a9f2994bda2d.gz",
+            "assetSize": 124431,
+            "needs": [
+              "libogg.so"
+            ]
+          },
+          {
+            "name": "libvorbisenc.so",
+            "size": 536976,
+            "sha256": "03f1db77410f51ed24301cea9b3eb53224daa59d496111db42489b32f69948ed",
+            "asset": "fluidsynth-x86-libvorbisenc.so-03f1db77410f.gz",
+            "assetSize": 91240,
+            "needs": [
+              "libvorbis.so",
+              "libogg.so"
+            ]
+          },
+          {
+            "name": "libsndfile.so",
+            "size": 636028,
+            "sha256": "0efa1aa9be5d5fa2c3921dced85feaf48462acacd11eebd3ef49a6e9c8fca5f6",
+            "asset": "fluidsynth-x86-libsndfile.so-0efa1aa9be5d.gz",
+            "assetSize": 257788,
+            "needs": [
+              "libogg.so",
+              "libvorbisenc.so",
+              "libFLAC.so",
+              "libopus.so",
+              "libvorbis.so"
+            ]
+          },
+          {
+            "name": "liboboe.so",
+            "size": 301000,
+            "sha256": "218749c2f09e901fcac9501e708ddfe2f9fed2cc1c8d5379ddde9882f6e0a378",
+            "asset": "fluidsynth-x86-liboboe.so-218749c2f09e.gz",
+            "assetSize": 111295,
+            "needs": []
+          },
+          {
+            "name": "libfluidsynth.so",
+            "size": 641624,
+            "sha256": "47a9a8f935392e001f3ffbd57d532ced87796bb7f06ebb8bb9aa9196706e3253",
+            "asset": "fluidsynth-x86-libfluidsynth.so-47a9a8f93539.gz",
+            "assetSize": 274969,
+            "needs": [
+              "libsndfile.so",
+              "liboboe.so"
+            ]
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "libogg.so",
+            "size": 29312,
+            "sha256": "bb30b82477f9598f83b1a930da54917f79c878f50069ed1b706b4b1697aaf6ef",
+            "asset": "fluidsynth-x86_64-libogg.so-bb30b82477f9.gz",
+            "assetSize": 18661,
+            "needs": []
+          },
+          {
+            "name": "libFLAC.so",
+            "size": 266944,
+            "sha256": "bba931ec4646089665d1ec9418049b46bc798c1282a0ebf0ed3ca39f55b20120",
+            "asset": "fluidsynth-x86_64-libFLAC.so-bba931ec4646.gz",
+            "assetSize": 121552,
+            "needs": [
+              "libogg.so"
+            ]
+          },
+          {
+            "name": "libopus.so",
+            "size": 479936,
+            "sha256": "afa21353af2acbee0be3b9f390a0f8f2b398ebbdee97c4989dd3cc5812117f2c",
+            "asset": "fluidsynth-x86_64-libopus.so-afa21353af2a.gz",
+            "assetSize": 271635,
+            "needs": []
+          },
+          {
+            "name": "libvorbis.so",
+            "size": 219632,
+            "sha256": "555d7266fe79278d7458cc22058f126fe7d5fd06915e9a8e82102ca59d29f3ca",
+            "asset": "fluidsynth-x86_64-libvorbis.so-555d7266fe79.gz",
+            "assetSize": 120990,
+            "needs": [
+              "libogg.so"
+            ]
+          },
+          {
+            "name": "libvorbisenc.so",
+            "size": 666328,
+            "sha256": "8c6b7ec55f94d6fe309c42f3c7aa3303b66a29c8bb23f7c02dc4388ed63274a5",
+            "asset": "fluidsynth-x86_64-libvorbisenc.so-8c6b7ec55f94.gz",
+            "assetSize": 91483,
+            "needs": [
+              "libvorbis.so",
+              "libogg.so"
+            ]
+          },
+          {
+            "name": "libsndfile.so",
+            "size": 552464,
+            "sha256": "c635b803d8ee003e0dafd7af71e2f74913f99cd45612bb15e7b8dc860e5612ce",
+            "asset": "fluidsynth-x86_64-libsndfile.so-c635b803d8ee.gz",
+            "assetSize": 221485,
+            "needs": [
+              "libogg.so",
+              "libvorbisenc.so",
+              "libFLAC.so",
+              "libopus.so",
+              "libvorbis.so"
+            ]
+          },
+          {
+            "name": "liboboe.so",
+            "size": 304288,
+            "sha256": "a88e587ad1f02960950aecb9b8a6e9dd45457d2c8dff6205186c87fa45a8a178",
+            "asset": "fluidsynth-x86_64-liboboe.so-a88e587ad1f0.gz",
+            "assetSize": 107696,
+            "needs": []
+          },
+          {
+            "name": "libfluidsynth.so",
+            "size": 587152,
+            "sha256": "1c13961b0fdb26e69f096a31db8d4051fb68e2b46469478e52ffe22d2d25dc01",
+            "asset": "fluidsynth-x86_64-libfluidsynth.so-1c13961b0fdb.gz",
+            "assetSize": 260033,
+            "needs": [
+              "libsndfile.so",
+              "liboboe.so"
+            ]
+          }
+        ]
+      },
+      "loaders": []
+    },
+    "ffdec": {
+      "versions": {
+        "ffdecFfmpeg": "8.1.3"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libavutil_voyage.so",
+            "size": 724960,
+            "sha256": "4f479adadd8911ef97afea99e541aa580e0706ded3ddb91ed1fbd9f74e771a39",
+            "asset": "ffdec-arm64-v8a-libavutil_voyage.so-4f479adadd89.gz",
+            "assetSize": 316688,
+            "needs": []
+          },
+          {
+            "name": "libswresample_voyage.so",
+            "size": 98184,
+            "sha256": "5495de1ab23ca048b93f472c237b4ad9ac921670710f2d5553609192162fb631",
+            "asset": "ffdec-arm64-v8a-libswresample_voyage.so-5495de1ab23c.gz",
+            "assetSize": 43587,
+            "needs": [
+              "libavutil_voyage.so"
+            ]
+          },
+          {
+            "name": "libswscale_voyage.so",
+            "size": 1154248,
+            "sha256": "84305df014d666ff0e3db99e3d48d86aaced6756b70336d6c4ef89c6c1e3a6d8",
+            "asset": "ffdec-arm64-v8a-libswscale_voyage.so-84305df014d6.gz",
+            "assetSize": 486245,
+            "needs": [
+              "libavutil_voyage.so"
+            ]
+          },
+          {
+            "name": "libavcodec_voyage.so",
+            "size": 4896232,
+            "sha256": "9627b979fcdb7810f20b397c5302115b8d2abc28242d9c892ba3ec097ce50dac",
+            "asset": "ffdec-arm64-v8a-libavcodec_voyage.so-9627b979fcdb.gz",
+            "assetSize": 2269376,
+            "needs": [
+              "libswresample_voyage.so",
+              "libavutil_voyage.so"
+            ]
+          },
+          {
+            "name": "libvoyageffdec.so",
+            "size": 59936,
+            "sha256": "a102e842a73516d61aec375286d4ba6a6cd0384907f16ec0c35e8a022ae93593",
+            "asset": "ffdec-arm64-v8a-libvoyageffdec.so-a102e842a735.gz",
+            "assetSize": 26802,
+            "needs": [
+              "libavcodec_voyage.so",
+              "libswscale_voyage.so",
+              "libswresample_voyage.so",
+              "libavutil_voyage.so"
+            ]
+          }
+        ],
+        "armeabi-v7a": [
+          {
+            "name": "libavutil_voyage.so",
+            "size": 641348,
+            "sha256": "4d0d4729637daefaef48a50eebe5ae9ede4cd3d541518f1f5b8913f9eebcfe34",
+            "asset": "ffdec-armeabi-v7a-libavutil_voyage.so-4d0d4729637d.gz",
+            "assetSize": 320078,
+            "needs": []
+          },
+          {
+            "name": "libswresample_voyage.so",
+            "size": 91068,
+            "sha256": "6218c5b08274eb94d2332f48cde12e5b5f18524f8660f4e69270ce853eacc05e",
+            "asset": "ffdec-armeabi-v7a-libswresample_voyage.so-6218c5b08274.gz",
+            "assetSize": 45194,
+            "needs": [
+              "libavutil_voyage.so"
+            ]
+          },
+          {
+            "name": "libswscale_voyage.so",
+            "size": 800564,
+            "sha256": "a88796d992272ee110aa262acecaf1f99dc5ed82e20fd6d27e0ab50c4504fa2f",
+            "asset": "ffdec-armeabi-v7a-libswscale_voyage.so-a88796d99227.gz",
+            "assetSize": 337593,
+            "needs": [
+              "libavutil_voyage.so"
+            ]
+          },
+          {
+            "name": "libavcodec_voyage.so",
+            "size": 4573368,
+            "sha256": "31a2b6437955959c34ac2de3fc8b6d348ead783989ba8361baafa0583e887504",
+            "asset": "ffdec-armeabi-v7a-libavcodec_voyage.so-31a2b6437955.gz",
+            "assetSize": 2188912,
+            "needs": [
+              "libswresample_voyage.so",
+              "libavutil_voyage.so"
+            ]
+          },
+          {
+            "name": "libvoyageffdec.so",
+            "size": 36972,
+            "sha256": "821cb2c7ac606484039fd406d4ecbee45460fe6ea5226f8b8c5c53c8d44f7bee",
+            "asset": "ffdec-armeabi-v7a-libvoyageffdec.so-821cb2c7ac60.gz",
+            "assetSize": 18540,
+            "needs": [
+              "libavcodec_voyage.so",
+              "libswscale_voyage.so",
+              "libswresample_voyage.so",
+              "libavutil_voyage.so"
+            ]
+          }
+        ],
+        "x86": [
+          {
+            "name": "libavutil_voyage.so",
+            "size": 767612,
+            "sha256": "dedc164b7a5e516b375f4978f504fb605eb0df0177ebba2a13c7c0782f37a704",
+            "asset": "ffdec-x86-libavutil_voyage.so-dedc164b7a5e.gz",
+            "assetSize": 333469,
+            "needs": []
+          },
+          {
+            "name": "libswresample_voyage.so",
+            "size": 118468,
+            "sha256": "342626442d3a52b2a09dbaa1ae7e5e25c22dcd2953efe648b9858807e45f7ece",
+            "asset": "ffdec-x86-libswresample_voyage.so-342626442d3a.gz",
+            "assetSize": 52334,
+            "needs": [
+              "libavutil_voyage.so"
+            ]
+          },
+          {
+            "name": "libswscale_voyage.so",
+            "size": 1379164,
+            "sha256": "0ae19954ded0f1f1440c2e27d00315cf50d0980941b67afbd95c370e38ae8a77",
+            "asset": "ffdec-x86-libswscale_voyage.so-0ae19954ded0.gz",
+            "assetSize": 482819,
+            "needs": [
+              "libavutil_voyage.so"
+            ]
+          },
+          {
+            "name": "libavcodec_voyage.so",
+            "size": 6130236,
+            "sha256": "84b3f6ff540f43078ecfdb66162336610e2f6f98e440e717e3c5c0525826f497",
+            "asset": "ffdec-x86-libavcodec_voyage.so-84b3f6ff540f.gz",
+            "assetSize": 2411972,
+            "needs": [
+              "libswresample_voyage.so",
+              "libavutil_voyage.so"
+            ]
+          },
+          {
+            "name": "libvoyageffdec.so",
+            "size": 52196,
+            "sha256": "b837da80a77ae5ce4d81f3ae816d5afc0f136fd4901821ced4aaedcd9f275d1b",
+            "asset": "ffdec-x86-libvoyageffdec.so-b837da80a77a.gz",
+            "assetSize": 25549,
+            "needs": [
+              "libavcodec_voyage.so",
+              "libswscale_voyage.so",
+              "libswresample_voyage.so",
+              "libavutil_voyage.so"
+            ]
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "libavutil_voyage.so",
+            "size": 724528,
+            "sha256": "3c800f37e243bd81d97b60818e0dbada9338c6a0bb0c46206d7a1596353f47db",
+            "asset": "ffdec-x86_64-libavutil_voyage.so-3c800f37e243.gz",
+            "assetSize": 320928,
+            "needs": []
+          },
+          {
+            "name": "libswresample_voyage.so",
+            "size": 112160,
+            "sha256": "2a2ff4e13546da93ef2b06596e241d19738bb5aa59c6db2203e6c21bf3f854f0",
+            "asset": "ffdec-x86_64-libswresample_voyage.so-2a2ff4e13546.gz",
+            "assetSize": 47992,
+            "needs": [
+              "libavutil_voyage.so"
+            ]
+          },
+          {
+            "name": "libswscale_voyage.so",
+            "size": 1294056,
+            "sha256": "00be965572ceeb2ba4ebfebc5981a3f3c4a768151974f9de521acdb7346e12cd",
+            "asset": "ffdec-x86_64-libswscale_voyage.so-00be965572ce.gz",
+            "assetSize": 465038,
+            "needs": [
+              "libavutil_voyage.so"
+            ]
+          },
+          {
+            "name": "libavcodec_voyage.so",
+            "size": 5636608,
+            "sha256": "9a06f5dd404cd3428f46e460b270c7d14fd630c09bd122b29baa5e91db4606c5",
+            "asset": "ffdec-x86_64-libavcodec_voyage.so-9a06f5dd404c.gz",
+            "assetSize": 2275948,
+            "needs": [
+              "libswresample_voyage.so",
+              "libavutil_voyage.so"
+            ]
+          },
+          {
+            "name": "libvoyageffdec.so",
+            "size": 57128,
+            "sha256": "8c0615f5374443d19ed783fe046a5d0dc8216fd8a89409aca584cd5f397dc0d4",
+            "asset": "ffdec-x86_64-libvoyageffdec.so-8c0615f53744.gz",
+            "assetSize": 26105,
+            "needs": [
+              "libavcodec_voyage.so",
+              "libswscale_voyage.so",
+              "libswresample_voyage.so",
+              "libavutil_voyage.so"
+            ]
+          }
+        ]
+      },
+      "loaders": []
+    },
+    "amap-map": {
+      "versions": {
+        "amapMap": "11.3.100"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libAMapSDK_MAP_v11_3_100.so",
+            "size": 34494320,
+            "sha256": "f51193a1188f40e3a460f8764b8c397d02844f166ead601bf55653b14e5e2bd1",
+            "asset": "3dmap-location-search-11.3.100_loc11.3.000_sea9.8.1.jar!/lib/arm64-v8a/libAMapSDK_MAP_v11_3_100.so",
+            "assetSize": 13428925,
+            "needs": [],
+            "source": {
+              "urls": [
+                "https://maven.aliyun.com/repository/central/com/amap/api/3dmap-location-search/11.3.100_loc11.3.000_sea9.8.1/3dmap-location-search-11.3.100_loc11.3.000_sea9.8.1.jar",
+                "https://repo1.maven.org/maven2/com/amap/api/3dmap-location-search/11.3.100_loc11.3.000_sea9.8.1/3dmap-location-search-11.3.100_loc11.3.000_sea9.8.1.jar"
+              ],
+              "offset": 11894251,
+              "format": "deflate"
+            }
+          }
+        ],
+        "armeabi-v7a": [
+          {
+            "name": "libAMapSDK_MAP_v11_3_100.so",
+            "size": 23573576,
+            "sha256": "4df6c58ba29129f5a7c2630ade148f57e69d47df53c2b6409cbc5307bef0f12e",
+            "asset": "3dmap-location-search-11.3.100_loc11.3.000_sea9.8.1.jar!/lib/armeabi-v7a/libAMapSDK_MAP_v11_3_100.so",
+            "assetSize": 11034661,
+            "needs": [],
+            "source": {
+              "urls": [
+                "https://maven.aliyun.com/repository/central/com/amap/api/3dmap-location-search/11.3.100_loc11.3.000_sea9.8.1/3dmap-location-search-11.3.100_loc11.3.000_sea9.8.1.jar",
+                "https://repo1.maven.org/maven2/com/amap/api/3dmap-location-search/11.3.100_loc11.3.000_sea9.8.1/3dmap-location-search-11.3.100_loc11.3.000_sea9.8.1.jar"
+              ],
+              "offset": 379917,
+              "format": "deflate"
+            }
+          }
+        ]
+      },
+      "loaders": []
+    },
+    "conscrypt": {
+      "versions": {
+        "conscrypt": "2.7.0"
+      },
+      "abis": {
+        "arm64-v8a": [
+          {
+            "name": "libconscrypt_jni.so",
+            "size": 2754312,
+            "sha256": "b57fbe4527d8f9fb6a249f02034b32423bc9cae1caccb4ac3abe35b6aa226882",
+            "asset": "conscrypt-android-2.7.0.aar!/jni/arm64-v8a/libconscrypt_jni.so",
+            "assetSize": 1070799,
+            "needs": [],
+            "source": {
+              "urls": [
+                "https://maven.aliyun.com/repository/central/org/conscrypt/conscrypt-android/2.7.0/conscrypt-android-2.7.0.aar",
+                "https://repo1.maven.org/maven2/org/conscrypt/conscrypt-android/2.7.0/conscrypt-android-2.7.0.aar"
+              ],
+              "offset": 600535,
+              "format": "deflate"
+            }
+          }
+        ],
+        "armeabi-v7a": [
+          {
+            "name": "libconscrypt_jni.so",
+            "size": 1776996,
+            "sha256": "61fd465ac351894811df52926bcc752f5b18aa30304d1a15161031313e37a3a7",
+            "asset": "conscrypt-android-2.7.0.aar!/jni/armeabi-v7a/libconscrypt_jni.so",
+            "assetSize": 937803,
+            "needs": [],
+            "source": {
+              "urls": [
+                "https://maven.aliyun.com/repository/central/org/conscrypt/conscrypt-android/2.7.0/conscrypt-android-2.7.0.aar",
+                "https://repo1.maven.org/maven2/org/conscrypt/conscrypt-android/2.7.0/conscrypt-android-2.7.0.aar"
+              ],
+              "offset": 1671447,
+              "format": "deflate"
+            }
+          }
+        ],
+        "x86": [
+          {
+            "name": "libconscrypt_jni.so",
+            "size": 2781268,
+            "sha256": "e9c5cb0396671a85e5505ccb00256932cef4204ac3cf6439ae8bb46bff2c9ed9",
+            "asset": "conscrypt-android-2.7.0.aar!/jni/x86/libconscrypt_jni.so",
+            "assetSize": 1148916,
+            "needs": [],
+            "source": {
+              "urls": [
+                "https://maven.aliyun.com/repository/central/org/conscrypt/conscrypt-android/2.7.0/conscrypt-android-2.7.0.aar",
+                "https://repo1.maven.org/maven2/org/conscrypt/conscrypt-android/2.7.0/conscrypt-android-2.7.0.aar"
+              ],
+              "offset": 2609347,
+              "format": "deflate"
+            }
+          }
+        ],
+        "x86_64": [
+          {
+            "name": "libconscrypt_jni.so",
+            "size": 2983040,
+            "sha256": "b5e6823520dd79f41f36cf1e36a8d72c4651823188708a6c68e2fb752be8e55d",
+            "asset": "conscrypt-android-2.7.0.aar!/jni/x86_64/libconscrypt_jni.so",
+            "assetSize": 1168584,
+            "needs": [],
+            "source": {
+              "urls": [
+                "https://maven.aliyun.com/repository/central/org/conscrypt/conscrypt-android/2.7.0/conscrypt-android-2.7.0.aar",
+                "https://repo1.maven.org/maven2/org/conscrypt/conscrypt-android/2.7.0/conscrypt-android-2.7.0.aar"
+              ],
+              "offset": 3758366,
+              "format": "deflate"
+            }
+          }
+        ]
+      },
+      "loaders": [
+        "org.conscrypt.NativeCryptoJni"
+      ]
+    }
+  }
+}

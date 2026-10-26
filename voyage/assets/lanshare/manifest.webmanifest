@@ -1,0 +1,19 @@
+{
+  "name": "Voyage 共享",
+  "short_name": "共享",
+  "description": "同一个局域网里浏览、下载与上传这台设备共享出来的文件",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#141218",
+  "theme_color": "#141218",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

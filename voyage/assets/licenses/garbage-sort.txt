@@ -1,0 +1,37 @@
+Waste sorting dictionary (assets/garbage/dictionary.tsv.gz)
+
+The bundled dictionary is compiled from the open data sets below and revised
+for common items against GB/T 19095-2019. Item names and categories were
+merged, deduplicated and re-encoded; no source code from these projects is
+included.
+
+- Lee-Jp/RefuseClassification (https://github.com/Lee-Jp/RefuseClassification)
+  Apache License 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+- rangyue624/GarbageClassificationSystem (https://github.com/rangyue624/GarbageClassificationSystem)
+  MIT License, Copyright (c) 2026 祝新龙
+- WinriseF/WEB-garbage-sort (https://github.com/WinriseF/WEB-garbage-sort)
+  MIT License, Copyright (c) 2025 Pengcheng Fu
+- chriswangweb/KGData (https://github.com/chriswangweb/KGData)
+  MIT License, Copyright (c) 2020 chriswangweb
+- BoYanZh/QQ-Group-Repeater (https://github.com/BoYanZh/QQ-Group-Repeater)
+  MIT License, Copyright (c) 2018 Lars Kappert
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

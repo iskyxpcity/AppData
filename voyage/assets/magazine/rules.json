@@ -1,0 +1,32 @@
+[
+ {
+  "sourceUrl": "voyage://feeds/english",
+  "sourceName": "英文期刊订阅",
+  "sourceGroup": "外文期刊",
+  "sourceComment": "The Atlantic、Harper's、New Yorker 等英文期刊的最新文章",
+  "kind": "feed",
+  "enabled": true,
+  "customOrder": 0,
+  "sortUrl": "The Atlantic::https://www.theatlantic.com/feed/all/\nThe New Yorker::https://www.newyorker.com/feed/everything\nHarper's Magazine::https://harpers.org/feed/\nNoema::https://www.noemamag.com/feed/\nLiterary Hub::https://lithub.com/feed/\nLongreads::https://longreads.com/feed/\nThe Guardian Long Read::https://www.theguardian.com/news/series/the-long-read/rss\nForeign Affairs::https://www.foreignaffairs.com/rss.xml\nThe Conversation::https://theconversation.com/global/articles.atom\nSmithsonian::https://www.smithsonianmag.com/rss/latest_articles/\nScientific American::https://www.scientificamerican.com/platform/syndication/rss/\nQuanta Magazine::https://www.quantamagazine.org/feed/\nNautilus::https://nautil.us/feed/\nPsyche::https://psyche.co/feed\nNature::https://www.nature.com/nature.rss\nNASA::https://www.nasa.gov/feed/"
+ },
+ {
+  "sourceUrl": "voyage://feeds/tech",
+  "sourceName": "科技人文订阅",
+  "sourceGroup": "科技",
+  "sourceComment": "科技媒体与技术周刊的最新文章",
+  "kind": "feed",
+  "enabled": true,
+  "customOrder": 1,
+  "sortUrl": "MIT Technology Review::https://www.technologyreview.com/feed/\nWired::https://www.wired.com/feed/rss\nArs Technica::https://feeds.arstechnica.com/arstechnica/index\nThe Verge::https://www.theverge.com/rss/index.xml\n爱范儿::https://www.ifanr.com/feed\n少数派::https://sspai.com/feed\n极客公园::https://www.geekpark.net/rss\n阮一峰的网络日志::https://www.ruanyifeng.com/blog/atom.xml"
+ },
+ {
+  "sourceUrl": "voyage://feeds/chinese",
+  "sourceName": "中文资讯订阅",
+  "sourceGroup": "时政新闻",
+  "sourceComment": "中文新闻媒体的最新报道",
+  "kind": "feed",
+  "enabled": true,
+  "customOrder": 2,
+  "sortUrl": "人民网::http://www.people.com.cn/rss/politics.xml\n新华网::http://www.xinhuanet.com/politics/news_politics.xml\n中国新闻网::https://www.chinanews.com.cn/rss/scroll-news.xml\n界面新闻::https://a.jiemian.com/index.php?m=article&a=rss\nBBC 中文::https://feeds.bbci.co.uk/zhongwen/simp/rss.xml\nFT 中文网::https://www.ftchinese.com/rss/feed\n纽约时报中文网::https://cn.nytimes.com/rss/\n德国之声中文::https://rss.dw.com/rdf/rss-chi-all"
+ }
+]

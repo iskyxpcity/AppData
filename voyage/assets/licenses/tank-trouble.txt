@@ -1,0 +1,18 @@
+Tank Trouble
+
+The game rules, graphics, the Laika character and the sound effects come
+from Tank Trouble 2 (Flash version 4.0, 2007-2013) by Mads Purup,
+www.purup.com / tanktrouble.com. The game logic, including the Laika
+computer opponent, was translated from the ActionScript 2 of the original
+TankTrouble_v4.0.swf and its external assets GameTank.swf, Tank.swf,
+Crate.swf and Laika.swf. The graphics and sounds are the original assets
+exported from those files. All rights in the game and its assets belong to
+Mads Purup.
+
+The Eurostile glyphs used for the score display are rendered from the font
+embedded in the original game.
+
+The built-in "other players' mazes" are mazes made by Tank Trouble players
+with the original site's maze editor, as served by tanktrouble.com's
+loadMaze.php and preserved by the Internet Archive's Wayback Machine. Titles
+and creator names are shown as they were published.

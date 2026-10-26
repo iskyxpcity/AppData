@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <!--
+    页面的图标：标签页的 favicon，以及「添加到主屏幕」之后那枚图标（见 manifest.webmanifest）。
+
+    自带明暗两套色：SVG 里的 <style> 支持 prefers-color-scheme，而浏览器在渲染 SVG 图标时
+    会把它当作一张文档，于是这枚图标会跟着系统主题走 —— 位图图标做不到这件事。
+
+    颜色写死在这里，不来自页面的 md-sys-color 变量：这个文件是作为图片被引用的
+    （<link rel=icon> 与 manifest 里的 icons），那种上下文里拿不到 CSS 变量。这段注释里
+    也不能写两个连在一起的连字符：XML 注释不允许，严格解析时整张图都不显示。
+
+    画的是应用图标上那只风车，几何与 ic_launcher_foreground.xml 相同（108 视口放大 1.8 倍），
+    浅色取 brand_paper / brand_blade，深色取启动画面的夜间配色。
+  -->
+  <style>
+    .bg { fill: #F4EFE9; }
+    .fg { fill: #C2513A; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1C1714; }
+      .fg { fill: #E07A5F; }
+    }
+  </style>
+  <rect class="bg" width="192" height="192" rx="44" />
+  <g transform="translate(96 96) scale(1.8) translate(-54 -54)">
+    <path class="fg" d="M54,54 L46.24,25.02 C70.07,26.17 74.70,48.45 54,54 Z M54,54 L82.98,46.24 C81.83,70.07 59.55,74.70 54,54 Z M54,54 L61.76,82.98 C37.93,81.83 33.30,59.55 54,54 Z M54,54 L25.02,61.76 C26.17,37.93 48.45,33.30 54,54 Z" />
+    <circle class="bg" cx="54" cy="54" r="2.8" />
+  </g>
+</svg>
