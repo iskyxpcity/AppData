@@ -1,0 +1,91 @@
+name: Extract Voyage upload parts
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "voyage/voyage-part-10.zip"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: extract-voyage-upload
+  cancel-in-progress: false
+
+jobs:
+  extract-and-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Verify and extract all parts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import glob, os, sys, zipfile
+          from pathlib import Path
+
+          repo = Path.cwd()
+          target = repo / "voyage"
+          parts = sorted(target.glob("voyage-part-*.zip"))
+          expected = [target / f"voyage-part-{i:02d}.zip" for i in range(1, 11)]
+          missing = [p.name for p in expected if not p.is_file()]
+          if missing:
+              raise SystemExit("Missing upload parts: " + ", ".join(missing))
+          stage = repo / ".voyage-extract-staging"
+          if stage.exists():
+              import shutil
+              shutil.rmtree(stage)
+          stage.mkdir()
+          for part in expected:
+              print(f"Checking {part.name} ({part.stat().st_size} bytes)")
+              with zipfile.ZipFile(part) as z:
+                  bad = z.testzip()
+                  if bad:
+                      raise SystemExit(f"Corrupt archive {part.name}: {bad}")
+                  for info in z.infolist():
+                      name = info.filename.replace("\\", "/")
+                      if name.startswith("/") or any(piece == ".." for piece in name.split("/")):
+                          raise SystemExit(f"Unsafe path in {part.name}: {info.filename}")
+                  z.extractall(stage)
+          staged_voyage = stage / "voyage"
+          if not staged_voyage.is_dir():
+              raise SystemExit("Archives did not contain the expected voyage/ directory")
+          count = 0
+          for root, dirs, files in os.walk(staged_voyage):
+              for filename in files:
+                  source = Path(root) / filename
+                  relative = source.relative_to(staged_voyage)
+                  destination = target / relative
+                  destination.parent.mkdir(parents=True, exist_ok=True)
+                  destination.write_bytes(source.read_bytes())
+                  count += 1
+          print(f"Extracted and copied {count} files into voyage/")
+          if count < 5000:
+              raise SystemExit(f"Unexpectedly low extracted file count: {count}")
+          PY
+
+      - name: Remove uploaded archive parts and commit extracted files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f voyage/voyage-part-*.zip
+          rm -rf .voyage-extract-staging
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A voyage
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Extract Voyage APK contents into voyage directory"
+          git push origin HEAD:main
