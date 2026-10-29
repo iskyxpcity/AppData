@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="tint_blades">
+        <item>@color/tint_01_blade</item>
+        <item>@color/tint_02_blade</item>
+        <item>@color/tint_03_blade</item>
+        <item>@color/tint_04_blade</item>
+        <item>@color/tint_05_blade</item>
+        <item>@color/tint_06_blade</item>
+        <item>@color/tint_07_blade</item>
+        <item>@color/tint_08_blade</item>
+        <item>@color/tint_09_blade</item>
+        <item>@color/tint_10_blade</item>
+        <item>@color/tint_11_blade</item>
+        <item>@color/tint_12_blade</item>
+        <item>@color/tint_13_blade</item>
+    </array>
+    <array name="tint_papers">
+        <item>@color/tint_01_paper</item>
+        <item>@color/tint_02_paper</item>
+        <item>@color/tint_03_paper</item>
+        <item>@color/tint_04_paper</item>
+        <item>@color/tint_05_paper</item>
+        <item>@color/tint_06_paper</item>
+        <item>@color/tint_07_paper</item>
+        <item>@color/tint_08_paper</item>
+        <item>@color/tint_09_paper</item>
+        <item>@color/tint_10_paper</item>
+        <item>@color/tint_11_paper</item>
+        <item>@color/tint_12_paper</item>
+        <item>@color/tint_13_paper</item>
+    </array>
+</resources>
