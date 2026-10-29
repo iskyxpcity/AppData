@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Splash mark, non-tinted version. Path data extracted from Voyage ic_splash_mark. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="288dp"
+    android:height="288dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:name="blades"
+        android:pivotX="54"
+        android:pivotY="54">
+        <path
+            android:name="bladePaths"
+            android:fillColor="@color/splash_icon_foreground"
+            android:pathData="M54,54 L46.24,25.02 C70.07,26.17 74.70,48.45 54,54 Z M54,54 L82.98,46.24 C81.83,70.07 59.55,74.70 54,54 Z M54,54 L61.76,82.98 C37.93,81.83 33.30,59.55 54,54 Z M54,54 L25.02,61.76 C26.17,37.93 48.45,33.30 54,54 Z" />
+    </group>
+    <path
+        android:name="pin"
+        android:fillColor="@color/splash_background"
+        android:pathData="M54,51.2 A2.8,2.8 0 1,0 54,56.8 A2.8,2.8 0 1,0 54,51.2 Z" />
+</vector>
