@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Custom theme attributes, as in the original app: blade = accent, paper = background. -->
+<resources>
+    <attr name="launchTintBlade" format="color|reference" />
+    <attr name="launchTintPaper" format="color|reference" />
+</resources>
