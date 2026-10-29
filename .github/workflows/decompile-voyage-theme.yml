@@ -26,7 +26,6 @@ jobs:
           sparse-checkout: |
             voyage/classes.dex
             voyage/classes2.dex
-            voyage/classes.dex
             voyage/classes5.dex
             voyage/classes6.dex
             voyage/classes7.dex
@@ -45,9 +44,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          curl --fail --location --retry 3 --retry-delay 2 \
-            https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip \
-            --output "$RUNNER_TEMP/jadx.zip"
+          curl --fail --location --retry 3 --retry-delay 2 https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip --output "$RUNNER_TEMP/jadx.zip"
           mkdir -p "$RUNNER_TEMP/jadx"
           unzip -q "$RUNNER_TEMP/jadx.zip" -d "$RUNNER_TEMP/jadx"
           test -x "$RUNNER_TEMP/jadx/bin/jadx"
@@ -85,60 +82,68 @@ jobs:
           rsd	classes8.dex
           t4l	classes7.dex
           s8f0	classes2.dex
+          y8f0	classes2.dex
+          vhf	classes7.dex
+          fqr	classes9.dex
+          ot8	classes9.dex
           EOF
           failures=0
+          for cls in y8f0 vhf fqr ot8; do
+            found_class=0
+            for dex in classes.dex classes2.dex classes5.dex classes6.dex classes7.dex classes8.dex classes9.dex classes10.dex; do
+              [ -f "voyage/$dex" ] || continue
+              target="decompiled/$cls.java"
+              outdir="$RUNNER_TEMP/jadx-$cls-$dex"
+              mkdir -p "$outdir"
+              "$JADx" -j 2 --no-res --show-bad-code --single-class "$cls" --single-class-output "$GITHUB_WORKSPACE/$target" -d "$outdir" "voyage/$dex" >"$outdir/stdout.log" 2>"$outdir/stderr.log" || true
+              if [ -s "$target" ]; then
+                echo "OK $cls from $dex $(wc -c < "$target") bytes"
+                found_class=1
+                break
+              fi
+            done
+            if [ "$found_class" -eq 0 ]; then
+              echo "FAILED $cls" | tee -a decompiled/FAILED.txt
+              failures=$((failures + 1))
+            fi
+          done
           while IFS=$'\t' read -r cls dex; do
             [ -n "$cls" ] || continue
+            case "$cls" in y8f0|vhf|fqr|ot8) continue ;; esac
             input="voyage/$dex"
             target="decompiled/$cls.java"
             outdir="$RUNNER_TEMP/jadx-$cls"
             mkdir -p "$outdir"
-            echo "::group::JADX $cls from $dex"
-            "$JADx" -j 2 --no-res --show-bad-code \
-              --single-class "$cls" \
-              --single-class-output "$GITHUB_WORKSPACE/$target" \
-              -d "$outdir" "$input" >"$outdir/stdout.log" 2>"$outdir/stderr.log" || true
+            "$JADx" -j 2 --no-res --show-bad-code --single-class "$cls" --single-class-output "$GITHUB_WORKSPACE/$target" -d "$outdir" "$input" >"$outdir/stdout.log" 2>"$outdir/stderr.log" || true
             if [ ! -s "$target" ]; then
-              "$JADx" -j 2 --no-res --show-bad-code \
-                --single-class "$cls" -d "$outdir/fallback" "$input" \
-                >"$outdir/fallback-stdout.log" 2>"$outdir/fallback-stderr.log" || true
+              "$JADx" -j 2 --no-res --show-bad-code --single-class "$cls" -d "$outdir/fallback" "$input" >"$outdir/fallback-stdout.log" 2>"$outdir/fallback-stderr.log" || true
               found="$(find "$outdir/fallback" -type f -name "$cls.java" -print -quit 2>/dev/null || true)"
-              if [ -n "$found" ] && [ -s "$found" ]; then
-                cp "$found" "$target"
-              fi
+              if [ -n "$found" ] && [ -s "$found" ]; then cp "$found" "$target"; fi
             fi
-            if [ -s "$target" ]; then
-              echo "OK $cls $(wc -c < "$target") bytes"
-            else
-              echo "FAILED $cls" | tee -a decompiled/FAILED.txt
-              cat "$outdir/stderr.log" "$outdir/fallback-stderr.log" 2>/dev/null | tail -40 || true
-              failures=$((failures + 1))
-            fi
-            echo "::endgroup::"
+            if [ -s "$target" ]; then echo "OK $cls $(wc -c < "$target") bytes"; else echo "FAILED $cls" | tee -a decompiled/FAILED.txt; failures=$((failures + 1)); fi
           done < "$RUNNER_TEMP/classes.tsv"
           cat > decompiled/SOURCE_INDEX.md <<'EOF'
           # Voyage theme decompilation index
 
           Source input: the user's Voyage APK unpacked into iskyxpcity/AppData/voyage/.
           Tool: official JADX CLI 1.5.6, run on GitHub Actions with Java 17.
-          Only the theme-related classes listed below were emitted; this is a focused source-analysis artifact, not a redistribution of the whole APK.
+          This is a focused source-analysis artifact, not a redistribution of the whole APK.
 
-          - Switch: gfj0, h7w0, j7w0, l2i0, g2i0, n2i0, i2i0, h2i0, k2i0, j2i0, m2i0, z4v0, frt0, it70, ckw0, rdf, y2t0, l140
-          - Slider: kdj0, gaf0, jaf0, iaf0, haf0, y8f0, ncw0, y3w0, w3w0, v2t0, caf0, y3f0
-          - Shape: ban, dan, fqw0, opw0, uwl, wcf, wgo0, e7g0, b2t0, qha0, vqp, eig0, d8t0, ewm, k9t0, shq, ycc0, nv30
+          - Slider entries: ncw0, y3w0, w3w0, v2t0
+          - Shared slider and renderer: j5v0, y8f0, caf0, y3f0, vhf
+          - Fancy callback and modifier chain: o4l, fqr, ot8
+          - Slider state/theme helpers: n8f0, faf0, gca0, xqv0
           EOF
           printf '\nJADX version: ' >> decompiled/SOURCE_INDEX.md
           "$JADx" --version >> decompiled/SOURCE_INDEX.md
           printf '\nFailed class count: %s\n' "$failures" >> decompiled/SOURCE_INDEX.md
           echo "Decompiled Java files: $(find decompiled -maxdepth 1 -name '*.java' | wc -l)"
-          if [ "$failures" -gt 0 ]; then
-            echo "Some classes failed; keep partial artifact for investigation."
-          fi
+          if [ "$failures" -gt 0 ]; then echo "Some classes failed; keep partial artifact for investigation."; fi
 
       - name: Upload focused decompiled source
         uses: actions/upload-artifact@v4
         with:
-          name: voyage-theme-decompiled-source
+          name: voyage-theme-decompiled-source-complete
           path: decompiled/
           if-no-files-found: error
           retention-days: 14
