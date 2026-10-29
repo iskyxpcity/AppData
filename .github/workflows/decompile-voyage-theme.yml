@@ -26,6 +26,7 @@ jobs:
           sparse-checkout: |
             voyage/classes.dex
             voyage/classes2.dex
+            voyage/classes.dex
             voyage/classes5.dex
             voyage/classes6.dex
             voyage/classes7.dex
@@ -140,7 +141,7 @@ jobs:
           Only the theme-related classes listed below were emitted; this is a focused source-analysis artifact, not a redistribution of the whole APK.
 
           - Switch: gfj0, h7w0, j7w0, l2i0, g2i0, n2i0, i2i0, h2i0, k2i0, j2i0, m2i0, z4v0, frt0, it70, ckw0, rdf, y2t0, l140
-          - Slider: kdj0, gaf0, jaf0, iaf0, haf0, y8f0
+          - Slider: kdj0, gaf0, jaf0, iaf0, haf0, y8f0, ncw0, y3w0, w3w0, v2t0, caf0, y3f0
           - Shape: ban, dan, fqw0, opw0, uwl, wcf, wgo0, e7g0, b2t0, qha0, vqp, eig0, d8t0, ewm, k9t0, shq, ycc0, nv30
           EOF
           printf '\nJADX version: ' >> decompiled/SOURCE_INDEX.md
