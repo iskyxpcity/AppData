@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Theme framework extracted from Voyage (Voyage Toolbox). No business code. -->
+<resources>
+    <!-- Base theme: warm paper background + terracotta blade accent. -->
+    <style name="Theme.Voyage" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_blade</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorPrimaryContainer">@color/brand_paper</item>
+        <item name="colorSurface">@color/brand_paper</item>
+        <item name="colorOnSurface">@color/splash_text_primary</item>
+        <item name="android:windowBackground">@color/splash_background</item>
+        <item name="android:colorBackground">@color/brand_paper</item>
+        <item name="android:textColorPrimary">@color/splash_text_primary</item>
+        <item name="android:textColorSecondary">@color/splash_text_secondary</item>
+        <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
+        <item name="launchTintBlade">@color/brand_blade</item>
+        <item name="launchTintPaper">@color/brand_paper</item>
+    </style>
+
+    <!-- Translucent variant, as in the original app. -->
+    <style name="Theme.Voyage.Translucent" parent="Theme.Voyage">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+    <!-- Splash / starting theme. MainActivity uses this in the manifest. -->
+    <style name="Theme.Voyage.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark</item>
+        <item name="windowSplashScreenAnimationDuration">760</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage</item>
+    </style>
+
+    <!-- Main theme, Tint 01. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint01" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_01_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_01_paper</item>
+        <item name="colorSurface">@color/tint_01_paper</item>
+        <item name="android:windowBackground">@color/tint_01_paper</item>
+        <item name="android:colorBackground">@color/tint_01_paper</item>
+        <item name="launchTintBlade">@color/tint_01_blade</item>
+        <item name="launchTintPaper">@color/tint_01_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 01. -->
+    <style name="Theme.Voyage.Starting.Tint01" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_01_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint01</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_01_blade</item>
+        <item name="launchTintPaper">@color/tint_01_paper</item>
+    </style>
+
+    <!-- Main theme, Tint 02. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint02" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_02_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_02_paper</item>
+        <item name="colorSurface">@color/tint_02_paper</item>
+        <item name="android:windowBackground">@color/tint_02_paper</item>
+        <item name="android:colorBackground">@color/tint_02_paper</item>
+        <item name="launchTintBlade">@color/tint_02_blade</item>
+        <item name="launchTintPaper">@color/tint_02_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 02. -->
+    <style name="Theme.Voyage.Starting.Tint02" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_02_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint02</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_02_blade</item>
+        <item name="launchTintPaper">@color/tint_02_paper</item>
+    </style>
+
+    <!-- Main theme, Tint 03. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint03" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_03_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_03_paper</item>
+        <item name="colorSurface">@color/tint_03_paper</item>
+        <item name="android:windowBackground">@color/tint_03_paper</item>
+        <item name="android:colorBackground">@color/tint_03_paper</item>
+        <item name="launchTintBlade">@color/tint_03_blade</item>
+        <item name="launchTintPaper">@color/tint_03_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 03. -->
+    <style name="Theme.Voyage.Starting.Tint03" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_03_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint03</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_03_blade</item>
+        <item name="launchTintPaper">@color/tint_03_paper</item>
+    </style>
+
+    <!-- Main theme, Tint 04. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint04" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_04_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_04_paper</item>
+        <item name="colorSurface">@color/tint_04_paper</item>
+        <item name="android:windowBackground">@color/tint_04_paper</item>
+        <item name="android:colorBackground">@color/tint_04_paper</item>
+        <item name="launchTintBlade">@color/tint_04_blade</item>
+        <item name="launchTintPaper">@color/tint_04_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 04. -->
+    <style name="Theme.Voyage.Starting.Tint04" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_04_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint04</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_04_blade</item>
+        <item name="launchTintPaper">@color/tint_04_paper</item>
+    </style>
+
+    <!-- Main theme, Tint 05. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint05" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_05_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_05_paper</item>
+        <item name="colorSurface">@color/tint_05_paper</item>
+        <item name="android:windowBackground">@color/tint_05_paper</item>
+        <item name="android:colorBackground">@color/tint_05_paper</item>
+        <item name="launchTintBlade">@color/tint_05_blade</item>
+        <item name="launchTintPaper">@color/tint_05_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 05. -->
+    <style name="Theme.Voyage.Starting.Tint05" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_05_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint05</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_05_blade</item>
+        <item name="launchTintPaper">@color/tint_05_paper</item>
+    </style>
+
+    <!-- Main theme, Tint 06. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint06" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_06_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_06_paper</item>
+        <item name="colorSurface">@color/tint_06_paper</item>
+        <item name="android:windowBackground">@color/tint_06_paper</item>
+        <item name="android:colorBackground">@color/tint_06_paper</item>
+        <item name="launchTintBlade">@color/tint_06_blade</item>
+        <item name="launchTintPaper">@color/tint_06_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 06. -->
+    <style name="Theme.Voyage.Starting.Tint06" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_06_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint06</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_06_blade</item>
+        <item name="launchTintPaper">@color/tint_06_paper</item>
+    </style>
+
+    <!-- Main theme, Tint 07. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint07" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_07_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_07_paper</item>
+        <item name="colorSurface">@color/tint_07_paper</item>
+        <item name="android:windowBackground">@color/tint_07_paper</item>
+        <item name="android:colorBackground">@color/tint_07_paper</item>
+        <item name="launchTintBlade">@color/tint_07_blade</item>
+        <item name="launchTintPaper">@color/tint_07_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 07. -->
+    <style name="Theme.Voyage.Starting.Tint07" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_07_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint07</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_07_blade</item>
+        <item name="launchTintPaper">@color/tint_07_paper</item>
+    </style>
+
+    <!-- Main theme, Tint 08. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint08" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_08_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_08_paper</item>
+        <item name="colorSurface">@color/tint_08_paper</item>
+        <item name="android:windowBackground">@color/tint_08_paper</item>
+        <item name="android:colorBackground">@color/tint_08_paper</item>
+        <item name="launchTintBlade">@color/tint_08_blade</item>
+        <item name="launchTintPaper">@color/tint_08_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 08. -->
+    <style name="Theme.Voyage.Starting.Tint08" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_08_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint08</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_08_blade</item>
+        <item name="launchTintPaper">@color/tint_08_paper</item>
+    </style>
+
+    <!-- Main theme, Tint 09. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint09" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_09_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_09_paper</item>
+        <item name="colorSurface">@color/tint_09_paper</item>
+        <item name="android:windowBackground">@color/tint_09_paper</item>
+        <item name="android:colorBackground">@color/tint_09_paper</item>
+        <item name="launchTintBlade">@color/tint_09_blade</item>
+        <item name="launchTintPaper">@color/tint_09_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 09. -->
+    <style name="Theme.Voyage.Starting.Tint09" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_09_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint09</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_09_blade</item>
+        <item name="launchTintPaper">@color/tint_09_paper</item>
+    </style>
+
+    <!-- Main theme, Tint 10. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint10" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_10_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_10_paper</item>
+        <item name="colorSurface">@color/tint_10_paper</item>
+        <item name="android:windowBackground">@color/tint_10_paper</item>
+        <item name="android:colorBackground">@color/tint_10_paper</item>
+        <item name="launchTintBlade">@color/tint_10_blade</item>
+        <item name="launchTintPaper">@color/tint_10_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 10. -->
+    <style name="Theme.Voyage.Starting.Tint10" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_10_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint10</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_10_blade</item>
+        <item name="launchTintPaper">@color/tint_10_paper</item>
+    </style>
+
+    <!-- Main theme, Tint 11. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint11" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_11_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_11_paper</item>
+        <item name="colorSurface">@color/tint_11_paper</item>
+        <item name="android:windowBackground">@color/tint_11_paper</item>
+        <item name="android:colorBackground">@color/tint_11_paper</item>
+        <item name="launchTintBlade">@color/tint_11_blade</item>
+        <item name="launchTintPaper">@color/tint_11_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 11. -->
+    <style name="Theme.Voyage.Starting.Tint11" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_11_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint11</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_11_blade</item>
+        <item name="launchTintPaper">@color/tint_11_paper</item>
+    </style>
+
+    <!-- Main theme, Tint 12. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint12" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_12_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_12_paper</item>
+        <item name="colorSurface">@color/tint_12_paper</item>
+        <item name="android:windowBackground">@color/tint_12_paper</item>
+        <item name="android:colorBackground">@color/tint_12_paper</item>
+        <item name="launchTintBlade">@color/tint_12_blade</item>
+        <item name="launchTintPaper">@color/tint_12_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 12. -->
+    <style name="Theme.Voyage.Starting.Tint12" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_12_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint12</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_12_blade</item>
+        <item name="launchTintPaper">@color/tint_12_paper</item>
+    </style>
+
+    <!-- Main theme, Tint 13. Day/night colors resolve via values / values-night. -->
+    <style name="Theme.Voyage.Tint13" parent="Theme.Voyage">
+        <item name="colorPrimary">@color/tint_13_blade</item>
+        <item name="colorPrimaryContainer">@color/tint_13_paper</item>
+        <item name="colorSurface">@color/tint_13_paper</item>
+        <item name="android:windowBackground">@color/tint_13_paper</item>
+        <item name="android:colorBackground">@color/tint_13_paper</item>
+        <item name="launchTintBlade">@color/tint_13_blade</item>
+        <item name="launchTintPaper">@color/tint_13_paper</item>
+    </style>
+
+    <!-- Splash theme, Tint 13. -->
+    <style name="Theme.Voyage.Starting.Tint13" parent="Theme.Voyage.Starting">
+        <item name="windowSplashScreenBackground">@color/tint_13_paper</item>
+        <item name="postSplashScreenTheme">@style/Theme.Voyage.Tint13</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_mark_tinted</item>
+        <item name="launchTintBlade">@color/tint_13_blade</item>
+        <item name="launchTintPaper">@color/tint_13_paper</item>
+    </style>
+
+</resources>
