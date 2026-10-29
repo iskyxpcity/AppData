@@ -41,6 +41,26 @@ tint（1-13）、自定义种子色、配色风格、显示模式（跟随系统
 纯黑深色、启动画面跟随主题、桌面图标跟随主题、主题色消息气泡、
 圆角、字体大小、动效开关。以上全部持久化，重启后仍生效。
 
+## 5. 完整主题扩展（按 THEME_DEEP_DIVE.md 实施，原值与重建严格区分）
+
+原值（直接从原应用 DEX/ARSC 读出）：
+- 13 套 Tint blade/paper、品牌纸/刃色、启动主题与动画、霞鹜文楷文件
+- 9 档风格的 Licj0 序号与中文名：0 灵动、1 柔和、2 中性、3 鲜明、4 彩虹、5 缤纷、6 单色、7 忠于种子、8 内容；其中忠于种子 = Fidelity、缤纷 = FruitSalad
+- 形状 8 角色名、排版 30 样式结构、7 档形状样式名、色觉模式 9 档名、阴影组与描边等设置项名
+
+算法重建（不是原应用运行时原值，文件头与代码注释均已标注）：
+- values/colors_scheme.xml（浅色）与 values-night/colors_scheme.xml（深色）：13 套 Tint × Fidelity/FruitSalad 两档，每档 48 个颜色（含 *_pureblack_surface），共每文件 1344 个颜色；种子 = 白天 blade、对比度 0.0、material-color-utilities（与 MaterialKolor 同源算法）
+- 指纹自检通过：Tint01 Fidelity 浅色 primary_container = #A0412E（= 种子），品牌 = #C2513A（= 种子）
+- 偏差声明：原应用用 SPEC_2021，本生成库未暴露规格开关，surface 容器系可能有偏差；原应用 §2.4 后处理链（表面色调重建、混色、对比度守卫、纯黑变换）未包含；深色纯黑 surface 为深色 surface 压暗 50% 的重建，不是原纯黑变换，也不是纯 #000000
+- 形状基础 dp、排版字号：Material3 库默认值基线，不是 Voyage 原值；7 档形状样式的序号 ↔ 中文名对应未解码，arrays.xml 中的顺序为可配置占位
+- 仅 Fidelity（7）与 FruitSalad（5）有完整表；其余 7 档在 UI 中标注“回落忠于种子”，切换时回落到 Fidelity，不得冒充已实现
+- 新增：values/themes_scheme.xml（26 个方案主题）、values/shapes.xml、values/typography.xml、values/styles.xml、res/menu/showcase_nav.xml；ThemeStore 扩展（9 档风格默认 7、形状样式、字体族、描边、色觉模式、反转、转场、背景动效、图标底衬、悬浮底栏、液态玻璃、内容取色占位、系统动态色锁定、阴影组）；MainActivity 演示页补齐 9 档风格列表、对话框、开关、列表、导航栏，纯黑时窗口背景取 *_pureblack_surface
+
+View 工程限制、未能实现（原因）：
+- 运行时 MaterialKolor 生成：原应用是 Compose 运行时生成，本壳是 View/AppCompat 工程，无 Compose 依赖，故用预生成的静态表等价实现，管线本身（种子 → SPEC_2021 → 后处理 → 动画）未在壳内复刻
+- 后处理链、弹簧主题切换动画（animateColorScheme / getDefaultColorSpring）、色觉模式改写矩阵、图标底衬 50 套路径、转场/背景动效时长与插值器：均未解码原值，壳内只保留开关/占位或默认值并标注
+- MIUIX 风格线不在壳的目标内，不补
+
 ## 不带的东西
 小说、音乐、AI 聊天、壁纸、工具箱、账号、广告、支付、消息内容、
 歌单、书架等一切业务页面、业务数据、业务网络请求。

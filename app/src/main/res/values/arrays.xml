@@ -30,4 +30,47 @@
         <item>@color/tint_12_paper</item>
         <item>@color/tint_13_paper</item>
     </array>
+    <!--
+      9 scheme styles, Licj0 numbers per THEME_DEEP_DIVE.md §2.2 (ORIGINAL mapping).
+      Only 7 (Fidelity) and 5 (FruitSalad) have complete generated tables in
+      colors_scheme.xml; the other 7 fall back to Fidelity in ThemeStore
+      and are labelled as such in the UI. Do NOT claim all 9 are implemented.
+    -->
+    <string-array name="scheme_styles">
+        <item>灵动</item>
+        <item>柔和</item>
+        <item>中性</item>
+        <item>鲜明</item>
+        <item>彩虹</item>
+        <item>缤纷</item>
+        <item>单色</item>
+        <item>忠于种子</item>
+        <item>内容</item>
+    </string-array>
+    <!--
+      7 shape styles, ARSC name set per THEME_DEEP_DIVE.md §3.1 (ORIGINAL names).
+      Enum-number <-> name mapping was NOT decoded; order below is a
+      configurable placeholder, NOT claimed as the original mapping.
+    -->
+    <string-array name="shape_styles">
+        <item>圆角</item>
+        <item>切角</item>
+        <item>超椭圆</item>
+        <item>平滑</item>
+        <item>波浪</item>
+        <item>内凹</item>
+        <item>缺口</item>
+    </string-array>
+    <!-- Colour-blind modes, ARSC names per THEME_DEEP_DIVE.md §2.4 (ORIGINAL names). -->
+    <string-array name="color_blind_modes">
+        <item>关闭</item>
+        <item>全色盲</item>
+        <item>全色弱</item>
+        <item>红色盲</item>
+        <item>红色弱</item>
+        <item>绿色盲</item>
+        <item>绿色弱</item>
+        <item>蓝色盲</item>
+        <item>蓝色弱</item>
+    </string-array>
 </resources>

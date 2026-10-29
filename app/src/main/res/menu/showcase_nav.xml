@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Component showcase navigation items only. No business destinations. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_theme" android:title="主题" />
+    <item android:id="@+id/nav_scheme" android:title="方案" />
+    <item android:id="@+id/nav_components" android:title="组件" />
+</menu>

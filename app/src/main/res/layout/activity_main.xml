@@ -209,7 +209,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="圆角 / 字体 / 动效：见主题状态，圆角、字体大小、动效开关均已存入 ThemeStore"
+                android:text="全部 9 档风格（Licj0 序号，见深挖报告 §2.2；仅忠于种子与缤纷有完整表，其余回落忠于种子）"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/styleList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="圆角 / 字体 / 动效：见主题状态，圆角、字体大小、动效开关均已存入 ThemeStore；形状样式 7 档、色觉模式 9 档、阴影组、描边、反转、转场、图标底衬、悬浮底栏等键已在 ThemeStore 中，序号与中文名对应待标定（见深挖报告）"
                 android:textColor="?android:attr/textColorSecondary"
                 android:textSize="14sp" />
 
@@ -271,8 +285,65 @@
                 android:layout_marginTop="24dp"
                 android:backgroundTint="?attr/colorPrimary"
                 android:fontFamily="@font/lxgwwenkaigb_regular"
-                android:text="主按钮（blade 色）"
-                android:textColor="@android:color/white" />
+                android:text="主按钮（当前方案 primary）"
+                android:textColor="?attr/colorOnPrimary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/showcaseOutlinedButton"
+                style="@style/Widget.Voyage.Button.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="描边按钮（outline）" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/showcaseSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:checked="true"
+                android:text="开关（跟随主题）" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/showcaseDialogButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="打开对话框示例" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="列表示例（跟随主题）"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="?attr/colorSurfaceContainer"
+                android:padding="12dp"
+                android:text="列表项 1 · surface_container"
+                android:textColor="?attr/colorOnSurface" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="?attr/colorSurfaceContainerHigh"
+                android:padding="12dp"
+                android:text="列表项 2 · surface_container_high"
+                android:textColor="?attr/colorOnSurface" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/showcaseNavBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="?attr/colorSurfaceContainer"
+                app:menu="@menu/showcase_nav" />
         </LinearLayout>
 
     </LinearLayout>

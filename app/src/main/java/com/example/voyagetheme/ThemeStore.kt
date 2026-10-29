@@ -17,10 +17,38 @@ object ThemeStore {
     private const val KEY_SPLASH_FOLLOW = "splash_follow_theme"
     private const val KEY_ICON_FOLLOW = "icon_follow_theme"
     private const val KEY_BUBBLE_THEME = "bubble_theme_color"
-    private const val KEY_SCHEME_STYLE = "scheme_style" // 0=faithful to seed, 1=vibrant
+    // Scheme style: Licj0 numbers per THEME_DEEP_DIVE.md §2.2 (ORIGINAL mapping):
+    // 0=灵动 Expressive, 1=柔和 TonalSpot, 2=中性 Neutral, 3=鲜明 Vibrant,
+    // 4=彩虹 Rainbow, 5=缤纷 FruitSalad, 6=单色 Monochrome,
+    // 7=忠于种子 Fidelity (DEFAULT), 8=内容 Content.
+    // Only 7 and 5 have complete generated tables (colors_scheme.xml);
+    // other numbers fall back to Fidelity in mainSchemeThemeRes, and the
+    // UI labels them as fallback — they are NOT claimed as implemented.
+    private const val KEY_SCHEME_STYLE = "scheme_style"
     private const val KEY_CORNER = "corner" // 0=small, 1=medium, 2=large
     private const val KEY_FONT_SIZE = "font_size" // 0=normal, 1=large
     private const val KEY_ANIMATION = "animation"
+    // New keys from THEME_DEEP_DIVE.md §3/§4.3. Values are theme-only.
+    // Shape-style number <-> name mapping was NOT decoded; stored number
+    // is a configurable placeholder, not a claimed original mapping.
+    private const val KEY_SHAPE_STYLE = "shape_style" // 0..6, default 0
+    private const val KEY_FONT_FAMILY = "font_family" // 0=default (LXGW), 1=serif
+    private const val KEY_BORDER_WIDTH = "border_width" // 0=thin, 1=medium, 2=thick
+    private const val KEY_COLOR_BLIND = "color_blind" // 0=off, 1..8 per arrays
+    private const val KEY_INVERT_COLORS = "invert_colors"
+    private const val KEY_TRANSITION_MOTION = "transition_motion" // 0=expressive, 1=reduced
+    private const val KEY_BACKGROUND_MOTION = "background_motion"
+    private const val KEY_ICON_SHAPE = "icon_shape" // -1=none, 0..49 presets, 50=random
+    private const val KEY_FLOATING_NAV = "floating_nav"
+    private const val KEY_LIQUID_GLASS = "liquid_glass"
+    private const val KEY_CONTENT_COLORS = "content_colors" // placeholder only, no content pages
+    private const val KEY_DYNAMIC_LOCKED = "dynamic_locked" // system dynamic colour locks manual choice
+    private const val KEY_SHADOW_TOPBAR = "shadow_topbar"
+    private const val KEY_SHADOW_BUTTON = "shadow_button"
+    private const val KEY_SHADOW_CONTAINER = "shadow_container"
+    private const val KEY_SHADOW_FAB = "shadow_fab"
+    private const val KEY_SHADOW_SLIDER = "shadow_slider"
+    private const val KEY_SHADOW_SWITCH = "shadow_switch"
 
     private fun prefs(context: Context) =
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
@@ -51,7 +79,7 @@ object ThemeStore {
     fun getSplashFollow(context: Context): Boolean = getBool(context, KEY_SPLASH_FOLLOW, true)
     fun getIconFollow(context: Context): Boolean = getBool(context, KEY_ICON_FOLLOW, true)
     fun getBubbleTheme(context: Context): Boolean = getBool(context, KEY_BUBBLE_THEME, true)
-    fun getSchemeStyle(context: Context): Int = getInt(context, KEY_SCHEME_STYLE, 0)
+    fun getSchemeStyle(context: Context): Int = getInt(context, KEY_SCHEME_STYLE, 7)
     fun getCorner(context: Context): Int = getInt(context, KEY_CORNER, 1)
     fun getFontSize(context: Context): Int = getInt(context, KEY_FONT_SIZE, 0)
     fun getAnimation(context: Context): Boolean = getBool(context, KEY_ANIMATION, true)
@@ -61,7 +89,100 @@ object ThemeStore {
     fun saveSplashFollow(context: Context, v: Boolean) = saveBool(context, KEY_SPLASH_FOLLOW, v)
     fun saveIconFollow(context: Context, v: Boolean) = saveBool(context, KEY_ICON_FOLLOW, v)
     fun saveBubbleTheme(context: Context, v: Boolean) = saveBool(context, KEY_BUBBLE_THEME, v)
-    fun saveSchemeStyle(context: Context, v: Int) = saveInt(context, KEY_SCHEME_STYLE, v)
+    fun saveSchemeStyle(context: Context, v: Int) = saveInt(context, KEY_SCHEME_STYLE, v.coerceIn(0, 8))
+    fun getShapeStyle(context: Context): Int = getInt(context, KEY_SHAPE_STYLE, 0)
+    fun saveShapeStyle(context: Context, v: Int) = saveInt(context, KEY_SHAPE_STYLE, v.coerceIn(0, 6))
+    fun getFontFamily(context: Context): Int = getInt(context, KEY_FONT_FAMILY, 0)
+    fun saveFontFamily(context: Context, v: Int) = saveInt(context, KEY_FONT_FAMILY, v)
+    fun getBorderWidth(context: Context): Int = getInt(context, KEY_BORDER_WIDTH, 1)
+    fun saveBorderWidth(context: Context, v: Int) = saveInt(context, KEY_BORDER_WIDTH, v)
+    fun getColorBlind(context: Context): Int = getInt(context, KEY_COLOR_BLIND, 0)
+    fun saveColorBlind(context: Context, v: Int) = saveInt(context, KEY_COLOR_BLIND, v.coerceIn(0, 8))
+    fun getInvertColors(context: Context): Boolean = getBool(context, KEY_INVERT_COLORS, false)
+    fun saveInvertColors(context: Context, v: Boolean) = saveBool(context, KEY_INVERT_COLORS, v)
+    fun getTransitionMotion(context: Context): Int = getInt(context, KEY_TRANSITION_MOTION, 0)
+    fun saveTransitionMotion(context: Context, v: Int) = saveInt(context, KEY_TRANSITION_MOTION, v)
+    fun getBackgroundMotion(context: Context): Boolean = getBool(context, KEY_BACKGROUND_MOTION, false)
+    fun saveBackgroundMotion(context: Context, v: Boolean) = saveBool(context, KEY_BACKGROUND_MOTION, v)
+    fun getIconShape(context: Context): Int = getInt(context, KEY_ICON_SHAPE, -1)
+    fun saveIconShape(context: Context, v: Int) = saveInt(context, KEY_ICON_SHAPE, v)
+    fun getFloatingNav(context: Context): Boolean = getBool(context, KEY_FLOATING_NAV, false)
+    fun saveFloatingNav(context: Context, v: Boolean) = saveBool(context, KEY_FLOATING_NAV, v)
+    fun getLiquidGlass(context: Context): Boolean = getBool(context, KEY_LIQUID_GLASS, false)
+    fun saveLiquidGlass(context: Context, v: Boolean) = saveBool(context, KEY_LIQUID_GLASS, v)
+    fun getContentColors(context: Context): Boolean = getBool(context, KEY_CONTENT_COLORS, false)
+    fun saveContentColors(context: Context, v: Boolean) = saveBool(context, KEY_CONTENT_COLORS, v)
+    fun getDynamicLocked(context: Context): Boolean = getBool(context, KEY_DYNAMIC_LOCKED, false)
+    fun saveDynamicLocked(context: Context, v: Boolean) = saveBool(context, KEY_DYNAMIC_LOCKED, v)
+    fun getShadow(context: Context, key: String): Boolean = getBool(context, key, true)
+    fun saveShadow(context: Context, key: String, v: Boolean) = saveBool(context, key, v)
+    fun shadowTopbar(context: Context) = getShadow(context, KEY_SHADOW_TOPBAR)
+    fun shadowButton(context: Context) = getShadow(context, KEY_SHADOW_BUTTON)
+    fun shadowContainer(context: Context) = getShadow(context, KEY_SHADOW_CONTAINER)
+    fun shadowFab(context: Context) = getShadow(context, KEY_SHADOW_FAB)
+    fun shadowSlider(context: Context) = getShadow(context, KEY_SHADOW_SLIDER)
+    fun shadowSwitch(context: Context) = getShadow(context, KEY_SHADOW_SWITCH)
+
+    fun schemeStyleName(style: Int): String = when (style.coerceIn(0, 8)) {
+        0 -> "灵动"
+        1 -> "柔和"
+        2 -> "中性"
+        3 -> "鲜明"
+        4 -> "彩虹"
+        5 -> "缤纷"
+        6 -> "单色"
+        7 -> "忠于种子"
+        else -> "内容"
+    }
+
+    /** True only for styles with a complete generated table. Others fall back. */
+    fun isSchemeImplemented(style: Int): Boolean = style == 7 || style == 5
+
+    /**
+     * Scheme theme for a Tint x style. Implemented: 7 Fidelity, 5 FruitSalad.
+     * All other Licj0 styles fall back to Fidelity and are labelled as
+     * fallback in the UI — their tables are not yet generated, and this
+     * fallback must not be presented as those styles being implemented.
+     * The View project cannot reproduce the original Compose runtime
+     * pipeline (MaterialKolor SPEC_2021 generation + §2.4 post-processing
+     * + animateColorScheme); these static themes are the generated-table
+     * equivalent, see colors_scheme.xml header.
+     */
+    fun mainSchemeThemeRes(tint: Int, style: Int): Int {
+        val t = tint.coerceIn(1, 13)
+        return when (style) {
+            5 -> when (t) {
+                1 -> R.style.Theme_Voyage_Tint01_FruitSalad
+                2 -> R.style.Theme_Voyage_Tint02_FruitSalad
+                3 -> R.style.Theme_Voyage_Tint03_FruitSalad
+                4 -> R.style.Theme_Voyage_Tint04_FruitSalad
+                5 -> R.style.Theme_Voyage_Tint05_FruitSalad
+                6 -> R.style.Theme_Voyage_Tint06_FruitSalad
+                7 -> R.style.Theme_Voyage_Tint07_FruitSalad
+                8 -> R.style.Theme_Voyage_Tint08_FruitSalad
+                9 -> R.style.Theme_Voyage_Tint09_FruitSalad
+                10 -> R.style.Theme_Voyage_Tint10_FruitSalad
+                11 -> R.style.Theme_Voyage_Tint11_FruitSalad
+                12 -> R.style.Theme_Voyage_Tint12_FruitSalad
+                else -> R.style.Theme_Voyage_Tint13_FruitSalad
+            }
+            else -> when (t) { // Fidelity, including fallback for 0,1,2,3,4,6,8
+                1 -> R.style.Theme_Voyage_Tint01_Fidelity
+                2 -> R.style.Theme_Voyage_Tint02_Fidelity
+                3 -> R.style.Theme_Voyage_Tint03_Fidelity
+                4 -> R.style.Theme_Voyage_Tint04_Fidelity
+                5 -> R.style.Theme_Voyage_Tint05_Fidelity
+                6 -> R.style.Theme_Voyage_Tint06_Fidelity
+                7 -> R.style.Theme_Voyage_Tint07_Fidelity
+                8 -> R.style.Theme_Voyage_Tint08_Fidelity
+                9 -> R.style.Theme_Voyage_Tint09_Fidelity
+                10 -> R.style.Theme_Voyage_Tint10_Fidelity
+                11 -> R.style.Theme_Voyage_Tint11_Fidelity
+                12 -> R.style.Theme_Voyage_Tint12_Fidelity
+                else -> R.style.Theme_Voyage_Tint13_Fidelity
+            }
+        }
+    }
     fun saveCorner(context: Context, v: Int) = saveInt(context, KEY_CORNER, v)
     fun saveFontSize(context: Context, v: Int) = saveInt(context, KEY_FONT_SIZE, v)
     fun saveAnimation(context: Context, v: Boolean) = saveBool(context, KEY_ANIMATION, v)

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Component styles — RECONSTRUCTION.
+  Source: THEME_DEEP_DIVE.md §3.3.
+  The original app has NO per-component style table: components are
+  Compose Material3 defaults whose colours come from the dynamic
+  ColorScheme roles, shapes from the transformed Shapes, typography
+  from the transformed Typography, plus shadow-group switches and a
+  border-width setting. The styles below therefore bind each View
+  component to the current scheme roles + shapes, rather than copying
+  any per-component dp/colour constants (none were found in DEX).
+  Roles referenced here (colorPrimary, colorSecondary, colorSurface,
+  colorOnSurface, colorOutline, etc.) are filled per Tint x style in
+  values/colors_scheme.xml and values-night/colors_scheme.xml.
+  In a View project these styles are the XML-side equivalent of the
+  original Compose Material3 defaults; the runtime dynamic-scheme
+  pipeline (MaterialKolor, SPEC_2021, post-processing) cannot be
+  reproduced by static XML alone — see THEME_DEEP_DIVE.md §5 P0.
+-->
+<resources>
+    <!-- Buttons: primary role, medium shape, label-large typography. -->
+    <style name="Widget.Voyage.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="cornerRadius">@dimen/shape_medium</item>
+        <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
+        <item name="android:textSize">@dimen/text_label_large</item>
+    </style>
+    <style name="Widget.Voyage.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">?attr/colorOutline</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="cornerRadius">@dimen/shape_medium</item>
+        <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
+        <item name="android:textSize">@dimen/text_label_large</item>
+    </style>
+    <!-- Cards: surface-container role, large shape, elevation via shadow switch. -->
+    <style name="Widget.Voyage.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">?attr/colorSurfaceContainer</item>
+        <item name="cardCornerRadius">@dimen/shape_large</item>
+        <item name="cardElevation">1dp</item>
+    </style>
+    <!-- Switch / Slider / Chip: roles + shapes, no hard-coded colours. -->
+    <style name="Widget.Voyage.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
+    </style>
+    <style name="Widget.Voyage.Chip" parent="Widget.Material3.Chip.Assist">
+        <item name="chipBackgroundColor">?attr/colorSecondaryContainer</item>
+        <item name="android:textColor">?attr/colorOnSecondaryContainer</item>
+        <item name="chipCornerRadius">@dimen/shape_small</item>
+        <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
+    </style>
+    <!-- Dialog: surface-container-high role, extra-large shape. -->
+    <style name="ThemeOverlay.Voyage.Dialog" parent="ThemeOverlay.Material3.Dialog">
+        <item name="colorSurface">?attr/colorSurfaceContainerHigh</item>
+    </style>
+    <!-- Text styles bound to the typography baseline + LXGW font. -->
+    <style name="TextAppearance.Voyage.DisplayLarge">
+        <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
+        <item name="android:textSize">@dimen/text_display_large</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextAppearance.Voyage.DisplayLargeEmphasized" parent="TextAppearance.Voyage.DisplayLarge">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextAppearance.Voyage.HeadlineLarge">
+        <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
+        <item name="android:textSize">@dimen/text_headline_large</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextAppearance.Voyage.TitleLarge">
+        <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
+        <item name="android:textSize">@dimen/text_title_large</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextAppearance.Voyage.BodyLarge">
+        <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
+        <item name="android:textSize">@dimen/text_body_large</item>
+    </style>
+    <style name="TextAppearance.Voyage.LabelLarge">
+        <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
+        <item name="android:textSize">@dimen/text_label_large</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

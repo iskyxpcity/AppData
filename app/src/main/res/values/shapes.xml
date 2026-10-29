@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Shapes — RECONSTRUCTION, not Voyage original values.
+  Source: THEME_DEEP_DIVE.md §3.1.
+  Original app: 8 Material3 Expressive shape roles, transformed by
+  7 shape styles x corner scale at runtime (Ljdj0 x F -> Lyge0 -> Lmfe0.l).
+  The 7 style-name <-> enum-number mapping was NOT decoded in the
+  original DEX (names are encrypted in DEX, ARSC only gives the name set),
+  so the mapping below is a CONFIGURABLE placeholder order and must be
+  re-calibrated against the original settings page order; it is NOT
+  claimed as the original mapping.
+  Base dp values below are Material3 library defaults (baseline
+  reconstruction), NOT Voyage custom values — Voyage customises via
+  style x scale, not via a static per-role dp table.
+-->
+<resources>
+    <!-- Material3 Expressive 8 roles, base dp (library defaults). -->
+    <dimen name="shape_extra_small">4dp</dimen>
+    <dimen name="shape_small">8dp</dimen>
+    <dimen name="shape_medium">12dp</dimen>
+    <dimen name="shape_large">16dp</dimen>
+    <dimen name="shape_large_increased">20dp</dimen>
+    <dimen name="shape_extra_large">28dp</dimen>
+    <dimen name="shape_extra_large_increased">36dp</dimen>
+    <dimen name="shape_extra_extra_large">48dp</dimen>
+    <!-- Corner scale factors used by ThemeStore.corner_scale:
+         0 = small (0.75x), 1 = medium (1.0x, default), 2 = large (1.5x).
+         These are shell reconstruction factors, not decoded originals. -->
+    <dimen name="shape_scale_small">0.75</dimen>
+    <dimen name="shape_scale_medium">1.0</dimen>
+    <dimen name="shape_scale_large">1.5</dimen>
+</resources>
