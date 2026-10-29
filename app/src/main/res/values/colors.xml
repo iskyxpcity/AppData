@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Day values, extracted from Voyage resources.arsc. Night values are in values-night/colors.xml. -->
+<resources>
+    <color name="brand_paper">#FFF4EFE9</color>
+    <color name="brand_blade">#FFC2513A</color>
+
+    <color name="splash_background">#FFF4EFE9</color>
+    <color name="splash_icon_foreground">#FFC2513A</color>
+    <color name="splash_text_primary">#FF2B1D18</color>
+    <color name="splash_text_secondary">#FF7A635A</color>
+
+    <!-- Tint blade / paper pairs, day. These match Theme.Voyage.Starting.TintXX.Light. -->
+    <color name="tint_01_blade">#FFA0412E</color>
+    <color name="tint_01_paper">#FFFDF4F2</color>
+    <color name="tint_02_blade">#FF905200</color>
+    <color name="tint_02_paper">#FFFCF5F0</color>
+    <color name="tint_03_blade">#FF776100</color>
+    <color name="tint_03_paper">#FFF9F7EF</color>
+    <color name="tint_04_blade">#FF566E00</color>
+    <color name="tint_04_paper">#FFF5F8F1</color>
+    <color name="tint_05_blade">#FF00773E</color>
+    <color name="tint_05_paper">#FFF2F9F4</color>
+    <color name="tint_06_blade">#FF007368</color>
+    <color name="tint_06_paper">#FFF0F9F7</color>
+    <color name="tint_07_blade">#FF007081</color>
+    <color name="tint_07_paper">#FFF0F9FB</color>
+    <color name="tint_08_blade">#FF0069A2</color>
+    <color name="tint_08_paper">#FFF1F8FD</color>
+    <color name="tint_09_blade">#FF4C5BAC</color>
+    <color name="tint_09_paper">#FFF4F6FE</color>
+    <color name="tint_10_blade">#FF734D9F</color>
+    <color name="tint_10_paper">#FFF8F5FD</color>
+    <color name="tint_11_blade">#FF8D4383</color>
+    <color name="tint_11_paper">#FFFBF4FA</color>
+    <color name="tint_12_blade">#FF9D3D5C</color>
+    <color name="tint_12_paper">#FFFDF4F6</color>
+    <color name="tint_13_blade">#FF555555</color>
+    <color name="tint_13_paper">#FFF7F7F7</color>
+</resources>
