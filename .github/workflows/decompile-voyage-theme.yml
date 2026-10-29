@@ -60,54 +60,12 @@ jobs:
           JADx="$RUNNER_TEMP/jadx/bin/jadx"
           mkdir -p decompiled
           cat > "$RUNNER_TEMP/classes.tsv" <<'EOF'
-          gfj0	classes5.dex
-          kdj0	classes5.dex
-          h7w0	classes7.dex
-          j7w0	classes6.dex
-          l2i0	classes.dex
-          g2i0	classes6.dex
-          n2i0	classes6.dex
-          i2i0	classes6.dex
-          h2i0	classes6.dex
-          k2i0	classes6.dex
-          j2i0	classes6.dex
-          m2i0	classes6.dex
-          z4v0	classes8.dex
-          frt0	classes9.dex
-          it70	classes8.dex
-          ckw0	classes8.dex
-          rdf	classes8.dex
-          y2t0	classes8.dex
-          l140	classes8.dex
-          gaf0	classes.dex
           ncw0	classes9.dex
           y3w0	classes9.dex
+          w3w0	classes9.dex
           v2t0	classes9.dex
           caf0	classes2.dex
-          w3w0	classes9.dex
           y3f0	classes2.dex
-          jaf0	classes6.dex
-          iaf0	classes6.dex
-          haf0	classes6.dex
-          y8f0	classes2.dex
-          ban	classes.dex
-          dan	classes.dex
-          fqw0	classes6.dex
-          opw0	classes6.dex
-          uwl	classes9.dex
-          wcf	classes10.dex
-          wgo0	classes.dex
-          e7g0	classes.dex
-          b2t0	classes9.dex
-          qha0	classes.dex
-          vqp	classes.dex
-          eig0	classes7.dex
-          d8t0	classes7.dex
-          ewm	classes.dex
-          k9t0	classes7.dex
-          shq	classes.dex
-          ycc0	classes.dex
-          nv30	classes7.dex
           EOF
           failures=0
           while IFS=$'\t' read -r cls dex; do
