@@ -26,7 +26,5 @@
     <!-- Corner scale factors used by ThemeStore.corner_scale:
          0 = small (0.75x), 1 = medium (1.0x, default), 2 = large (1.5x).
          These are shell reconstruction factors, not decoded originals. -->
-    <dimen name="shape_scale_small">0.75</dimen>
-    <dimen name="shape_scale_medium">1.0</dimen>
-    <dimen name="shape_scale_large">1.5</dimen>
+    <!-- Corner scale factors (0.75x / 1.0x / 1.5x) live in ThemeStore, not as resources: a bare float is not a valid <dimen> or <item type="float"> for aapt2. -->
 </resources>
