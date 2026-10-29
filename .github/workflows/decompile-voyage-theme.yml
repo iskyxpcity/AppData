@@ -66,6 +66,25 @@ jobs:
           v2t0	classes9.dex
           caf0	classes2.dex
           y3f0	classes2.dex
+          j5v0	classes8.dex
+          o4l	classes7.dex
+          dn7	classes6.dex
+          p4l	classes9.dex
+          n8f0	classes2.dex
+          xqv0	classes7.dex
+          faf0	classes2.dex
+          gca0	classes2.dex
+          aod	classes8.dex
+          nmd	classes9.dex
+          mmd	classes7.dex
+          thd	classes9.dex
+          uhd	classes6.dex
+          vhd	classes9.dex
+          lmd	classes7.dex
+          qsd	classes8.dex
+          rsd	classes8.dex
+          t4l	classes7.dex
+          s8f0	classes2.dex
           EOF
           failures=0
           while IFS=$'\t' read -r cls dex; do
