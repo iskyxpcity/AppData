@@ -8,7 +8,7 @@ on:
       - ".github/workflows/decompile-voyage-theme.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: voyage-full-ui-decompile
@@ -87,3 +87,38 @@ jobs:
           path: decompiled/
           if-no-files-found: error
           retention-days: 14
+
+
+      - name: Publish Compose interaction candidates to a read-only analysis branch
+        if: success()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p decompiled/interaction-candidates
+          grep -RIlE 'PressInteraction|collectIsPressedAsState|MutableInteractionSource|animateFloatAsState|graphicsLayer|combinedClickable|scaleX|scaleY' decompiled --include='*.java' > decompiled/interaction-candidates/FILES.txt || true
+          while IFS= read -r src; do
+            [ -s "$src" ] || continue
+            mkdir -p "decompiled/interaction-candidates/$(dirname "$src")"
+            cp "$src" "decompiled/interaction-candidates/$src"
+          done < decompiled/interaction-candidates/FILES.txt
+          {
+            echo '# Compose interaction candidate source'
+            echo
+            echo "Source commit: $GITHUB_SHA"
+            echo "Candidate files: $(wc -l < decompiled/interaction-candidates/FILES.txt)"
+            echo
+            echo 'The source files below are copied verbatim from the successful full JADX output.'
+          } > decompiled/interaction-candidates/README.md
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git worktree add --detach "$RUNNER_TEMP/interaction-publish" "$GITHUB_SHA"
+          git -C "$RUNNER_TEMP/interaction-publish" switch --orphan analysis/voyage-compose-interactions-20261030
+          git -C "$RUNNER_TEMP/interaction-publish" rm -rf . >/dev/null 2>&1 || true
+          mkdir -p "$RUNNER_TEMP/interaction-publish"
+          cp -R decompiled/interaction-candidates "$RUNNER_TEMP/interaction-publish/"
+          cp decompiled/ANALYSIS_INDEX.md "$RUNNER_TEMP/interaction-publish/" 2>/dev/null || true
+          git -C "$RUNNER_TEMP/interaction-publish" add interaction-candidates ANALYSIS_INDEX.md
+          git -C "$RUNNER_TEMP/interaction-publish" commit -m 'Publish Voyage Compose interaction source candidates'
+          git -C "$RUNNER_TEMP/interaction-publish" push origin HEAD:refs/heads/analysis/voyage-compose-interactions-20261030
