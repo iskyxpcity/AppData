@@ -64,3 +64,16 @@ View 工程限制、未能实现（原因）：
 ## 不带的东西
 小说、音乐、AI 聊天、壁纸、工具箱、账号、广告、支付、消息内容、
 歌单、书架等一切业务页面、业务数据、业务网络请求。
+
+## §6 组件框架（2026-10-29 续抠，ARSC 原值）
+
+来源：原应用 resources.arsc 字符串名 + 中文译文，证据等级 ✅ 名称/分组，❌ 逐组件数值（原应用无逐组件样式表，见深挖报告 §3.3）。
+
+- 组件分组：theme_group_components = 组件；界面风格 Material 3 副标题原话：形状、开关与滑条样式、阴影和描边可自定义；MIUIX 线（开关、滑条、按钮、对话框、顶栏与列表改用 MIUIX 组件）不在本壳范围。
+- 开关样式 8 档（theme_switch_*）：Compose、Cupertino、Fluent、HyperOS、液态玻璃、Material You、One UI、Pixel。壳内 ThemeStore.switch_style 0..7，默认 Material You（壳默认，原默认未解码）；View 下以 Material 开关 + 名称示意，非原 Compose 绘制，不得冒充。
+- 滑条样式 4 档（theme_slider_*）：灵动、HyperOS、Material 2、Material You。壳内 slider_style 0..3，默认 Material You（壳默认）。
+- 形状样式 7 档（theme_shape_*）：切角、缺口、圆角、内凹、平滑、超椭圆、波浪。壳内 shape_style 顺序为壳自定顺序，ARSC 资源 ID 顺序是字母序，不能证明原枚举序号，不得把顺序说成原枚举。
+- 阴影组 6 项（theme_group_shadows + theme_shadow_*）：顶栏、按钮、容器、悬浮按钮、滑条、开关。壳内 6 个开关已接管顶栏/按钮/卡片/悬浮按钮/滑条/开关的 elevation。
+- 导航栏组（theme_group_navigation_bar）：悬浮底栏（底部导航栏悬浮在页面之上，内容延伸到它下方，仅窄屏底部导航生效）；液态玻璃（悬浮底栏折射并模糊后面内容，按住选中项左右拖动切换，需先开悬浮底栏，需 Android 13+）。壳内：悬浮改导航栏边距 + elevation，液态玻璃在 View 下仅以半透明近似，真正折射模糊未复刻，且液态玻璃开关在悬浮关闭时禁用。
+- 顶栏：theme_shadow_app_bar = 顶栏，属阴影组一项；壳内加 MaterialToolbar 示例，elevation 由阴影顶栏开关控制。
+- 描边/圆角：theme_border_width_title = 描边宽度，theme_corner_scale_title = 圆角大小，均已在 ThemeStore（border_width、corner），未解码具体档位数值。

@@ -73,4 +73,28 @@
         <item>蓝色盲</item>
         <item>蓝色弱</item>
     </string-array>
+    <!-- Switch styles, ARSC theme_switch_* names (ORIGINAL names).
+         Order here is the shell list order, NOT a decoded enum order:
+         ARSC resource IDs are alphabetical, so they do not prove the
+         original enum numbering. Drawings are NOT reproduced: the
+         original switches are Compose custom drawings, the shell
+         shows a Material Switch with the style name + scheme colours. -->
+    <string-array name="switch_styles">
+        <item>Compose</item>
+        <item>Cupertino</item>
+        <item>Fluent</item>
+        <item>HyperOS</item>
+        <item>液态玻璃</item>
+        <item>Material You</item>
+        <item>One UI</item>
+        <item>Pixel</item>
+    </string-array>
+    <!-- Slider styles, ARSC theme_slider_* names (ORIGINAL names).
+         Same order caveat as switch_styles. -->
+    <string-array name="slider_styles">
+        <item>灵动</item>
+        <item>HyperOS</item>
+        <item>Material 2</item>
+        <item>Material You</item>
+    </string-array>
 </resources>

@@ -173,6 +173,93 @@ class MainActivity : AppCompatActivity() {
         }
         findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.showcaseNavBar)
             .setOnItemSelectedListener { true }
+        // Component state line: switch / slider / shape styles (ARSC names)
+        findViewById<TextView>(R.id.componentState).text =
+            "开关：%s · 滑条：%s · 形状：%s".format(
+                ThemeStore.switchStyleName(ThemeStore.getSwitchStyle(this)),
+                ThemeStore.sliderStyleName(ThemeStore.getSliderStyle(this)),
+                ThemeStore.shapeStyleName(ThemeStore.getShapeStyle(this))
+            )
+        // Style lists: switch (8), slider (4), shape (7)
+        fun buildList(id: Int, names: Array<String>, current: Int, onPick: (Int) -> Unit) {
+            val list = findViewById<LinearLayout>(id)
+            for (i in names.indices) {
+                val button = MaterialButton(this).apply {
+                    text = if (i == current) "%s（当前）".format(names[i]) else names[i]
+                    textSize = 15f
+                    setOnClickListener { onPick(i); recreate() }
+                }
+                list.addView(button, LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                ).apply { topMargin = 12 })
+            }
+        }
+        buildList(R.id.switchStyleList, resources.getStringArray(R.array.switch_styles),
+            ThemeStore.getSwitchStyle(this)) { ThemeStore.saveSwitchStyle(this, it) }
+        buildList(R.id.sliderStyleList, resources.getStringArray(R.array.slider_styles),
+            ThemeStore.getSliderStyle(this)) { ThemeStore.saveSliderStyle(this, it) }
+        buildList(R.id.shapeStyleList, resources.getStringArray(R.array.shape_styles),
+            ThemeStore.getShapeStyle(this)) { ThemeStore.saveShapeStyle(this, it) }
+        // Shadows: 6 switches from theme_group_shadows, applied as elevation
+        fun dp(v: Float) = v * resources.displayMetrics.density
+        fun applyShadows() {
+            findViewById<View>(R.id.showcaseTopBar).elevation =
+                if (ThemeStore.shadowTopbar(this)) dp(4f) else 0f
+            findViewById<View>(R.id.primaryButton).elevation =
+                if (ThemeStore.shadowButton(this)) dp(2f) else 0f
+            findViewById<MaterialCardView>(R.id.showcaseCard).cardElevation =
+                if (ThemeStore.shadowContainer(this)) dp(2f) else 0f
+            findViewById<View>(R.id.showcaseFab).elevation =
+                if (ThemeStore.shadowFab(this)) dp(6f) else 0f
+            findViewById<View>(R.id.showcaseSlider).elevation =
+                if (ThemeStore.shadowSlider(this)) dp(2f) else 0f
+            findViewById<View>(R.id.showcaseSwitch).elevation =
+                if (ThemeStore.shadowSwitch(this)) dp(2f) else 0f
+        }
+        applyShadows()
+        bindSwitch(R.id.shadowTopBar, ThemeStore.shadowTopbar(this)) {
+            ThemeStore.saveShadow(this, "shadow_topbar", it); applyShadows()
+        }
+        bindSwitch(R.id.shadowButton, ThemeStore.shadowButton(this)) {
+            ThemeStore.saveShadow(this, "shadow_button", it); applyShadows()
+        }
+        bindSwitch(R.id.shadowContainer, ThemeStore.shadowContainer(this)) {
+            ThemeStore.saveShadow(this, "shadow_container", it); applyShadows()
+        }
+        bindSwitch(R.id.shadowFab, ThemeStore.shadowFab(this)) {
+            ThemeStore.saveShadow(this, "shadow_fab", it); applyShadows()
+        }
+        bindSwitch(R.id.shadowSlider, ThemeStore.shadowSlider(this)) {
+            ThemeStore.saveShadow(this, "shadow_slider", it); applyShadows()
+        }
+        bindSwitch(R.id.shadowSwitch, ThemeStore.shadowSwitch(this)) {
+            ThemeStore.saveShadow(this, "shadow_switch", it); applyShadows()
+        }
+        // Navigation bar: floating + liquid glass (liquid needs floating first)
+        val navBar = findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.showcaseNavBar)
+        fun applyNavBar() {
+            val floating = ThemeStore.getFloatingNav(this)
+            val liquid = floating && ThemeStore.getLiquidGlass(this)
+            val params = navBar.layoutParams as LinearLayout.LayoutParams
+            params.setMargins(if (floating) dp(16f).toInt() else 0, 0, if (floating) dp(16f).toInt() else 0, 0)
+            navBar.layoutParams = params
+            navBar.elevation = if (floating) dp(8f) else 0f
+            // View shell approximation of liquid glass: translucent bar.
+            // True refraction + blur is a Compose / Android 13 effect and
+            // is NOT reproduced here.
+            navBar.alpha = if (liquid) 0.85f else 1f
+            findViewById<SwitchCompat>(R.id.switchLiquidGlass).isEnabled = floating
+        }
+        applyNavBar()
+        bindSwitch(R.id.switchFloatingNav, ThemeStore.getFloatingNav(this)) {
+            ThemeStore.saveFloatingNav(this, it)
+            if (!it) ThemeStore.saveLiquidGlass(this, false)
+            applyNavBar()
+        }
+        bindSwitch(R.id.switchLiquidGlass, ThemeStore.getLiquidGlass(this)) {
+            ThemeStore.saveLiquidGlass(this, it); applyNavBar()
+        }
         show(sectionTheme)
     }
 }

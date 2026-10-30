@@ -31,7 +31,9 @@ object ThemeStore {
     // New keys from THEME_DEEP_DIVE.md §3/§4.3. Values are theme-only.
     // Shape-style number <-> name mapping was NOT decoded; stored number
     // is a configurable placeholder, not a claimed original mapping.
-    private const val KEY_SHAPE_STYLE = "shape_style" // 0..6, default 0
+    private const val KEY_SHAPE_STYLE = "shape_style" // 0..6, shell order in arrays.xml, default 0 (rounded)
+    private const val KEY_SWITCH_STYLE = "switch_style" // 0..7, ARSC names, shell default 5 (Material You)
+    private const val KEY_SLIDER_STYLE = "slider_style" // 0..3, ARSC names, shell default 3 (Material You)
     private const val KEY_FONT_FAMILY = "font_family" // 0=default (LXGW), 1=serif
     private const val KEY_BORDER_WIDTH = "border_width" // 0=thin, 1=medium, 2=thick
     private const val KEY_COLOR_BLIND = "color_blind" // 0=off, 1..8 per arrays
@@ -92,6 +94,13 @@ object ThemeStore {
     fun saveSchemeStyle(context: Context, v: Int) = saveInt(context, KEY_SCHEME_STYLE, v.coerceIn(0, 8))
     fun getShapeStyle(context: Context): Int = getInt(context, KEY_SHAPE_STYLE, 0)
     fun saveShapeStyle(context: Context, v: Int) = saveInt(context, KEY_SHAPE_STYLE, v.coerceIn(0, 6))
+    fun getSwitchStyle(context: Context): Int = getInt(context, KEY_SWITCH_STYLE, 5)
+    fun saveSwitchStyle(context: Context, v: Int) = saveInt(context, KEY_SWITCH_STYLE, v.coerceIn(0, 7))
+    fun getSliderStyle(context: Context): Int = getInt(context, KEY_SLIDER_STYLE, 3)
+    fun saveSliderStyle(context: Context, v: Int) = saveInt(context, KEY_SLIDER_STYLE, v.coerceIn(0, 3))
+    fun switchStyleName(style: Int): String = listOf("Compose", "Cupertino", "Fluent", "HyperOS", "液态玻璃", "Material You", "One UI", "Pixel")[style.coerceIn(0, 7)]
+    fun sliderStyleName(style: Int): String = listOf("灵动", "HyperOS", "Material 2", "Material You")[style.coerceIn(0, 3)]
+    fun shapeStyleName(style: Int): String = listOf("圆角", "切角", "超椭圆", "平滑", "波浪", "内凹", "缺口")[style.coerceIn(0, 6)]
     fun getFontFamily(context: Context): Int = getInt(context, KEY_FONT_FAMILY, 0)
     fun saveFontFamily(context: Context, v: Int) = saveInt(context, KEY_FONT_FAMILY, v)
     fun getBorderWidth(context: Context): Int = getInt(context, KEY_BORDER_WIDTH, 1)

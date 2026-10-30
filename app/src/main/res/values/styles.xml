@@ -81,4 +81,21 @@
         <item name="android:textSize">@dimen/text_label_large</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <!-- Top bar / navigation bar / FAB: Material3 defaults bound to the
+         current scheme roles. Original top bars / nav bars are Compose
+         Material3 defaults; no per-component dp/colour constants were
+         found in DEX, so these styles only bind roles + shapes, and
+         elevation is driven by the shadow switches in ThemeStore. -->
+    <style name="Widget.Voyage.TopBar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="titleTextColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="Widget.Voyage.NavBar" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">?attr/colorSurfaceContainer</item>
+        <item name="itemIconTint">?attr/colorOnSurfaceVariant</item>
+        <item name="itemTextColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+    <style name="Widget.Voyage.Fab" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="backgroundTint">?attr/colorPrimaryContainer</item>
+    </style>
 </resources>

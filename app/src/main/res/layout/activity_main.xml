@@ -243,6 +243,141 @@
             android:orientation="vertical"
             android:visibility="gone">
 
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/showcaseTopBar"
+                style="@style/Widget.Voyage.TopBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:elevation="4dp"
+                app:title="顶栏示例"
+                app:subtitle="阴影由“阴影 · 顶栏”开关控制" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/showcaseFab"
+                style="@style/Widget.Voyage.Fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:contentDescription="悬浮按钮示例"
+                app:srcCompat="@drawable/ic_splash_mark" />
+
+            <TextView
+                android:id="@+id/componentState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="组件状态"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="开关样式（原应用 8 档，ARSC 名；壳内为 Material 开关 + 名称示意，非原 Compose 绘制）"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/switchStyleList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="滑条样式（原应用 4 档，ARSC 名；壳内为 SeekBar + 名称示意，非原 Compose 绘制）"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/sliderStyleList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="形状样式（原应用 7 档，ARSC 名；View 下切角/超椭圆/波浪等需 Compose 形状，壳内以圆角大小示意）"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/shapeStyleList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="阴影（原应用 theme_group_shadows 下 6 项，逐项开关）"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/shadowTopBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阴影 · 顶栏" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/shadowButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阴影 · 按钮" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/shadowContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阴影 · 容器" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/shadowFab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阴影 · 悬浮按钮" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/shadowSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阴影 · 滑条" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/shadowSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阴影 · 开关" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="导航栏（原应用：悬浮底栏；液态玻璃需先开悬浮底栏，需 Android 13+）"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchFloatingNav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="悬浮底栏" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchLiquidGlass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="液态玻璃（需先开悬浮底栏，Android 13+）" />
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/showcaseCard"
                 android:layout_width="match_parent"
