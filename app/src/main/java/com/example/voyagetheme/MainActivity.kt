@@ -103,16 +103,16 @@ class MainActivity : AppCompatActivity() {
             ThemeStore.savePureBlack(this, it); recreate()
         }
         bindSwitch(R.id.switchSplashFollow, ThemeStore.getSplashFollow(this)) {
-            ThemeStore.saveSplashFollow(this, it)
+            ThemeStore.saveSplashFollow(this, it); recreate()
         }
         bindSwitch(R.id.switchIconFollow, ThemeStore.getIconFollow(this)) {
-            ThemeStore.saveIconFollow(this, it)
+            ThemeStore.saveIconFollow(this, it); recreate()
         }
         bindSwitch(R.id.switchBubble, ThemeStore.getBubbleTheme(this)) {
-            ThemeStore.saveBubbleTheme(this, it)
+            ThemeStore.saveBubbleTheme(this, it); recreate()
         }
         bindSwitch(R.id.switchAnimation, ThemeStore.getAnimation(this)) {
-            ThemeStore.saveAnimation(this, it)
+            ThemeStore.saveAnimation(this, it); recreate()
         }
         findViewById<MaterialButton>(R.id.btnResetTheme).setOnClickListener {
             ThemeStore.resetToDefaults(this); recreate()
@@ -175,10 +175,38 @@ class MainActivity : AppCompatActivity() {
             .setOnItemSelectedListener { true }
         // Functional effects: every control now does something visible
         ThemeEffects.applyColorVision(window.decorView, ThemeStore.getColorBlind(this), ThemeStore.getInvertColors(this))
-        ThemeEffects.applySwitchStyle(findViewById(R.id.showcaseSwitch), ThemeStore.getSwitchStyle(this), this)
+        ThemeEffects.applyToAllSwitches(window.decorView, ThemeStore.getSwitchStyle(this), this)
         ThemeEffects.applySliderStyle(findViewById(R.id.showcaseSlider), ThemeStore.getSliderStyle(this), this)
         ThemeEffects.applyShapeStyle(findViewById(R.id.showcaseCard), findViewById(R.id.primaryButton), ThemeStore.getShapeStyle(this), this)
         ThemeEffects.applyIconShapePreview(findViewById(R.id.splashMark), ThemeStore.getIconShape(this), this)
+        // Visible equivalents, in-shell, for settings that otherwise have
+        // no View-visible counterpart (see spec §8):
+        // - splash follow: splash mark tinted with current Tint blade
+        // - icon follow: splash mark background uses Tint paper
+        // - bubble: showcase bubble uses theme colour, else neutral grey
+        // - animation: splash mark spins once when animation is on
+        // - content colours: showcase card uses primary container
+        // - dynamic locked: mode-follow button disabled while locked
+        run {
+            val mark = findViewById<android.widget.ImageView>(R.id.splashMark)
+            if (ThemeStore.getSplashFollow(this)) {
+                mark.setColorFilter(ThemeEffects.resolveColor(this, com.google.android.material.R.attr.colorPrimary))
+            }
+            if (ThemeStore.getAnimation(this)) {
+                mark.animate().rotationBy(360f).setDuration(760).start()
+            }
+            val bubble = findViewById<android.widget.TextView>(R.id.showcaseBubble)
+            bubble.setBackgroundColor(if (ThemeStore.getBubbleTheme(this))
+                ThemeEffects.resolveColor(this, com.google.android.material.R.attr.colorPrimary)
+            else android.graphics.Color.parseColor("#FF888888"))
+            bubble.setTextColor(android.graphics.Color.WHITE)
+            if (ThemeStore.getContentColors(this)) {
+                findViewById<com.google.android.material.card.MaterialCardView>(R.id.showcaseCard)
+                    .setCardBackgroundColor(ThemeEffects.resolveColor(this, com.google.android.material.R.attr.colorPrimaryContainer))
+            }
+            findViewById<com.google.android.material.button.MaterialButton>(R.id.btnModeFollow).isEnabled =
+                !ThemeStore.getDynamicLocked(this)
+        }
         // Component state line: switch / slider / shape styles (ARSC names)
         findViewById<TextView>(R.id.componentState).text =
             "开关：%s · 滑条：%s · 形状：%s".format(
@@ -222,6 +250,15 @@ class MainActivity : AppCompatActivity() {
                 if (ThemeStore.shadowSlider(this)) dp(2f) else 0f
             findViewById<View>(R.id.showcaseSwitch).elevation =
                 if (ThemeStore.shadowSwitch(this)) dp(2f) else 0f
+            // Settings page itself: group cards follow container shadow
+            val themeSection = findViewById<android.widget.LinearLayout>(R.id.sectionTheme)
+            for (i in 0 until themeSection.childCount) {
+                val child = themeSection.getChildAt(i)
+                if (child is com.google.android.material.card.MaterialCardView) {
+                    child.cardElevation = if (ThemeStore.shadowContainer(this)) dp(2f) else 0f
+                    ThemeEffects.applyShapeToCard(child, ThemeStore.getShapeStyle(this), this)
+                }
+            }
         }
         applyShadows()
         bindSwitch(R.id.shadowTopBar, ThemeStore.shadowTopbar(this)) {
@@ -274,8 +311,14 @@ class MainActivity : AppCompatActivity() {
             ThemeStore.saveDesign(this, 1); recreate()
         }
         findViewById<TextView>(R.id.currentTint).text =
-            "当前 Tint：%02d · 风格：%s%s · 界面：%s".format(
-                tint, styleName, styleNote, ThemeStore.designName(ThemeStore.getDesign(this)))
+            "当前 Tint：%02d · 风格：%s%s · 界面：%s\n气泡：%s · 动效：%s · 启动跟随：%s · 图标跟随：%s · 内容取色：%s · 动态锁定：%s".format(
+                tint, styleName, styleNote, ThemeStore.designName(ThemeStore.getDesign(this)),
+                if (ThemeStore.getBubbleTheme(this)) "开" else "关",
+                if (ThemeStore.getAnimation(this)) "开" else "关",
+                if (ThemeStore.getSplashFollow(this)) "开" else "关",
+                if (ThemeStore.getIconFollow(this)) "开" else "关",
+                if (ThemeStore.getContentColors(this)) "开" else "关",
+                if (ThemeStore.getDynamicLocked(this)) "开" else "关")
         findViewById<MaterialButton>(R.id.btnCornerSmall).setOnClickListener {
             ThemeStore.saveCorner(this, 0); recreate()
         }
@@ -314,13 +357,13 @@ class MainActivity : AppCompatActivity() {
         buildList(R.id.colorBlindList, resources.getStringArray(R.array.color_blind_modes),
             ThemeStore.getColorBlind(this)) { ThemeStore.saveColorBlind(this, it) }
         bindSwitch(R.id.switchInvert, ThemeStore.getInvertColors(this)) {
-            ThemeStore.saveInvertColors(this, it)
+            ThemeStore.saveInvertColors(this, it); recreate()
         }
         bindSwitch(R.id.switchContentColors, ThemeStore.getContentColors(this)) {
-            ThemeStore.saveContentColors(this, it)
+            ThemeStore.saveContentColors(this, it); recreate()
         }
         bindSwitch(R.id.switchDynamicLocked, ThemeStore.getDynamicLocked(this)) {
-            ThemeStore.saveDynamicLocked(this, it)
+            ThemeStore.saveDynamicLocked(this, it); recreate()
         }
         // Scheme editor: new / delete custom schemes, preset list
         findViewById<MaterialButton>(R.id.btnOpenSchemeEditor).setOnClickListener {

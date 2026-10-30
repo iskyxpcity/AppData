@@ -159,6 +159,34 @@ object ThemeEffects {
         button.shapeAppearanceModel = model
     }
 
+    fun applyShapeToCard(card: MaterialCardView, style: Int, context: Context) {
+        val density = context.resources.displayMetrics.density
+        val radius = 16f * density
+        val builder = ShapeAppearanceModel.builder()
+        when (style) {
+            1 -> builder.setAllCorners(CornerFamily.CUT, radius)
+            2 -> builder.setAllCorners(CornerFamily.ROUNDED, radius)
+            3 -> builder.setAllCorners(CornerFamily.ROUNDED, radius * 1.5f)
+            4 -> builder.setAllCorners(CornerFamily.ROUNDED, radius)
+            5 -> builder.setAllCorners(CornerFamily.CUT, radius * 0.5f)
+            6 -> builder.setAllCorners(CornerFamily.CUT, radius * 0.5f)
+            else -> builder.setAllCorners(CornerFamily.ROUNDED, radius)
+        }
+        card.shapeAppearanceModel = builder.build()
+    }
+
+    fun applyToAllSwitches(root: View, style: Int, context: Context) {
+        if (root is SwitchCompat) {
+            applySwitchStyle(root, style, context)
+            return
+        }
+        if (root is android.view.ViewGroup) {
+            for (i in 0 until root.childCount) {
+                applyToAllSwitches(root.getChildAt(i), style, context)
+            }
+        }
+    }
+
     fun applyIconShapePreview(view: View, shape: Int, context: Context) {
         val paper = resolveColor(context, com.google.android.material.R.attr.colorSurface)
         val density = context.resources.displayMetrics.density

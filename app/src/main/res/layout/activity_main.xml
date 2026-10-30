@@ -805,6 +805,16 @@
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="16sp" />
 
+            <TextView
+                android:id="@+id/showcaseBubble"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="16dp"
+                android:text="自己的消息使用主题色，关闭时为中性灰"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/showcaseCard"
                 android:layout_width="match_parent"
