@@ -1,4 +1,4 @@
-name: Decompile Voyage theme classes (temporary analysis branch)
+name: Decompile complete Voyage Compose UI source (temporary analysis branch)
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: voyage-theme-decompile
+  group: voyage-full-ui-decompile
   cancel-in-progress: false
 
 jobs:
@@ -19,19 +19,25 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
-      - name: Checkout only Voyage DEX inputs
+      - name: Checkout all Voyage DEX inputs
         uses: actions/checkout@v4
         with:
           ref: tools/voyage-theme-decompile-20261028
           sparse-checkout: |
             voyage/classes.dex
             voyage/classes2.dex
+            voyage/classes3.dex
+            voyage/classes4.dex
             voyage/classes5.dex
             voyage/classes6.dex
             voyage/classes7.dex
             voyage/classes8.dex
             voyage/classes9.dex
             voyage/classes10.dex
+            voyage/classes11.dex
+            voyage/classes12.dex
+            voyage/classes13.dex
+            voyage/classes14.dex
           sparse-checkout-cone-mode: false
 
       - name: Set up Java
@@ -50,100 +56,34 @@ jobs:
           test -x "$RUNNER_TEMP/jadx/bin/jadx"
           "$RUNNER_TEMP/jadx/bin/jadx" --version
 
-      - name: Decompile source-grounded Voyage theme classes
+      - name: Decompile all application and library classes
         shell: bash
         run: |
-          set -uo pipefail
+          set -euo pipefail
           JADx="$RUNNER_TEMP/jadx/bin/jadx"
           mkdir -p decompiled
-          cat > "$RUNNER_TEMP/classes.tsv" <<'EOF'
-          ncw0	classes9.dex
-          y3w0	classes9.dex
-          w3w0	classes9.dex
-          v2t0	classes9.dex
-          caf0	classes2.dex
-          y3f0	classes2.dex
-          j5v0	classes8.dex
-          o4l	classes7.dex
-          dn7	classes6.dex
-          p4l	classes9.dex
-          n8f0	classes2.dex
-          xqv0	classes7.dex
-          faf0	classes2.dex
-          gca0	classes2.dex
-          aod	classes8.dex
-          nmd	classes9.dex
-          mmd	classes7.dex
-          thd	classes9.dex
-          uhd	classes6.dex
-          vhd	classes9.dex
-          lmd	classes7.dex
-          qsd	classes8.dex
-          rsd	classes8.dex
-          t4l	classes7.dex
-          s8f0	classes2.dex
-          y8f0	classes2.dex
-          vhf	classes7.dex
-          fqr	classes9.dex
-          ot8	classes9.dex
-          EOF
-          failures=0
-          for cls in y8f0 vhf fqr ot8; do
-            found_class=0
-            for dex in classes.dex classes2.dex classes5.dex classes6.dex classes7.dex classes8.dex classes9.dex classes10.dex; do
-              [ -f "voyage/$dex" ] || continue
-              target="decompiled/$cls.java"
-              outdir="$RUNNER_TEMP/jadx-$cls-$dex"
-              mkdir -p "$outdir"
-              "$JADx" -j 2 --no-res --show-bad-code --single-class "$cls" --single-class-output "$GITHUB_WORKSPACE/$target" -d "$outdir" "voyage/$dex" >"$outdir/stdout.log" 2>"$outdir/stderr.log" || true
-              if [ -s "$target" ]; then
-                echo "OK $cls from $dex $(wc -c < "$target") bytes"
-                found_class=1
-                break
-              fi
-            done
-            if [ "$found_class" -eq 0 ]; then
-              echo "FAILED $cls" | tee -a decompiled/FAILED.txt
-              failures=$((failures + 1))
-            fi
+          inputs=()
+          for dex in voyage/classes*.dex; do
+            [ -s "$dex" ] || continue
+            inputs+=("$dex")
+            echo "Input: $dex ($(stat -c%s "$dex") bytes)"
           done
-          while IFS=$'\t' read -r cls dex; do
-            [ -n "$cls" ] || continue
-            case "$cls" in y8f0|vhf|fqr|ot8) continue ;; esac
-            input="voyage/$dex"
-            target="decompiled/$cls.java"
-            outdir="$RUNNER_TEMP/jadx-$cls"
-            mkdir -p "$outdir"
-            "$JADx" -j 2 --no-res --show-bad-code --single-class "$cls" --single-class-output "$GITHUB_WORKSPACE/$target" -d "$outdir" "$input" >"$outdir/stdout.log" 2>"$outdir/stderr.log" || true
-            if [ ! -s "$target" ]; then
-              "$JADx" -j 2 --no-res --show-bad-code --single-class "$cls" -d "$outdir/fallback" "$input" >"$outdir/fallback-stdout.log" 2>"$outdir/fallback-stderr.log" || true
-              found="$(find "$outdir/fallback" -type f -name "$cls.java" -print -quit 2>/dev/null || true)"
-              if [ -n "$found" ] && [ -s "$found" ]; then cp "$found" "$target"; fi
-            fi
-            if [ -s "$target" ]; then echo "OK $cls $(wc -c < "$target") bytes"; else echo "FAILED $cls" | tee -a decompiled/FAILED.txt; failures=$((failures + 1)); fi
-          done < "$RUNNER_TEMP/classes.tsv"
-          cat > decompiled/SOURCE_INDEX.md <<'EOF'
-          # Voyage theme decompilation index
+          test "${#inputs[@]}" -eq 14
+          "$JADx" -j 2 --no-res --show-bad-code -d decompiled "${inputs[@]}" 2>&1 | tee decompiled/jadx.log
+          printf '# Voyage full DEX decompilation\n\n' > decompiled/ANALYSIS_INDEX.md
+          printf 'Tool: JADX CLI 1.5.6; Java 17.\n\n' >> decompiled/ANALYSIS_INDEX.md
+          printf 'Inputs: %s DEX files.\n\n' "${#inputs[@]}" >> decompiled/ANALYSIS_INDEX.md
+          printf 'Java source files: %s\n' "$(find decompiled -type f -name '*.java' | wc -l)" >> decompiled/ANALYSIS_INDEX.md
+          printf 'Kotlin metadata files: %s\n' "$(find decompiled -type f -name '*.kotlin_metadata' | wc -l)" >> decompiled/ANALYSIS_INDEX.md
+          printf '\n## Compose interaction API references\n' >> decompiled/ANALYSIS_INDEX.md
+          grep -RIlE 'PressInteraction|collectIsPressedAsState|MutableInteractionSource|animateFloatAsState|graphicsLayer|combinedClickable|clickable' decompiled --include='*.java' | sed 's#^#- #' >> decompiled/ANALYSIS_INDEX.md || true
+          printf '\n## Scale / transform references\n' >> decompiled/ANALYSIS_INDEX.md
+          grep -RIlE 'scaleX|scaleY|scale\(' decompiled --include='*.java' | sed 's#^#- #' >> decompiled/ANALYSIS_INDEX.md || true
 
-          Source input: the user's Voyage APK unpacked into iskyxpcity/AppData/voyage/.
-          Tool: official JADX CLI 1.5.6, run on GitHub Actions with Java 17.
-          This is a focused source-analysis artifact, not a redistribution of the whole APK.
-
-          - Slider entries: ncw0, y3w0, w3w0, v2t0
-          - Shared slider and renderer: j5v0, y8f0, caf0, y3f0, vhf
-          - Fancy callback and modifier chain: o4l, fqr, ot8
-          - Slider state/theme helpers: n8f0, faf0, gca0, xqv0
-          EOF
-          printf '\nJADX version: ' >> decompiled/SOURCE_INDEX.md
-          "$JADx" --version >> decompiled/SOURCE_INDEX.md
-          printf '\nFailed class count: %s\n' "$failures" >> decompiled/SOURCE_INDEX.md
-          echo "Decompiled Java files: $(find decompiled -maxdepth 1 -name '*.java' | wc -l)"
-          if [ "$failures" -gt 0 ]; then echo "Some classes failed; keep partial artifact for investigation."; fi
-
-      - name: Upload focused decompiled source
+      - name: Upload full decompiled source
         uses: actions/upload-artifact@v4
         with:
-          name: voyage-theme-decompiled-source-complete
+          name: voyage-full-compose-ui-decompiled-source
           path: decompiled/
           if-no-files-found: error
           retention-days: 14
