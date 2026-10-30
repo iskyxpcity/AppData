@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Scheme editor subpage. Theme only, no business content. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/editorTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:navigationIcon="@drawable/ic_splash_mark"
+        app:title="配色方案编辑"
+        app:subtitle="新建 / 编辑 / 删除配色" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="色相"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/seekHue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="色度"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/seekChroma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="色调"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/seekTone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="十六进制"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editorHex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="#RRGGBB"
+                android:inputType="text"
+                android:textColor="?attr/colorOnSurface" />
+
+            <TextView
+                android:id="@+id/editorPreviewText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="预览"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/previewPrimary"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1" />
+
+                <View
+                    android:id="@+id/previewSecondary"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1" />
+
+                <View
+                    android:id="@+id/previewTertiary"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1" />
+
+                <View
+                    android:id="@+id/previewSurface"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1" />
+
+                <View
+                    android:id="@+id/previewContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="预览色由色相/色度/色调换算（HSV），非原应用生成算法，原算法未解码。"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="14sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditorSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="保存" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditorDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="删除最后一个自定义配色" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

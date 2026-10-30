@@ -173,6 +173,12 @@ class MainActivity : AppCompatActivity() {
         }
         findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.showcaseNavBar)
             .setOnItemSelectedListener { true }
+        // Functional effects: every control now does something visible
+        ThemeEffects.applyColorVision(window.decorView, ThemeStore.getColorBlind(this), ThemeStore.getInvertColors(this))
+        ThemeEffects.applySwitchStyle(findViewById(R.id.showcaseSwitch), ThemeStore.getSwitchStyle(this), this)
+        ThemeEffects.applySliderStyle(findViewById(R.id.showcaseSlider), ThemeStore.getSliderStyle(this), this)
+        ThemeEffects.applyShapeStyle(findViewById(R.id.showcaseCard), findViewById(R.id.primaryButton), ThemeStore.getShapeStyle(this), this)
+        ThemeEffects.applyIconShapePreview(findViewById(R.id.splashMark), ThemeStore.getIconShape(this), this)
         // Component state line: switch / slider / shape styles (ARSC names)
         findViewById<TextView>(R.id.componentState).text =
             "开关：%s · 滑条：%s · 形状：%s".format(
@@ -317,6 +323,9 @@ class MainActivity : AppCompatActivity() {
             ThemeStore.saveDynamicLocked(this, it)
         }
         // Scheme editor: new / delete custom schemes, preset list
+        findViewById<MaterialButton>(R.id.btnOpenSchemeEditor).setOnClickListener {
+            startActivity(android.content.Intent(this, SchemeEditorActivity::class.java))
+        }
         findViewById<MaterialButton>(R.id.btnSchemeNew).setOnClickListener {
             val n = ThemeStore.getCustomSchemes(this).size + 1
             ThemeStore.addCustomScheme(this, "自定义 %d".format(n)); recreate()
