@@ -54,7 +54,7 @@
         <item name="colorSurface">?attr/colorSurfaceContainerHigh</item>
     </style>
     <!-- Text styles bound to the typography baseline + LXGW font. -->
-    <style name="TextAppearance.Voyage.DisplayLarge">
+    <style name="TextAppearance.Voyage.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
         <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
         <item name="android:textSize">@dimen/text_display_large</item>
         <item name="android:textStyle">bold</item>
@@ -62,21 +62,21 @@
     <style name="TextAppearance.Voyage.DisplayLargeEmphasized" parent="TextAppearance.Voyage.DisplayLarge">
         <item name="android:textStyle">bold</item>
     </style>
-    <style name="TextAppearance.Voyage.HeadlineLarge">
+    <style name="TextAppearance.Voyage.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
         <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
         <item name="android:textSize">@dimen/text_headline_large</item>
         <item name="android:textStyle">bold</item>
     </style>
-    <style name="TextAppearance.Voyage.TitleLarge">
+    <style name="TextAppearance.Voyage.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
         <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
         <item name="android:textSize">@dimen/text_title_large</item>
         <item name="android:textStyle">bold</item>
     </style>
-    <style name="TextAppearance.Voyage.BodyLarge">
+    <style name="TextAppearance.Voyage.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
         <item name="android:textSize">@dimen/text_body_large</item>
     </style>
-    <style name="TextAppearance.Voyage.LabelLarge">
+    <style name="TextAppearance.Voyage.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
         <item name="android:fontFamily">@font/lxgwwenkaigb_regular</item>
         <item name="android:textSize">@dimen/text_label_large</item>
         <item name="android:textStyle">bold</item>
