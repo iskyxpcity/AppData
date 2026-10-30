@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Theme shell only. No business content. -->
+<!-- Theme shell only. No business content.
+     Layout follows the original theme settings grouping (ARSC theme_group_*):
+     界面风格 / 显示模式 / 配色方案 / 形状 / 组件 / 导航栏 / 阴影 /
+     启动画面与图标 / 色彩辅助.
+     Group NAMES and items are original; group ORDER in this shell is the
+     shell's arrangement (ARSC IDs are alphabetical and do not prove the
+     original page order, and the original Compose page order was not
+     decoded from ThemeSettingsRoute, which is only a route class). -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -69,7 +76,7 @@
                 android:text="组件展示" />
         </LinearLayout>
 
-        <!-- Section: Theme settings -->
+        <!-- Section: Theme settings, grouped like the original -->
         <LinearLayout
             android:id="@+id/sectionTheme"
             android:layout_width="match_parent"
@@ -86,13 +93,53 @@
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="18sp" />
 
+            <!-- 界面风格 -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
+                android:text="界面风格"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDesignMaterial3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Material 3" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDesignMiuix"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MIUIX（仅记录）" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="原副标题：Material 3 为 Google Material You 设计，可自定义形状、开关与滑条样式、阴影和描边；MIUIX 线不在本壳范围，选择后仅记录。"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="14sp" />
+
+            <!-- 显示模式 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:text="显示模式"
                 android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -128,30 +175,30 @@
                 android:layout_marginTop="16dp"
                 android:text="深色下用纯黑背景" />
 
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/switchSplashFollow"
-                android:layout_width="match_parent"
+            <!-- 配色方案 -->
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="启动画面跟随主题" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/switchIconFollow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="桌面图标跟随主题" />
+                android:layout_marginTop="24dp"
+                android:text="配色方案"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switchBubble"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="主题色消息气泡（仅主题开关）" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnResetTheme"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="恢复主题默认值" />
+                android:text="预设配色（13 Tint）"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:id="@+id/tintList"
@@ -159,29 +206,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:orientation="vertical" />
-        </LinearLayout>
-
-        <!-- Section: Scheme editor -->
-        <LinearLayout
-            android:id="@+id/sectionScheme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="配色方案：预设配色列表（演示，无业务数据）"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="配色风格"
+                android:text="配色风格（9 档；仅忠于种子与缤纷有完整表，其余回落忠于种子）"
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="16sp" />
 
@@ -205,16 +235,32 @@
                     android:text="缤纷" />
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/styleList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <!-- 形状 -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="全部 9 档风格（Licj0 序号，见深挖报告 §2.2；仅忠于种子与缤纷有完整表，其余回落忠于种子）"
-                android:textColor="?android:attr/textColorSecondary"
-                android:textSize="14sp" />
+                android:layout_marginTop="24dp"
+                android:text="形状"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="形状样式（原应用 7 档）"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
 
             <LinearLayout
-                android:id="@+id/styleList"
+                android:id="@+id/shapeStyleList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" />
@@ -223,7 +269,353 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="圆角 / 字体 / 动效：见主题状态，圆角、字体大小、动效开关均已存入 ThemeStore；形状样式 7 档、色觉模式 9 档、阴影组、描边、反转、转场、图标底衬、悬浮底栏等键已在 ThemeStore 中，序号与中文名对应待标定（见深挖报告）"
+                android:text="圆角大小"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCornerSmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="小" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCornerMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="中" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCornerLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="大" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="描边宽度"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBorderThin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="细" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBorderMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="中" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBorderThick"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="粗" />
+            </LinearLayout>
+
+            <!-- 组件 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="组件"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="开关样式（原应用 8 档；壳内为 Material 开关 + 名称示意，非原 Compose 绘制）"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/switchStyleList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="滑条样式（原应用 4 档；壳内为 SeekBar + 名称示意，非原 Compose 绘制）"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/sliderStyleList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <!-- 导航栏 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="导航栏"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchFloatingNav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="悬浮底栏" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchLiquidGlass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="液态玻璃（需先开悬浮底栏，Android 13+）" />
+
+            <!-- 阴影 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="阴影"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/shadowTopBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="阴影 · 顶栏" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/shadowButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阴影 · 按钮" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/shadowContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阴影 · 容器" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/shadowFab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阴影 · 悬浮按钮" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/shadowSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阴影 · 滑条" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/shadowSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阴影 · 开关" />
+
+            <!-- 启动画面与图标 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="启动画面与图标"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchSplashFollow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="启动画面跟随主题" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchIconFollow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="桌面图标跟随主题" />
+
+            <TextView
+                android:id="@+id/iconShapeState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="图标底衬：无"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnIconNone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="无" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnIconRandom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="随机" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="图标底衬预设 0–9（原应用共 50 套，壳内仅记录选择，底衬绘制未复刻）"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/iconShapeList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <!-- 色彩辅助 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="色彩辅助"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="色觉模式（原应用 9 档；壳内仅记录选择，改写矩阵未解码）"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/colorBlindList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchInvert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="反转颜色" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchContentColors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="内容取色（仅开关，无内容页面）" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchDynamicLocked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="系统动态色锁定提示" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnResetTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="恢复主题默认值" />
+        </LinearLayout>
+
+        <!-- Section: Scheme editor -->
+        <LinearLayout
+            android:id="@+id/sectionScheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="配色方案编辑：新建 / 删除（壳内演示，无业务数据）"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSchemeNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="新建配色" />
+
+            <LinearLayout
+                android:id="@+id/customSchemeList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="点自定义配色可删除；点预设配色可切换 Tint"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="预设配色"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/presetSchemeList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="动效：转场动效、背景动效、动效与触感（时长与插值器未解码，壳内仅开关）"
                 android:textColor="?android:attr/textColorSecondary"
                 android:textSize="14sp" />
 
@@ -235,7 +627,7 @@
                 android:text="动效与触感" />
         </LinearLayout>
 
-        <!-- Section: Component showcase -->
+        <!-- Section: Component showcase (visual only; settings live in 主题设置 groups) -->
         <LinearLayout
             android:id="@+id/sectionComponents"
             android:layout_width="match_parent"
@@ -271,112 +663,6 @@
                 android:text="组件状态"
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="开关样式（原应用 8 档，ARSC 名；壳内为 Material 开关 + 名称示意，非原 Compose 绘制）"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp" />
-
-            <LinearLayout
-                android:id="@+id/switchStyleList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="滑条样式（原应用 4 档，ARSC 名；壳内为 SeekBar + 名称示意，非原 Compose 绘制）"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp" />
-
-            <LinearLayout
-                android:id="@+id/sliderStyleList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="形状样式（原应用 7 档，ARSC 名；View 下切角/超椭圆/波浪等需 Compose 形状，壳内以圆角大小示意）"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp" />
-
-            <LinearLayout
-                android:id="@+id/shapeStyleList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="阴影（原应用 theme_group_shadows 下 6 项，逐项开关）"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/shadowTopBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="阴影 · 顶栏" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/shadowButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="阴影 · 按钮" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/shadowContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="阴影 · 容器" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/shadowFab"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="阴影 · 悬浮按钮" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/shadowSlider"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="阴影 · 滑条" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/shadowSwitch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="阴影 · 开关" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="导航栏（原应用：悬浮底栏；液态玻璃需先开悬浮底栏，需 Android 13+）"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/switchFloatingNav"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="悬浮底栏" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/switchLiquidGlass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="液态玻璃（需先开悬浮底栏，Android 13+）" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/showcaseCard"

@@ -32,6 +32,8 @@ object ThemeStore {
     // Shape-style number <-> name mapping was NOT decoded; stored number
     // is a configurable placeholder, not a claimed original mapping.
     private const val KEY_SHAPE_STYLE = "shape_style" // 0..6, shell order in arrays.xml, default 0 (rounded)
+    private const val KEY_DESIGN = "design" // 0=Material 3, 1=MIUIX (shell records only, MIUIX rendering not in scope)
+    private const val KEY_CUSTOM_SCHEMES = "custom_schemes" // comma-separated demo scheme names, theme shell only
     private const val KEY_SWITCH_STYLE = "switch_style" // 0..7, ARSC names, shell default 5 (Material You)
     private const val KEY_SLIDER_STYLE = "slider_style" // 0..3, ARSC names, shell default 3 (Material You)
     private const val KEY_FONT_FAMILY = "font_family" // 0=default (LXGW), 1=serif
@@ -101,6 +103,21 @@ object ThemeStore {
     fun switchStyleName(style: Int): String = listOf("Compose", "Cupertino", "Fluent", "HyperOS", "液态玻璃", "Material You", "One UI", "Pixel")[style.coerceIn(0, 7)]
     fun sliderStyleName(style: Int): String = listOf("灵动", "HyperOS", "Material 2", "Material You")[style.coerceIn(0, 3)]
     fun shapeStyleName(style: Int): String = listOf("圆角", "切角", "超椭圆", "平滑", "波浪", "内凹", "缺口")[style.coerceIn(0, 6)]
+    fun getDesign(context: Context): Int = getInt(context, KEY_DESIGN, 0)
+    fun saveDesign(context: Context, v: Int) = saveInt(context, KEY_DESIGN, v.coerceIn(0, 1))
+    fun designName(design: Int): String = if (design == 1) "MIUIX（仅记录，壳内仍为 Material 3）" else "Material 3"
+    fun getCustomSchemes(context: Context): List<String> {
+        val raw = prefs(context).getString(KEY_CUSTOM_SCHEMES, "") ?: ""
+        return raw.split(",").filter { it.isNotBlank() }
+    }
+    fun addCustomScheme(context: Context, name: String) {
+        val list = getCustomSchemes(context) + name
+        prefs(context).edit().putString(KEY_CUSTOM_SCHEMES, list.joinToString(",")).apply()
+    }
+    fun deleteCustomScheme(context: Context, name: String) {
+        val list = getCustomSchemes(context) - name
+        prefs(context).edit().putString(KEY_CUSTOM_SCHEMES, list.joinToString(",")).apply()
+    }
     fun getFontFamily(context: Context): Int = getInt(context, KEY_FONT_FAMILY, 0)
     fun saveFontFamily(context: Context, v: Int) = saveInt(context, KEY_FONT_FAMILY, v)
     fun getBorderWidth(context: Context): Int = getInt(context, KEY_BORDER_WIDTH, 1)

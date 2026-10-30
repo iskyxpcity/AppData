@@ -260,6 +260,103 @@ class MainActivity : AppCompatActivity() {
         bindSwitch(R.id.switchLiquidGlass, ThemeStore.getLiquidGlass(this)) {
             ThemeStore.saveLiquidGlass(this, it); applyNavBar()
         }
+        // Grouped settings: design / corner / border
+        findViewById<MaterialButton>(R.id.btnDesignMaterial3).setOnClickListener {
+            ThemeStore.saveDesign(this, 0); recreate()
+        }
+        findViewById<MaterialButton>(R.id.btnDesignMiuix).setOnClickListener {
+            ThemeStore.saveDesign(this, 1); recreate()
+        }
+        findViewById<TextView>(R.id.currentTint).text =
+            "当前 Tint：%02d · 风格：%s%s · 界面：%s".format(
+                tint, styleName, styleNote, ThemeStore.designName(ThemeStore.getDesign(this)))
+        findViewById<MaterialButton>(R.id.btnCornerSmall).setOnClickListener {
+            ThemeStore.saveCorner(this, 0); recreate()
+        }
+        findViewById<MaterialButton>(R.id.btnCornerMedium).setOnClickListener {
+            ThemeStore.saveCorner(this, 1); recreate()
+        }
+        findViewById<MaterialButton>(R.id.btnCornerLarge).setOnClickListener {
+            ThemeStore.saveCorner(this, 2); recreate()
+        }
+        findViewById<MaterialButton>(R.id.btnBorderThin).setOnClickListener {
+            ThemeStore.saveBorderWidth(this, 0); recreate()
+        }
+        findViewById<MaterialButton>(R.id.btnBorderMedium).setOnClickListener {
+            ThemeStore.saveBorderWidth(this, 1); recreate()
+        }
+        findViewById<MaterialButton>(R.id.btnBorderThick).setOnClickListener {
+            ThemeStore.saveBorderWidth(this, 2); recreate()
+        }
+        // Icon shape: -1 none, 50 random, 0..9 presets shown (original has 0..49)
+        fun iconShapeLabel(v: Int): String = when (v) {
+            -1 -> "无"; 50 -> "随机"; else -> "预设 %d".format(v)
+        }
+        findViewById<TextView>(R.id.iconShapeState).text =
+            "图标底衬：%s".format(iconShapeLabel(ThemeStore.getIconShape(this)))
+        findViewById<MaterialButton>(R.id.btnIconNone).setOnClickListener {
+            ThemeStore.saveIconShape(this, -1); recreate()
+        }
+        findViewById<MaterialButton>(R.id.btnIconRandom).setOnClickListener {
+            ThemeStore.saveIconShape(this, 50); recreate()
+        }
+        buildList(R.id.iconShapeList, Array(10) { "预设 %d".format(it) },
+            ThemeStore.getIconShape(this).takeIf { it in 0..9 } ?: -2) {
+            ThemeStore.saveIconShape(this, it)
+        }
+        // Colour assistance: 9 modes + invert / content / dynamic-locked
+        buildList(R.id.colorBlindList, resources.getStringArray(R.array.color_blind_modes),
+            ThemeStore.getColorBlind(this)) { ThemeStore.saveColorBlind(this, it) }
+        bindSwitch(R.id.switchInvert, ThemeStore.getInvertColors(this)) {
+            ThemeStore.saveInvertColors(this, it)
+        }
+        bindSwitch(R.id.switchContentColors, ThemeStore.getContentColors(this)) {
+            ThemeStore.saveContentColors(this, it)
+        }
+        bindSwitch(R.id.switchDynamicLocked, ThemeStore.getDynamicLocked(this)) {
+            ThemeStore.saveDynamicLocked(this, it)
+        }
+        // Scheme editor: new / delete custom schemes, preset list
+        findViewById<MaterialButton>(R.id.btnSchemeNew).setOnClickListener {
+            val n = ThemeStore.getCustomSchemes(this).size + 1
+            ThemeStore.addCustomScheme(this, "自定义 %d".format(n)); recreate()
+        }
+        val customList = findViewById<LinearLayout>(R.id.customSchemeList)
+        for (name in ThemeStore.getCustomSchemes(this)) {
+            val button = MaterialButton(this).apply {
+                text = "%s（点此删除）".format(name)
+                textSize = 15f
+                setOnClickListener {
+                    ThemeStore.deleteCustomScheme(this@MainActivity, name); recreate()
+                }
+            }
+            customList.addView(button, LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply { topMargin = 12 })
+        }
+        val presetList = findViewById<LinearLayout>(R.id.presetSchemeList)
+        val presetBlades = resources.obtainTypedArray(R.array.tint_blades)
+        val presetPapers = resources.obtainTypedArray(R.array.tint_papers)
+        try {
+            for (i in 1..13) {
+                val button = MaterialButton(this).apply {
+                    text = "预设 Tint %02d".format(i)
+                    textSize = 15f
+                    backgroundTintList = ColorStateList.valueOf(presetBlades.getColor(i - 1, 0))
+                    setTextColor(presetPapers.getColor(i - 1, 0))
+                    setOnClickListener {
+                        ThemeStore.saveTint(this@MainActivity, i); recreate()
+                    }
+                }
+                presetList.addView(button, LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                ).apply { topMargin = 12 })
+            }
+        } finally {
+            presetBlades.recycle(); presetPapers.recycle()
+        }
         show(sectionTheme)
     }
 }
