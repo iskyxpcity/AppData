@@ -1,0 +1,73 @@
+name: Decompile Voyage liquid glass switch classes
+
+on:
+  push:
+    branches:
+      - analysis/voyage-liquid-glass-switch-20261106
+    paths:
+      - ".github/workflows/decompile-voyage-switch.yml"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout Voyage DEX archive
+        uses: actions/checkout@v4
+        with:
+          ref: analysis/voyage-liquid-glass-switch-20261106
+          fetch-depth: 1
+
+      - name: Install JADX 1.5.6
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 3 -o /tmp/jadx.zip https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip
+          echo "545ea2be9c242511bc145755cf4bda2485ade42966e096f8b4d3da2a230e8974  /tmp/jadx.zip" | sha256sum -c -
+          mkdir -p /opt/jadx
+          unzip -q /tmp/jadx.zip -d /opt/jadx
+          chmod +x /opt/jadx/bin/jadx
+          /opt/jadx/bin/jadx --version
+
+      - name: Decompile only switch and glass pipeline classes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/voyage-selected
+          dex=(voyage/classes*.dex)
+          test "${#dex[@]}" -ge 10
+          classes=(ixv0 rdf mcv qqf usf z6t0 jqf kqf g1u qft cyi nyi eyi kyi hqf iqf gqf us t5d mrv0 jow0 hfp ffr v6g0)
+          missing=()
+          for c in "${classes[@]}"; do
+            echo "===== Decompiling defpackage.$c ====="
+            out="/tmp/voyage-selected/$c"
+            mkdir -p "$out"
+            /opt/jadx/bin/jadx --threads-count 4 --no-res --single-class "defpackage.$c" -d "$out" "${dex[@]}" || true
+            f="$(find "$out" -type f -name "$c.java" -print -quit)"
+            if [ -n "$f" ]; then
+              cp "$f" "/tmp/voyage-selected/$c.java"
+              echo "FOUND $c: $(wc -c < "$f") bytes"
+            else
+              missing+=("$c")
+              echo "MISSING $c"
+            fi
+          done
+          printf '%s\n' "${missing[@]}" > /tmp/voyage-selected/MISSING.txt
+          test -f /tmp/voyage-selected/ixv0.java
+          test -f /tmp/voyage-selected/jqf.java
+          cd /tmp
+          zip -qr voyage-liquid-glass-switch-source.zip voyage-selected
+          ls -lh /tmp/voyage-liquid-glass-switch-source.zip
+          echo "Missing classes: ${missing[*]:-none}"
+
+      - name: Upload selected decompiled sources
+        uses: actions/upload-artifact@v4
+        with:
+          name: voyage-liquid-glass-switch-source
+          path: /tmp/voyage-liquid-glass-switch-source.zip
+          if-no-files-found: error
+          retention-days: 7
