@@ -28,6 +28,7 @@ jobs:
           - defpackage.r120
           - defpackage.mxe0
           - defpackage.fwe0
+          - defpackage.bwm
     steps:
       - name: Checkout original DEX partitions
         uses: actions/checkout@v4
