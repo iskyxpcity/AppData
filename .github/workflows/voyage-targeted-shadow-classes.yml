@@ -53,7 +53,7 @@ jobs:
           OUT="$RUNNER_TEMP/voyage-targeted"
           mkdir -p "$OUT/classes"
           DEXES=(voyage/classes.dex voyage/classes2.dex)
-          TARGETS=(x1j)
+          TARGETS=(ro brc cm8 c9c0)
           : > "$OUT/RESULTS.txt"
           for cls in "${TARGETS[@]}"; do
             echo "===== $cls =====" | tee -a "$OUT/RESULTS.txt"
