@@ -49,17 +49,17 @@ def read_dex(path):
     widths[0xfa]=4; widths[0xfb]=4; widths[0xfc]=3; widths[0xfd]=3
     widths[0xfe]=2; widths[0xff]=2
     targets = {
-      ("Ldefpackage/dko;", "Io"),
-      ("Ldefpackage/dko;", "oo"),
-      ("Ldefpackage/dko;", "llO"),
-      ("Ldefpackage/dko;", "loO"),
-      ("Ldefpackage/bko;", "<init>"),
-      ("Ldefpackage/bko;", "l"),
-      ("Ldefpackage/wgo0;", "<init>"),
+      ("Ldko;", "Io"),
+      ("Ldko;", "oo"),
+      ("Ldko;", "llO"),
+      ("Ldko;", "loO"),
+      ("Lbko;", "<init>"),
+      ("Lbko;", "l"),
+      ("Lwgo0;", "<init>"),
     }
     out=[]
     target_ids=[(i, methods[i]) for i in range(len(methods)) if methods[i] in targets]
-    wave_fields=[(i, fields[i]) for i in range(len(fields)) if fields[i][0]=="Ldefpackage/vk7;" and fields[i][2]=="lI"]
+    wave_fields=[(i, fields[i]) for i in range(len(fields)) if fields[i][0]=="Lvk7;" and fields[i][2]=="lI"]
     out.append(f"INDEX {os.path.basename(path)}: classes={class_size} methods={meth_size} target_method_ids={target_ids} wave_shape_field_ids={wave_fields}")
     for ci in range(class_size):
         base=class_off+ci*32
@@ -101,7 +101,7 @@ def read_dex(path):
                     # sget/sput variants: include direct static field access to Voyage's shared wave shape.
                     if opcode in (0x60,0x61,0x62,0x63,0x67,0x68,0x69,0x6a,0x6b,0x6c,0x6d):
                         ref=struct.unpack_from("<H",data,start+(pc+1)*2)[0]
-                        if ref < len(fields) and fields[ref][0]=="Ldefpackage/vk7;" and fields[ref][2]=="lI":
+                        if ref < len(fields) and fields[ref][0]=="Lvk7;" and fields[ref][2]=="lI":
                             out.append(f"{os.path.basename(path)}: {owner} method_idx={mid} accesses vk7.lI wave Shape at code_unit={pc}")
                     pc += max(1,length)
     return out
