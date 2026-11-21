@@ -11,7 +11,8 @@ def uleb(data, off):
 
 def read_dex(path):
     data = open(path, "rb").read()
-    if data[:4] != b"dex\n": raise ValueError("not dex: " + path)
+    if data[:4] != b"dex
+": raise ValueError("not dex: " + path)
     def u32(o): return struct.unpack_from("<I", data, o)[0]
     str_size, str_off = u32(56), u32(60)
     type_size, type_off = u32(64), u32(68)
@@ -55,7 +56,10 @@ def read_dex(path):
       ("Ldko;", "loO"),
       ("Lbko;", "<init>"),
       ("Lbko;", "l"),
-      ("Lwgo0;", "<init>"),\n      ("Lvk7;", "I"),\n      ("Lfwe0;", "<init>"),\n      ("Lmxe0;", "<init>"),
+      ("Lwgo0;", "<init>"),
+      ("Lvk7;", "I"),
+      ("Lfwe0;", "<init>"),
+      ("Lmxe0;", "<init>"),
     }
     out=[]
     target_ids=[(i, methods[i]) for i in range(len(methods)) if methods[i] in targets]
@@ -110,4 +114,5 @@ all_out=[]
 for path in sys.argv[1:]:
     try: all_out.extend(read_dex(path))
     except Exception as e: all_out.append(f"ERROR {path}: {type(e).__name__}: {e}")
-print("\n".join(all_out))
+print("
+".join(all_out))
