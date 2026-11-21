@@ -1,0 +1,84 @@
+name: Voyage targeted wave-shadow class decompile
+
+on:
+  push:
+    branches:
+      - analysis/voyage-full-dex-forensics-20261121
+    paths:
+      - ".github/workflows/voyage-targeted-shadow-classes.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  targeted:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout only DEX partitions containing known targets
+        uses: actions/checkout@v4
+        with:
+          ref: analysis/voyage-full-dex-forensics-20261121
+          sparse-checkout: |
+            voyage/classes.dex
+            voyage/classes2.dex
+            voyage/classes6.dex
+            voyage/classes7.dex
+            voyage/classes8.dex
+            voyage/classes9.dex
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Download JADX 1.5.6
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 3 -o "$RUNNER_TEMP/jadx.zip" https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip
+          mkdir -p "$RUNNER_TEMP/jadx"
+          unzip -q "$RUNNER_TEMP/jadx.zip" -d "$RUNNER_TEMP/jadx"
+          chmod +x "$RUNNER_TEMP/jadx/bin/jadx"
+          "$RUNNER_TEMP/jadx/bin/jadx" --version
+
+      - name: Decompile only the known shadow call-chain classes
+        shell: bash
+        env:
+          JAVA_OPTS: "-Xmx4g"
+        run: |
+          set -euo pipefail
+          JADX="$RUNNER_TEMP/jadx/bin/jadx"
+          OUT="$RUNNER_TEMP/voyage-targeted"
+          mkdir -p "$OUT/classes"
+          DEXES=(voyage/classes.dex voyage/classes2.dex voyage/classes6.dex voyage/classes7.dex voyage/classes8.dex voyage/classes9.dex)
+          TARGETS=(wgo0 vne xgo0 vk7 u5 bwm bko iko dko r120 w6b0 fwe0)
+          : > "$OUT/RESULTS.txt"
+          for cls in "${TARGETS[@]}"; do
+            echo "===== $cls =====" | tee -a "$OUT/RESULTS.txt"
+            if "$JADX" --threads-count 1 --no-res --show-bad-code \
+                --single-class "$cls" \
+                --single-class-output "$OUT/classes/$cls.java" \
+                -d "$OUT/work-$cls" "${DEXES[@]}" >> "$OUT/RESULTS.txt" 2>&1; then
+              if [ -f "$OUT/classes/$cls.java" ]; then
+                echo "OK: $cls" | tee -a "$OUT/RESULTS.txt"
+              else
+                echo "NO_OUTPUT: $cls" | tee -a "$OUT/RESULTS.txt"
+              fi
+            else
+              echo "FAILED: $cls (continuing with next class)" | tee -a "$OUT/RESULTS.txt"
+            fi
+            rm -rf "$OUT/work-$cls"
+          done
+          find "$OUT/classes" -type f -maxdepth 1 -print
+          cd "$RUNNER_TEMP"
+          zip -qr voyage-targeted-shadow-classes.zip voyage-targeted
+
+      - name: Upload targeted shadow class evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: voyage-targeted-wave-shadow-classes
+          path: ${{ runner.temp }}/voyage-targeted-shadow-classes.zip
+          if-no-files-found: error
+          retention-days: 14
