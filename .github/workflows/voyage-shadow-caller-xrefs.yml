@@ -33,48 +33,15 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Install APK disassembler
-        shell: bash
-        run: |
-          set -euo pipefail
-          sudo apt-get update
-          sudo apt-get install -y apktool
-          apktool --version
-
-      - name: Disassemble and locate real shadow callers
+      - name: Scan DEX method and field references
         shell: bash
         run: |
           set -euo pipefail
           OUT="$RUNNER_TEMP/voyage-xrefs"
-          mkdir -p "$OUT/smali" "$OUT/hits" "$OUT/miniapk"
-          cp voyage/classes*.dex "$OUT/miniapk/"
-          cat > "$OUT/miniapk/AndroidManifest.xml" <<'EOF'
-          <?xml version="1.0" encoding="utf-8"?>
-          <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.voyage.forensics"><application /></manifest>
-          EOF
-          (cd "$OUT/miniapk" && zip -q "$OUT/voyage-dex-only.apk" AndroidManifest.xml classes*.dex)
-          apktool d -f -r "$OUT/voyage-dex-only.apk" -o "$OUT/decoded"
-          cp -R "$OUT/decoded"/smali* "$OUT/smali/"
-
-          PATTERNS=(
-            'Ldefpackage/dko;->Io(F)V'
-            'Ldefpackage/dko;->oo(J)V'
-            'Ldefpackage/dko;->llO(J)V'
-            'Ldefpackage/dko;->loO(Landroid/graphics/Outline;J)V'
-            'Ldefpackage/bko;-><init>(Ldefpackage/dko;)V'
-            'Ldefpackage/bko;->l()V'
-            'Ldefpackage/wgo0;'
-          )
-          : > "$OUT/XREFS.txt"
-          for pattern in "${PATTERNS[@]}"; do
-            echo "===== $pattern =====" | tee -a "$OUT/XREFS.txt"
-            grep -R -n -F -B 12 -A 18 "$pattern" "$OUT/smali" >> "$OUT/XREFS.txt" || true
-          done
-          find "$OUT/smali" -type f -name '*.smali' -print0 | xargs -0 grep -l -E 'Ldefpackage/(dko|bko|wgo0);' | while read -r file; do
-            cp --parents "$file" "$OUT/hits/"
-          done
+          mkdir -p "$OUT"
+          python3 tools/voyage_dex_shadow_xrefs.py voyage/classes.dex voyage/classes2.dex voyage/classes6.dex voyage/classes7.dex voyage/classes8.dex voyage/classes9.dex | tee "$OUT/XREFS.txt"
           cd "$RUNNER_TEMP"
-          zip -qr voyage-shadow-caller-xrefs.zip voyage-xrefs/XREFS.txt voyage-xrefs/hits
+          zip -qr voyage-shadow-caller-xrefs.zip voyage-xrefs/XREFS.txt
       - name: Upload xref evidence
         uses: actions/upload-artifact@v4
         with:
