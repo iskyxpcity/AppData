@@ -22,7 +22,7 @@ jobs:
           - defpackage.vne
           - defpackage.xgo0
           - defpackage.vk7
-          - defpackage.Liko
+          - defpackage.iko
     steps:
       - name: Checkout original DEX partitions
         uses: actions/checkout@v4
@@ -60,19 +60,23 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/targeted"
+          set +e
           "$RUNNER_TEMP/jadx/bin/jadx" \
             --threads-count 1 --no-res --show-bad-code \
             --single-class "$TARGET_CLASS" \
             --single-class-output "$RUNNER_TEMP/targeted" \
             voyage/classes.dex voyage/classes2.dex voyage/classes6.dex voyage/classes7.dex voyage/classes8.dex voyage/classes9.dex
+          JADX_STATUS=$?
+          set -e
+          echo "JADX exit status: $JADX_STATUS"
           find "$RUNNER_TEMP/targeted" -type f -maxdepth 8 -print
-          cd "$RUNNER_TEMP"
-          zip -qr "voyage-${TARGET_CLASS##*.}.zip" targeted
+          TARGET_FILE="$RUNNER_TEMP/targeted/${TARGET_CLASS##*.}.java"
+          test -s "$TARGET_FILE" || { echo "Target source was not produced: $TARGET_FILE"; exit 1; }
 
       - name: Upload ${{ matrix.target }} source
         uses: actions/upload-artifact@v4
         with:
           name: voyage-single-${{ matrix.target }}
-          path: ${{ runner.temp }}/voyage-*.zip
+          path: ${{ runner.temp }}/targeted/
           if-no-files-found: error
           retention-days: 14
