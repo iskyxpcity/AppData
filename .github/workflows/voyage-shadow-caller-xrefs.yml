@@ -6,6 +6,7 @@ on:
       - analysis/voyage-full-dex-forensics-20261121
     paths:
       - ".github/workflows/voyage-shadow-caller-xrefs.yml"
+      - "tools/voyage_dex_shadow_xrefs.py"
 
 permissions:
   contents: read
