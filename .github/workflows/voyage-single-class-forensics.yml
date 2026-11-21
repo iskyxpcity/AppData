@@ -23,6 +23,10 @@ jobs:
           - defpackage.xgo0
           - defpackage.vk7
           - defpackage.iko
+          - defpackage.dko
+          - defpackage.bko
+          - defpackage.r120
+          - defpackage.mxe0
     steps:
       - name: Checkout original DEX partitions
         uses: actions/checkout@v4
