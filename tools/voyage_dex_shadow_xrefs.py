@@ -58,6 +58,9 @@ def read_dex(path):
       ("Ldefpackage/wgo0;", "<init>"),
     }
     out=[]
+    target_ids=[(i, methods[i]) for i in range(len(methods)) if methods[i] in targets]
+    wave_fields=[(i, fields[i]) for i in range(len(fields)) if fields[i][0]=="Ldefpackage/vk7;" and fields[i][2]=="lI"]
+    out.append(f"INDEX {os.path.basename(path)}: classes={class_size} methods={meth_size} target_method_ids={target_ids} wave_shape_field_ids={wave_fields}")
     for ci in range(class_size):
         base=class_off+ci*32
         cidx= u32(base)
