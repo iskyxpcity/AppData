@@ -55,7 +55,7 @@ def read_dex(path):
       ("Ldko;", "loO"),
       ("Lbko;", "<init>"),
       ("Lbko;", "l"),
-      ("Lwgo0;", "<init>"),
+      ("Lwgo0;", "<init>"),\n      ("Lvk7;", "I"),\n      ("Lfwe0;", "<init>"),\n      ("Lmxe0;", "<init>"),
     }
     out=[]
     target_ids=[(i, methods[i]) for i in range(len(methods)) if methods[i] in targets]
@@ -97,12 +97,12 @@ def read_dex(path):
                     if opcode in list(range(0x6e,0x73))+list(range(0x74,0x79)):
                         ref=struct.unpack_from("<H",data,start+(pc+1)*2)[0]
                         if ref < len(methods) and methods[ref] in targets:
-                            out.append(f"{os.path.basename(path)}: {owner} method_idx={mid} invokes {methods[ref][0]}->{methods[ref][1]} at code_unit={pc}")
+                            out.append(f"{os.path.basename(path)}: {owner}->{methods[mid][1]} method_idx={mid} invokes {methods[ref][0]}->{methods[ref][1]} at code_unit={pc}")
                     # sget/sput variants: include direct static field access to Voyage's shared wave shape.
                     if opcode in (0x60,0x61,0x62,0x63,0x67,0x68,0x69,0x6a,0x6b,0x6c,0x6d):
                         ref=struct.unpack_from("<H",data,start+(pc+1)*2)[0]
                         if ref < len(fields) and fields[ref][0]=="Lvk7;" and fields[ref][2]=="lI":
-                            out.append(f"{os.path.basename(path)}: {owner} method_idx={mid} accesses vk7.lI wave Shape at code_unit={pc}")
+                            out.append(f"{os.path.basename(path)}: {owner}->{methods[mid][1]} method_idx={mid} accesses vk7.lI wave Shape at code_unit={pc}")
                     pc += max(1,length)
     return out
 
