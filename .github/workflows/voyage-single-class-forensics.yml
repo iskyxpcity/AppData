@@ -1,0 +1,78 @@
+name: Voyage single-class Shape and shadow forensic decompile
+
+on:
+  push:
+    branches:
+      - analysis/voyage-full-dex-forensics-20261121
+    paths:
+      - ".github/workflows/voyage-single-class-forensics.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  decompile-one:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - defpackage.wgo0
+          - defpackage.vne
+          - defpackage.xgo0
+          - defpackage.vk7
+          - defpackage.Liko
+    steps:
+      - name: Checkout original DEX partitions
+        uses: actions/checkout@v4
+        with:
+          ref: analysis/voyage-full-dex-forensics-20261121
+          sparse-checkout: |
+            voyage/classes.dex
+            voyage/classes2.dex
+            voyage/classes6.dex
+            voyage/classes7.dex
+            voyage/classes8.dex
+            voyage/classes9.dex
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Download JADX 1.5.6
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 3 -o "$RUNNER_TEMP/jadx.zip" https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip
+          mkdir -p "$RUNNER_TEMP/jadx"
+          unzip -q "$RUNNER_TEMP/jadx.zip" -d "$RUNNER_TEMP/jadx"
+          chmod +x "$RUNNER_TEMP/jadx/bin/jadx"
+          "$RUNNER_TEMP/jadx/bin/jadx" --version
+
+      - name: Decompile only ${{ matrix.target }}
+        shell: bash
+        env:
+          JAVA_OPTS: "-Xmx4g"
+          TARGET_CLASS: ${{ matrix.target }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/targeted"
+          "$RUNNER_TEMP/jadx/bin/jadx" \
+            --threads-count 1 --no-res --show-bad-code \
+            --single-class "$TARGET_CLASS" \
+            --single-class-output "$RUNNER_TEMP/targeted" \
+            voyage/classes.dex voyage/classes2.dex voyage/classes6.dex voyage/classes7.dex voyage/classes8.dex voyage/classes9.dex
+          find "$RUNNER_TEMP/targeted" -type f -maxdepth 8 -print
+          cd "$RUNNER_TEMP"
+          zip -qr "voyage-${TARGET_CLASS##*.}.zip" targeted
+
+      - name: Upload ${{ matrix.target }} source
+        uses: actions/upload-artifact@v4
+        with:
+          name: voyage-single-${{ matrix.target }}
+          path: ${{ runner.temp }}/voyage-*.zip
+          if-no-files-found: error
+          retention-days: 14
