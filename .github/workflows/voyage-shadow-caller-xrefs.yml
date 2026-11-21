@@ -26,6 +26,7 @@ jobs:
             voyage/classes7.dex
             voyage/classes8.dex
             voyage/classes9.dex
+            tools/voyage_dex_shadow_xrefs.py
 
       - name: Set up Java
         uses: actions/setup-java@v4
