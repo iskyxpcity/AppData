@@ -61,6 +61,7 @@ def read_dex(path):
       ("Lmxe0;", "<init>"),
       ("Ln8c;", "<init>"),
       ("Lncw0;", "Il"),
+      ("Lw6b0;", "lO"),
     }
     out=[]
     target_ids=[(i, methods[i]) for i in range(len(methods)) if methods[i] in targets]
