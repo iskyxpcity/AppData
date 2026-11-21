@@ -52,8 +52,8 @@ jobs:
           JADX="$RUNNER_TEMP/jadx/bin/jadx"
           OUT="$RUNNER_TEMP/voyage-targeted"
           mkdir -p "$OUT/classes"
-          DEXES=(voyage/classes.dex voyage/classes2.dex)
-          TARGETS=(tia)
+          DEXES=(voyage/classes.dex voyage/classes2.dex voyage/classes6.dex voyage/classes7.dex voyage/classes8.dex voyage/classes9.dex)
+          TARGETS=(d23 wge0 uge0 vox)
           : > "$OUT/RESULTS.txt"
           for cls in "${TARGETS[@]}"; do
             echo "===== $cls =====" | tee -a "$OUT/RESULTS.txt"
