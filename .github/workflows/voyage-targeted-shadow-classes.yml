@@ -52,7 +52,7 @@ jobs:
           JADX="$RUNNER_TEMP/jadx/bin/jadx"
           OUT="$RUNNER_TEMP/voyage-targeted"
           mkdir -p "$OUT/classes"
-          DEXES=(voyage/classes.dex voyage/classes2.dex voyage/classes6.dex voyage/classes7.dex voyage/classes8.dex voyage/classes9.dex)
+          DEXES=(voyage/classes.dex)
           TARGETS=(z58)
           : > "$OUT/RESULTS.txt"
           for cls in "${TARGETS[@]}"; do
