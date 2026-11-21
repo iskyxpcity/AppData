@@ -1,0 +1,92 @@
+name: Voyage focused Shape and shadow call-chain decompile
+
+on:
+  push:
+    branches:
+      - analysis/voyage-full-dex-forensics-20261121
+    paths:
+      - ".github/workflows/voyage-focused-dex-forensics.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  decompile-focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout original DEX files
+        uses: actions/checkout@v4
+        with:
+          ref: analysis/voyage-full-dex-forensics-20261121
+          sparse-checkout: |
+            voyage/classes.dex
+            voyage/classes2.dex
+            voyage/classes6.dex
+            voyage/classes7.dex
+            voyage/classes8.dex
+            voyage/classes9.dex
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Download JADX 1.5.6
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 3 -o "$RUNNER_TEMP/jadx.zip" https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip
+          mkdir -p "$RUNNER_TEMP/jadx"
+          unzip -q "$RUNNER_TEMP/jadx.zip" -d "$RUNNER_TEMP/jadx"
+          chmod +x "$RUNNER_TEMP/jadx/bin/jadx"
+
+      - name: Decompile Shape and shadow DEX partitions
+        shell: bash
+        env:
+          JAVA_OPTS: "-Xmx5g"
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/voyage-focused"
+          "$RUNNER_TEMP/jadx/bin/jadx" --threads-count 4 --no-res --show-bad-code \
+            -d "$RUNNER_TEMP/voyage-focused" \
+            voyage/classes.dex voyage/classes2.dex voyage/classes6.dex voyage/classes7.dex voyage/classes8.dex voyage/classes9.dex
+
+      - name: Collect call-chain source evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC="$RUNNER_TEMP/voyage-focused/sources"
+          OUT="$RUNNER_TEMP/voyage-focused-evidence"
+          mkdir -p "$OUT"
+          python3 - "$SRC" "$OUT" <<'PY'
+          import re, shutil, sys
+          from pathlib import Path
+          src, out = Path(sys.argv[1]), Path(sys.argv[2])
+          patterns = re.compile(r"wgo0|vne|xgo0|vk7|Liko|setShadowLayer|setAmbientShadowColor|setSpotShadowColor|setElevation|setOutline|shadowElevation|RenderNode|graphicsLayer|drawIntoCanvas|drawPath")
+          hits=[]
+          for p in src.rglob("*.java"):
+              data=p.read_text(errors="replace")
+              if patterns.search(data):
+                  hits.append(p)
+                  dst=out/"sources"/p.relative_to(src)
+                  dst.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copy2(p,dst)
+          (out/"INDEX.txt").write_text(
+              f"Decompiled classes: {sum(1 for _ in src.rglob('*.java'))}\\n"
+              f"Evidence files: {len(hits)}\\n\\n" +
+              "\\n".join(str(p.relative_to(src)) for p in sorted(hits)) + "\\n"
+          )
+          print(f"Decompiled {sum(1 for _ in src.rglob('*.java'))} classes; retained {len(hits)} evidence files.")
+          PY
+          cd "$RUNNER_TEMP"
+          zip -qr voyage-focused-evidence.zip voyage-focused-evidence
+
+      - name: Upload focused source
+        uses: actions/upload-artifact@v4
+        with:
+          name: voyage-focused-shape-shadow-source
+          path: ${{ runner.temp }}/voyage-focused-evidence.zip
+          if-no-files-found: error
+          retention-days: 14
