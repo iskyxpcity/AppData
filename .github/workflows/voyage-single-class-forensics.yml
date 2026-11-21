@@ -30,6 +30,7 @@ jobs:
           - defpackage.fwe0
           - defpackage.bwm
           - defpackage.u5
+          - defpackage.n8c
     steps:
       - name: Checkout original DEX partitions
         uses: actions/checkout@v4
